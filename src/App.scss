@@ -1,0 +1,166 @@
+// Sass variables for color calculations
+$primary-blue: #1E7CE8;
+$primary-teal: #00D4AA;
+$primary-orange: #FF6B35;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url("../src/assets/Poppins/Poppins-Regular.ttf");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Poppins";
+	src: url("../src/assets/Poppins/Poppins-Medium.ttf");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Poppins";
+	src: url("../src/assets/Poppins/Poppins-SemiBold.ttf");
+	font-weight: 600;
+}
+@font-face {
+	font-family: "Poppins";
+	src: url("../src/assets/Poppins/Poppins-Bold.ttf");
+	font-weight: 700;
+}
+@font-face {
+	font-family: "Poppins";
+	src: url("../src/assets/Poppins/Poppins-ExtraBold.ttf");
+	font-weight: 900;
+}
+body {
+  font-family: 'Poppins';
+  line-height: 1.1;
+  color: #333;
+  overflow-x: hidden;
+  font-weight: 400;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+// Global variables
+:root {
+  --primary-blue: #{$primary-blue};
+  --primary-teal: #{$primary-teal};
+  --primary-orange: #{$primary-orange};
+  --dark-bg: #1a1a1a;
+  --darker-bg: #0f0f0f;
+  --text-white: #ffffff;
+  --text-gray: #888;
+  --text-light-gray: #ccc;
+  --border-color: #333;
+  --card-bg: #2a2a2a;
+}
+
+// Utility classes
+.container {
+ max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
+}
+a, h1, h2, h3, h4, h5, h6, p, span, td, th {
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+}
+.section {
+  padding: 80px 0;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 16px 28px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+
+  &.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+
+    &:hover {
+      background-color: darken($primary-blue, 10%);
+      transform: translateY(-2px);
+    }
+  }
+
+  &.btn-outline {
+    background-color: transparent;
+    color: white;
+    border: 2px solid var(--border-color);
+
+    &:hover {
+      background-color: white;
+      color: var(--dark-bg);
+      border-color: white;
+    }
+  }
+
+  &.btn-teal {
+    background-color: var(--primary-blue);
+    color: white;
+
+    &:hover {
+      background-color: darken($primary-teal, 10%);
+    }
+  }
+
+  &.btn-orange {
+    background-color: var(--primary-orange);
+    color: white;
+
+    &:hover {
+      background-color: darken($primary-orange, 10%);
+    }
+  }
+}
+
+
+ .logo {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    .logo-text{
+        font-size: 40px;
+    letter-spacing: -4px;
+    font-weight: 900;
+    }
+  }
+.animate-gradient {
+    animation: gradient 6s linear infinite
+}
+@keyframes gradient {
+    to {
+        background-position: 200%
+    }
+}
+
+.animate-gradient {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(270deg, #ff7356, #ff59e2 25.52%, #52ddf6 50%, #eadf4e 76.04%, #ff7356);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text
+}

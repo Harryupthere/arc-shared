@@ -1,0 +1,103 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { KeyboardArrowDown, Search, Language } from '@mui/icons-material';
+import './Header.scss';
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems = [
+    { 
+      label: 'How it works', 
+      hasDropdown: true,
+      dropdownItems: [
+        { title: 'Evaluation Process', link: '#' },
+        { title: 'Trading Objectives', link: '#' },
+        { title: 'Scaling Plan', link: '#' }
+      ]
+    },
+    { label: 'FAQ' },
+    { label: 'Testimonials' },
+    { 
+      label: 'Trading', 
+      hasDropdown: true,
+      dropdownItems: [
+        { title: 'Blog', link: '#' },
+        { title: 'Trading Updates', link: '#' },
+        { title: 'Tools & Services', link: '#' },
+        { title: 'Trading Platforms', link: '#' },
+        { title: 'Premium Programme', link: '#' },
+        { title: 'Symbols', link: '#' },
+        { title: 'Leaderboard', link: '#' },
+        { title: 'Economic Calendar', link: '#' },
+        { title: 'App Suite', link: '#' }
+      ]
+    },
+    { 
+      label: 'About us', 
+      hasDropdown: true,
+      dropdownItems: [
+        { title: 'About us', link: '#' },
+        { title: 'Contact us', link: '#' },
+        { title: 'Careers', link: '#' },
+        { title: 'Press Kit', link: '#' },
+        { title: 'Press Release', link: '#' }
+      ]
+    },
+    { label: 'Academy' },
+    { label: 'Client Area', className: 'client-area' }
+  ];
+
+  return (
+    <header className="header">
+      <div className="container">
+        <div className="header-content">
+          <Link to="/" className="logo">
+            <h2 className="logo-text animate-gradient ">ARC</h2>
+          </Link>
+          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+            {navItems.map((item, index) => (
+              <div key={index} className={`nav-item ${item.hasDropdown ? 'has-dropdown' : ''}`}>
+                <a href="#" className={item.className}>
+                  {item.label}
+                  {item.hasDropdown && <KeyboardArrowDown />}
+                </a>
+                {item.hasDropdown && item.dropdownItems && (
+                  <div className="dropdown-menu">
+                    <div className="dropdown-content">
+                      {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
+                        <a key={dropdownIndex} href={dropdownItem.link} className="dropdown-item">
+                          {dropdownItem.title}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
+
+          <div className="header-actions">
+            <div className="language-selector">
+              <Language />
+              <span>EN</span>
+              <KeyboardArrowDown />
+            </div>
+            <Search className="search-icon" />
+          </div>
+
+          <button 
+            className="mobile-menu-toggle"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
