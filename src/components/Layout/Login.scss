@@ -1,0 +1,310 @@
+.login-page {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+  align-items: center;
+  justify-content: center;
+     padding: 20px 0;
+}
+
+.login-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+}
+
+.login-form-section {
+  padding: 40px;
+  color: white;
+  position: relative;
+.logo{
+    text-align: center; 
+    margin-bottom: 20px;
+}
+  @media (max-width: 968px) {
+    padding: 30px;
+  }
+
+  .language-selector {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-light-gray);
+    cursor: pointer;
+
+    .flag {
+      font-size: 18px;
+    }
+
+    .dropdown-arrow {
+      font-size: 10px;
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .ftmo-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+    span:first-child {
+      color: var(--primary-blue);
+    }
+  }
+
+  .login-form {
+    max-width: 400px;
+
+    h1 {
+      font-size: 30px;
+      font-weight: 600;
+      margin-bottom: 10px;
+       text-align: center;
+
+    }
+
+    .signup-link {
+      font-size: 14px;
+      color: var(--text-light-gray);
+      margin-bottom: 30px;
+      text-align: center;
+
+      a {
+        color: var(--primary-blue);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: white;
+      }
+
+      input {
+        width: 100%;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        color: white;
+        font-size: 14px;
+        transition: all 0.3s ease;
+
+        &::placeholder {
+          color: var(--text-gray);
+        }
+
+        &:focus {
+          outline: none;
+          border-color: var(--primary-blue);
+          background: rgba(255, 255, 255, 0.15);
+        }
+      }
+
+      .password-input {
+        position: relative;
+
+        .password-toggle {
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: none;
+          border: none;
+          color: var(--text-gray);
+          cursor: pointer;
+          padding: 0;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+
+    .form-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+
+      .checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        cursor: pointer;
+
+        input[type="checkbox"] {
+          width: auto;
+          margin: 0;
+          display: none;
+        }
+
+        .checkmark {
+          width: 18px;
+          height: 18px;
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          border-radius: 3px;
+          position: relative;
+
+          &::after {
+            content: '✓';
+            position: absolute;
+            top: -2px;
+            left: 2px;
+            color: var(--primary-blue);
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+          }
+        }
+
+        input:checked + .checkmark::after {
+          opacity: 1;
+        }
+      }
+
+      .forgot-password {
+        color: var(--text-light-gray);
+        text-decoration: none;
+        font-size: 14px;
+
+        &:hover {
+          color: white;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 15px;
+      background: var(--primary-blue);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 25px;
+
+      &:hover {
+        background: #1565c0;
+      }
+    }
+
+    .divider {
+      text-align: center;
+      margin-bottom: 25px;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      span {
+        background: var(--dark-bg);
+        padding: 0 15px;
+        color: var(--text-gray);
+        font-size: 14px;
+      }
+    }
+
+    .social-login {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 30px;
+
+      .social-btn {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        text-align: center;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: rgba(255, 255, 255, 0.3);
+        }
+
+      }
+    }
+
+    .cookie-settings {
+      text-align: center;
+
+      a {
+        color: var(--text-gray);
+        text-decoration: underline;
+        font-size: 14px;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.login-info-section {
+ background-color: #26272980;
+ border-radius: 20px;
+padding: 30px;
+text-align: center;
+img{
+    margin-bottom: 20px;
+}
+h3{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+p{
+    font-size: 14px;
+}
+}
