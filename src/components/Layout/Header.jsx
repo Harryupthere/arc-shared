@@ -45,7 +45,7 @@ const Header = () => {
       ]
     },
     { label: 'Academy' },
-    { label: 'Client Area', className: 'client-area' }
+    { label: 'Client Area', className: 'client-area' ,link: '/login'}
   ];
 
   return (
@@ -58,17 +58,17 @@ const Header = () => {
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             {navItems.map((item, index) => (
               <div key={index} className={`nav-item ${item.hasDropdown ? 'has-dropdown' : ''}`}>
-                <a href="#" className={item.className}>
+                <Link to={item.link} className={item.className}>
                   {item.label}
                   {item.hasDropdown && <KeyboardArrowDown />}
-                </a>
+                </Link>
                 {item.hasDropdown && item.dropdownItems && (
                   <div className="dropdown-menu">
                     <div className="dropdown-content">
                       {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
-                        <a key={dropdownIndex} href={dropdownItem.link} className="dropdown-item">
+                        <Link key={dropdownIndex} to={dropdownItem.link} className="dropdown-item">
                           {dropdownItem.title}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>

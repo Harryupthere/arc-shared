@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import './Login.scss';
 
@@ -8,7 +8,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
-
+    const navidgate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle login logic here
@@ -41,7 +41,6 @@ const Login = () => {
                                     placeholder="Email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    required
                                 />
                             </div>
 
@@ -54,7 +53,6 @@ const Login = () => {
                                         placeholder="Password"
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
-                                        required
                                     />
                                     <button
                                         type="button"
@@ -81,7 +79,7 @@ const Login = () => {
                                 </Link>
                             </div>
 
-                            <button type="submit" className="login-btn">
+                            <button type="submit" className="login-btn" onClick={()=>navidgate('/dashboard')}>
                                 Log in
                             </button>
 
@@ -102,10 +100,6 @@ const Login = () => {
                                     <img src='images/apple.svg' alt='apple' />
                                     <span>Continue with Apple</span>
                                 </button>
-                            </div>
-
-                            <div className="cookie-settings">
-                                <Link to="/cookie-settings">Cookie settings</Link>
                             </div>
                         </form>
                     </div>

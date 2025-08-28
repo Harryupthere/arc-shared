@@ -13,10 +13,10 @@ const Home = () => {
       <HeroSection />
       <TradersSection />
       <ProcessSection />
-      <ObjectivesSection />
       <BenefitsSection />
       <CustomerSupportSection />
       <TestimonialsSection />
+      <ObjectivesSection />
       <CallToActionSection />
     </>
   );

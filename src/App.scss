@@ -57,7 +57,7 @@ body {
   --text-gray: #888;
   --text-light-gray: #ccc;
   --border-color: #333;
-  --card-bg: #2a2a2a;
+  --card-bg: #262729;
   --slate-color: #a2acbd;
 }
 
@@ -81,6 +81,20 @@ a, h1, h2, h3, h4, h5, h6, p, span, td, th {
   @media (max-width: 768px) {
     padding: 60px 0;
   }
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--primary-blue); 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-blue); 
 }
 
 
