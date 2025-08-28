@@ -3,11 +3,13 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
 import './App.scss';
 import Login from './components/Layout/Login';
+import Translator from './components/Translator';
 
 function App() {
   return (
-    <Router>
+    // <Router>
       <div className="App">
+        <Translator />
         <Routes>
             <Route path="/login" element={<Login />} />
           <Route path="/" element={<Layout />}>
@@ -15,7 +17,7 @@ function App() {
           </Route>
         </Routes>
       </div>
-    </Router>
+    // </Router>
   );
 }
 

@@ -1,56 +1,71 @@
 import './CustomerSupportSection.scss';
-//import { allCountries } from 'country-telephone-data';
+import { useDispatch } from 'react-redux';
+import {setLanguage} from '../../redux/slice/languageSlice';
+
+const languages = [
+  { name: 'Arabic', flag: '🇸🇦', code: 'ar' },
+  { name: 'Czech', flag: '🇨🇿', code: 'cs' },
+  { name: 'Spanish', flag: '🇪🇸' },
+  { name: 'French', flag: '🇫🇷' },
+  { name: 'German', flag: '🇩🇪' },
+  { name: 'Hebrew', flag: '🇮🇱' },
+  { name: 'Italian', flag: '🇮🇹' },
+  { name: 'Japanese', flag: '🇯🇵' },
+  { name: 'Polish', flag: '🇵🇱' },
+  { name: 'Portuguese', flag: '🇵🇹' },
+  { name: 'Russian', flag: '🇷🇺' },
+  { name: 'Serbian', flag: '🇷🇸' },
+  { name: 'Swahili', flag: '🇰🇪' },
+  { name: 'Tagalog', flag: '🇵🇭' },
+  { name: 'Turkish', flag: '🇹🇷' },
+  { name: 'Ukrainian', flag: '🇺🇦' },
+  { name: 'English', flag: '🇬🇧' },
+  { name: 'Vietnamese', flag: '🇻🇳' },
+  { name: 'Swedish', flag: '🇸🇪' },
+  { name: 'Romanian', flag: '🇷🇴' }
+];
+
+const supportChannels = [
+  {
+    icon: '📱',
+    title: 'WHATSAPP',
+    description: '',
+    link: '#'
+  },
+  {
+    icon: '💬',
+    title: 'LIVECHAT',
+    description: '',
+    link: '#'
+  },
+  {
+    icon: '✉️',
+    title: 'EMAIL',
+    description: 'support@ftmo.com',
+    link: 'mailto:support@ftmo.com'
+  },
+  {
+    icon: '📞',
+    title: 'PHONE',
+    description: '+420 910 920 310',
+    link: 'tel:+420910920310'
+  }
+];
 
 const CustomerSupportSection = () => {
-  const languages = [
-    { name: 'Arabic', flag: '🇸🇦' },
-    { name: 'Czech', flag: '🇨🇿' },
-    { name: 'Spanish', flag: '🇪🇸' },
-    { name: 'French', flag: '🇫🇷' },
-    { name: 'German', flag: '🇩🇪' },
-    { name: 'Hebrew', flag: '🇮🇱' },
-    { name: 'Italian', flag: '🇮🇹' },
-    { name: 'Japanese', flag: '🇯🇵' },
-    { name: 'Polish', flag: '🇵🇱' },
-    { name: 'Portuguese', flag: '🇵🇹' },
-    { name: 'Russian', flag: '🇷🇺' },
-    { name: 'Serbian', flag: '🇷🇸' },
-    { name: 'Swahili', flag: '🇰🇪' },
-    { name: 'Tagalog', flag: '🇵🇭' },
-    { name: 'Turkish', flag: '🇹🇷' },
-    { name: 'Ukrainian', flag: '🇺🇦' },
-    { name: 'English', flag: '🇬🇧' },
-    { name: 'Vietnamese', flag: '🇻🇳' },
-    { name: 'Swedish', flag: '🇸🇪' },
-    { name: 'Romanian', flag: '🇷🇴' }
-  ];
+  const dispatch = useDispatch();
 
-  const supportChannels = [
-    {
-      icon: '📱',
-      title: 'WHATSAPP',
-      description: '',
-      link: '#'
-    },
-    {
-      icon: '💬',
-      title: 'LIVECHAT',
-      description: '',
-      link: '#'
-    },
-    {
-      icon: '✉️',
-      title: 'EMAIL',
-      description: 'support@ftmo.com',
-      link: 'mailto:support@ftmo.com'
-    },
-    {
-      icon: '📞',
-      title: 'PHONE',
-      description: '+420 910 920 310',
-      link: 'tel:+420910920310'
+  const handleLanguageClick = (code) => {
+    dispatch(setLanguage(code));
+    // Set Google Translate language
+    if (window.google && window.google.translate) {
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = code;
+        select.dispatchEvent(new Event('change'));
+      }
     }
-  ];
+  };
 
   return (
     <section className="customer-support-section">
@@ -61,7 +76,12 @@ const CustomerSupportSection = () => {
 
         <div className="languages-grid">
           {languages.map((language, index) => (
-            <div key={index} className="language-card">
+            <div
+              key={index}
+              className="language-card"
+              onClick={() => handleLanguageClick(language.code)}
+              style={{ cursor: 'pointer' }}
+            >
               <span className="language-flag">{language.flag}</span>
               <span className="language-name">{language.name}</span>
             </div>
