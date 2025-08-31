@@ -25,7 +25,7 @@ import { useState } from 'react';
     { path: '/dashboard/certificates', icon: CardMembership, label: 'Certificates' },
     // { path: '/dashboard/downloads', icon: Download, label: 'Downloads' },
     { path: '/dashboard/social-media', icon: Share, label: 'Social Media' },
-    { path: '/dashboard/social-media', icon: CalendarMonthOutlined, label: 'Economic Calendar' },
+    { path: '/dashboard/calendar', icon: CalendarMonthOutlined, label: 'Economic Calendar' },
     { path: '/dashboard/social-media', icon: LocationOn, label: 'Timezone Converter' },
     { path: '/dashboard/social-media', icon: PercentRounded, label: 'Partnership Deals' },
     { path: '/dashboard/social-media', icon: MonitorHeartOutlined, label: 'Mentor App' }

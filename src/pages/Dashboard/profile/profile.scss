@@ -1,0 +1,30 @@
+.profile {
+    .dark-card {
+        padding: 0;
+        .tabs-content{
+            padding: 0;
+        }
+        .card-header {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            h1 {
+                font-size: 20px;
+                line-height: 28px;
+                font-weight: 600;
+                margin: 0;
+            }
+        }
+    }  
+
+    .tabs-content {
+        background: #1e1e1e;
+        padding: 20px;
+        border-radius: 8px;
+        color: #fff;
+    }
+
+}
