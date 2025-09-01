@@ -75,16 +75,15 @@ const Header = () => {
                 )}
               </div>
             ))}
-          </nav>
-
-          <div className="header-actions">
             <div className="language-selector">
               <Language />
               <span>EN</span>
               <KeyboardArrowDown />
             </div>
             <Search className="search-icon" />
-          </div>
+          </nav>
+
+  
 
           <button 
             className="mobile-menu-toggle"

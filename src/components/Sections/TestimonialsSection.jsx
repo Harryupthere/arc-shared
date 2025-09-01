@@ -116,7 +116,6 @@ const TestimonialsSection = () => {
               ))}
             </div>
 
-            <button className="all-reviews-btn">ALL REVIEWS</button>
           </div>
         </div>
 

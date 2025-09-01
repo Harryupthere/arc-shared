@@ -26,11 +26,9 @@ import { useState } from 'react';
     // { path: '/dashboard/downloads', icon: Download, label: 'Downloads' },
     { path: '/dashboard/social-media', icon: Share, label: 'Social Media' },
     { path: '/dashboard/calendar', icon: CalendarMonthOutlined, label: 'Economic Calendar' },
-    { path: '/dashboard/social-media', icon: LocationOn, label: 'Timezone Converter' },
-    { path: '/dashboard/social-media', icon: PercentRounded, label: 'Partnership Deals' },
-    { path: '/dashboard/social-media', icon: MonitorHeartOutlined, label: 'Mentor App' }
-
-
+    { path: '#/', icon: LocationOn, label: 'Timezone Converter' },
+    { path: '#/', icon: PercentRounded, label: 'Partnership Deals' },
+    { path: '#/', icon: MonitorHeartOutlined, label: 'Mentor App' }
 
   ];
 function DashboardSidebar() {
