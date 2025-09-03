@@ -10,6 +10,9 @@ import FTMOTraders from './pages/Dashboard/FTMOTraders';
 import Leaderboard from './pages/Dashboard/Leaderboard';
 import Certificates from './pages/Dashboard/Certificates';
 import SocialMedia from './pages/Dashboard/SocialMedia';
+import Profile from './pages/Dashboard/profile/Profile';
+import Billing from './pages/Dashboard/Billing';
+import EconomyCalendar from './pages/Dashboard/EconomyCalnedar';
 function App() {
   return (
     // <Router>
@@ -23,14 +26,15 @@ function App() {
         <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<AccountsOverview />} />
             <Route path="premium" element={<div>Premium Page</div>} />
-            <Route path="profile" element={<div>Profile Page</div>} />
+            <Route path="profile" element={<Profile/>} />
             <Route path="arc-traders" element={<FTMOTraders />} />
             <Route path="arc-academy" element={<div>FTMO Academy Page</div>} />
-            <Route path="billing" element={<div>Billing Page</div>} />
+            <Route path="billing" element={<Billing/>} />
             <Route path="leaderboard" element={<Leaderboard />} />
             <Route path="certificates" element={<Certificates />} />
             <Route path="downloads" element={<div>Downloads Page</div>} />
             <Route path="social-media" element={<SocialMedia />} />
+            <Route path="calendar" element={<EconomyCalendar />} />
           </Route>
       </Routes>
     </div>

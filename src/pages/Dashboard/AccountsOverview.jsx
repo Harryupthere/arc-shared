@@ -1,5 +1,6 @@
 import './AccountsOverview.scss';
-
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 const AccountsOverview = () => {
   return (
     <div className="accounts-overview">
@@ -35,7 +36,7 @@ const AccountsOverview = () => {
 
       <div className="info-cards">
         <div className="info-card free-trial">
-          <div className="card-icon">⏰</div>
+          <div className="card-icon"><AccessAlarmIcon/></div>
           <div className="card-content">
             <h3>Free Trial</h3>
             <p className="card-subtitle">Master your skills</p>
@@ -43,12 +44,18 @@ const AccountsOverview = () => {
               Practice your trading without risking anything, and be ready for the 
               real challenge when it comes!
             </p>
+            <ul>
+              <li> No eligibility for ARC Account</li>
+              <li>14 days</li>
+              <li>Basic Account Analysis</li>
+              <li>Limited Apps</li>
+            </ul>
           </div>
               <button className="btn btn-outline">Start Free Trial</button>
         </div>
 
         <div className="info-card ftmo-challenge">
-          <div className="card-icon">💼</div>
+          <div className="card-icon"><AutoGraphIcon/></div>
           <div className="card-content">
             <h3>ARC Challenge</h3>
             <p className="card-subtitle">Trade up to $200,000 ARC Account</p>
@@ -56,6 +63,12 @@ const AccountsOverview = () => {
               Show us your trading skills. Pass the Evaluation Course and receive 
               the ARC Account!
             </p>
+               <ul>
+              <li>We provide you with up to $200,000 ARC Account</li>
+              <li>Prove your trading skills</li>
+              <li>Full Account Analysis</li>
+              <li>Premium Apps</li>
+            </ul>
           </div>
               <button className="btn btn-primary">New ARC Challenge</button>
 
