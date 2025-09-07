@@ -7,44 +7,46 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { 
-      label: 'How it works', 
-      hasDropdown: true,
-      dropdownItems: [
-        { title: 'Evaluation Process', link: '#' },
-        { title: 'Trading Objectives', link: '#' },
-        { title: 'Scaling Plan', link: '#' }
-      ]
-    },
+    // { 
+    //   label: 'How it works', 
+    //   hasDropdown: true,
+    //   dropdownItems: [
+    //     { title: 'Evaluation Process', link: '#' },
+    //     { title: 'Trading Objectives', link: '#' },
+    //     { title: 'Scaling Plan', link: '#' }
+    //   ]
+    // },
+    { label: 'Home', link: '/' },
     { label: 'FAQ' },
     { label: 'Testimonials' },
-    { 
-      label: 'Trading', 
-      hasDropdown: true,
-      dropdownItems: [
-        { title: 'Blog', link: '#' },
-        { title: 'Trading Updates', link: '#' },
-        { title: 'Tools & Services', link: '#' },
-        { title: 'Trading Platforms', link: '#' },
-        { title: 'Premium Programme', link: '#' },
-        { title: 'Symbols', link: '#' },
-        { title: 'Leaderboard', link: '#' },
-        { title: 'Economic Calendar', link: '#' },
-        { title: 'App Suite', link: '#' }
-      ]
-    },
+    { label: 'Build for ARC',link: '/build-arc' },
+    // { 
+    //   label: 'Trading', 
+    //   hasDropdown: true,
+    //   dropdownItems: [
+    //     { title: 'Blog', link: '#' },
+    //     { title: 'Trading Updates', link: '#' },
+    //     { title: 'Tools & Services', link: '#' },
+    //     { title: 'Trading Platforms', link: '#' },
+    //     { title: 'Premium Programme', link: '#' },
+    //     { title: 'Symbols', link: '#' },
+    //     { title: 'Leaderboard', link: '#' },
+    //     { title: 'Economic Calendar', link: '#' },
+    //     { title: 'App Suite', link: '#' }
+    //   ]
+    // },
     { 
       label: 'About us', 
-      hasDropdown: true,
-      dropdownItems: [
-        { title: 'About us', link: '#' },
-        { title: 'Contact us', link: '#' },
-        { title: 'Careers', link: '#' },
-        { title: 'Press Kit', link: '#' },
-        { title: 'Press Release', link: '#' }
-      ]
+      // hasDropdown: true,
+      // dropdownItems: [
+      //   { title: 'About us', link: '#' },
+      //   { title: 'Contact us', link: '#' },
+      //   { title: 'Careers', link: '#' },
+      //   { title: 'Press Kit', link: '#' },
+      //   { title: 'Press Release', link: '#' }
+      // ]
     },
-    { label: 'Academy' },
+    // { label: 'Academy' },
     { label: 'Client Area', className: 'client-area' ,link: '/login'}
   ];
 

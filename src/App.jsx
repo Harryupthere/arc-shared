@@ -16,6 +16,7 @@ import EconomyCalendar from './pages/Dashboard/EconomyCalnedar';
 import MainContent from './pages/dashboard-components/MainContent';
 import Trader from './pages/Dashboard/Trader';
 import Withdrawal from './pages/Dashboard/Withdrawal';
+import FlowContainer from './components/arc-flow/FlowContainer';
 function App() {
   return (
     // <Router>
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+        <Route path="/build-arc" element={<FlowContainer/>}/>
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<DashboardLayout />}>
