@@ -1,0 +1,54 @@
+.trader-wrapped {
+    .account-card{
+    display: flex;
+    gap: 10px;
+    }
+    .dark-card {
+        &.first-card {
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .tabs-content {
+            padding: 0;
+        }
+        .card-header {
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            h1 {
+                font-size: 20px;
+                line-height: 28px;
+                font-weight: 600;
+                margin: 0;
+            }
+        }
+    }
+
+    .theme_card {
+        width: calc(33.33% - 5px);
+        padding: 20px;
+
+        .funded-content {
+            margin-bottom: 20px;
+
+            h4 {
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+
+            .status {
+                margin: 10px 0;
+
+                span {
+                    padding: 5px;
+                    background-color: green;
+                    font-size: 14px;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+}
