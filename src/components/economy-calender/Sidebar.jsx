@@ -4,7 +4,6 @@
   import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { CurrencyBitcoin, TrendingUp, ZoomInMap } from '@mui/icons-material';
 
-  // import { TrendingUp, Zap, Bitcoin, Calendar } from 'lucide-react';
 
   const navigationItems = [
     { id: 'today', label: 'Today' },

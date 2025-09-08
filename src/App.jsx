@@ -13,6 +13,7 @@ import SocialMedia from './pages/Dashboard/SocialMedia';
 import Profile from './pages/Dashboard/profile/Profile';
 import Billing from './pages/Dashboard/Billing';
 import EconomyCalendar from './pages/Dashboard/EconomyCalnedar';
+import MainContent from './pages/dashboard-components/MainContent';
 function App() {
   return (
     // <Router>
@@ -27,6 +28,7 @@ function App() {
             <Route index element={<AccountsOverview />} />
             <Route path="premium" element={<div>Premium Page</div>} />
             <Route path="profile" element={<Profile/>} />
+            <Route path="account" element={<MainContent/>} />
             <Route path="arc-traders" element={<FTMOTraders />} />
             <Route path="arc-academy" element={<div>FTMO Academy Page</div>} />
             <Route path="billing" element={<Billing/>} />

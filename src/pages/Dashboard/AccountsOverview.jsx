@@ -1,7 +1,9 @@
 import './AccountsOverview.scss';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import { useNavigate } from 'react-router-dom';
 const AccountsOverview = () => {
+  const navigate = useNavigate()
   return (
     <div className="accounts-overview">
       <div className="page-header">
@@ -15,7 +17,7 @@ const AccountsOverview = () => {
               <h3>Free Trial: <span className="account-id"> 1511440682</span></h3>
               <h3>Balance: <span className="account-id"> $200,000.00</span></h3>
             </div>
-            <button className="start-trial-btn">Start Free Trial</button>
+            <button className="start-trial-btn" onClick={()=>navigate('/dashboard/account')}>Start Free Trial</button>
           </div>
         </div>
       </div>
@@ -27,8 +29,8 @@ const AccountsOverview = () => {
             <h3>No active accounts</h3>
             <p>Show us your trading skills. Pass the Evaluation Process and receive the ARC Account!</p>
             <div className="action-buttons">
-              <button className="btn btn-primary">New ARC Challenge</button>
-              <button className="btn btn-outline">Start Free Trial</button>
+              <button className="btn btn-primary" onClick={()=>navigate('/dashboard/account')}>New ARC Challenge</button>
+              <button className="btn btn-outline" onClick={()=>navigate('/dashboard/account')}>Start Free Trial</button>
             </div>
           </div>
         </div>
