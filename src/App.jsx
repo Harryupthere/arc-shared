@@ -17,6 +17,7 @@ import MainContent from './pages/dashboard-components/MainContent';
 import Trader from './pages/Dashboard/Trader';
 import Withdrawal from './pages/Dashboard/Withdrawal';
 import FlowContainer from './components/arc-flow/FlowContainer';
+import FAQ from './pages/Faq';
 function App() {
   return (
     // <Router>
@@ -25,25 +26,26 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-        <Route path="/build-arc" element={<FlowContainer/>}/>
+          <Route path="/build-arc" element={<FlowContainer />} />
+        <Route path="/faq" element={<FAQ />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<DashboardLayout />}>
-            <Route index element={<AccountsOverview />} />
-            <Route path="premium" element={<div>Premium Page</div>} />
-            <Route path="profile" element={<Profile/>} />
-            <Route path="account" element={<MainContent/>} />
-            {/* <Route path="arc-traders" element={<FTMOTraders />} /> */}
-            <Route path="arc-academy" element={<div>FTMO Academy Page</div>} />
-            <Route path="billing" element={<Billing/>} />
-            <Route path="leaderboard" element={<Leaderboard />} />
-            <Route path="certificates" element={<Certificates />} />
-            <Route path="downloads" element={<div>Downloads Page</div>} />
-            <Route path="social-media" element={<SocialMedia />} />
-            <Route path="calendar" element={<EconomyCalendar />} />
-            <Route path="arc-traders" element={<Trader/>} />
-            <Route path="arc-traders/withdrawal" element={<Withdrawal/>} />
-          </Route>
+          <Route index element={<AccountsOverview />} />
+          <Route path="premium" element={<div>Premium Page</div>} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="account" element={<MainContent />} />
+          {/* <Route path="arc-traders" element={<FTMOTraders />} /> */}
+          <Route path="arc-academy" element={<div>FTMO Academy Page</div>} />
+          <Route path="billing" element={<Billing />} />
+          <Route path="leaderboard" element={<Leaderboard />} />
+          <Route path="certificates" element={<Certificates />} />
+          <Route path="downloads" element={<div>Downloads Page</div>} />
+          <Route path="social-media" element={<SocialMedia />} />
+          <Route path="calendar" element={<EconomyCalendar />} />
+          <Route path="arc-traders" element={<Trader />} />
+          <Route path="arc-traders/withdrawal" element={<Withdrawal />} />
+        </Route>
       </Routes>
     </div>
     // </Router>

@@ -6,6 +6,7 @@ import BenefitsSection from '../components/Sections/BenefitsSection';
 import CustomerSupportSection from '../components/Sections/CustomerSupportSection';
 import TestimonialsSection from '../components/Sections/TestimonialsSection';
 import CallToActionSection from '../components/Sections/CallToActionSection';
+import PricingTable from './pricingTable/PricingTable';
 
 const Home = () => {
   return (
@@ -14,9 +15,10 @@ const Home = () => {
       <TradersSection />
       <ProcessSection />
       <BenefitsSection />
-      <CustomerSupportSection />
+      {/* <CustomerSupportSection /> */}
       <TestimonialsSection />
-      <ObjectivesSection />
+      {/* <ObjectivesSection /> */}
+      <PricingTable/>
       <CallToActionSection />
     </>
   );

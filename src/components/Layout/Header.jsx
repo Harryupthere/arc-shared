@@ -17,7 +17,7 @@ const Header = () => {
     //   ]
     // },
     { label: 'Home', link: '/' },
-    { label: 'FAQ' },
+    { label: 'FAQ',link: '/faq'},
     { label: 'Testimonials' },
     { label: 'Build for ARC',link: '/build-arc' },
     // { 
