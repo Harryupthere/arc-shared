@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { KeyboardArrowDown, Search, Language } from '@mui/icons-material';
 import './Header.scss';
+import { useDispatch } from 'react-redux';
+ import { allCountries } from 'country-telephone-data';
+import {setLanguage} from '../../redux/slice/languageSlice';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const langRef = useRef(null);
 
   const navItems = [
     // { 
@@ -17,7 +22,7 @@ const Header = () => {
     //   ]
     // },
     { label: 'Home', link: '/' },
-    { label: 'FAQ' },
+    { label: 'FAQ',link: '/faq'},
     { label: 'Testimonials' },
     { label: 'Build for ARC',link: '/build-arc' },
     // { 
@@ -50,6 +55,39 @@ const Header = () => {
     { label: 'Client Area', className: 'client-area' ,link: '/login'}
   ];
 
+    const dispatch = useDispatch();
+  
+  const handleLanguageClick = (code) => {
+    dispatch(setLanguage(code));
+    setIsLangOpen(false); // Close dropdown after selection
+    // Set Google Translate language
+    if (window.google && window.google.translate) {
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = code;
+        select.dispatchEvent(new Event('change'));
+      }
+    }
+  };
+
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (langRef.current && !langRef.current.contains(event.target)) {
+        setIsLangOpen(false);
+      }
+    };
+    if (isLangOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isLangOpen]);
+
+  // Example: filter countries by supported iso codes if needed
+  // const supportedIsoCodes = ['en', 'fr', ...];
+  // const filteredCountries = allCountries.filter(c => supportedIsoCodes.includes(c.iso2));
+  // For now, show allCountries
+
   return (
     <header className="header">
       <div className="container">
@@ -77,10 +115,60 @@ const Header = () => {
                 )}
               </div>
             ))}
-            <div className="language-selector">
-              <Language />
-              <span>EN</span>
-              <KeyboardArrowDown />
+            <div
+              className="language-selector"
+              style={{ position: 'relative' }}
+              ref={langRef}
+            >
+              <div
+                style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+                onClick={() => setIsLangOpen((prev) => !prev)}
+              >
+                <Language />
+                <span>EN</span>
+                <KeyboardArrowDown />
+              </div>
+              {isLangOpen && (
+                <div
+                  className="language-dropdown"
+                  style={{
+                    position: 'absolute',
+                    top: '100%',
+                    left: 0,
+                    background: 'black',
+                    border: '1px solid #eee',
+                    zIndex: 1000,
+                    maxHeight: 250,
+                    overflowY: 'auto',
+                    minWidth: 180
+                  }}
+                >
+                  {allCountries.map((country) => (
+                    <div
+                      key={country.iso2}
+                      onClick={() => handleLanguageClick(country.iso2)}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        padding: '6px 12px',
+                        cursor: 'pointer',
+                        borderBottom: '1px solid #f5f5f5'
+                      }}
+                    >
+                      <span style={{ fontSize: 20, marginRight: 8 }}>
+                        {country.flag ? country.flag : (
+                          <img
+                            src={`https://flagcdn.com/24x18/${country.iso2}.png`}
+                            alt={country.name}
+                            style={{ width: 20, height: 15, objectFit: 'cover' }}
+                          />
+                        )}
+                      </span>
+                      <span>{country.name}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
             <Search className="search-icon" />
           </nav>

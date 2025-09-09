@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Star } from '@mui/icons-material';
 import './HeroSection.scss';
+import { GraphIcon, ProfitSplit, TradingDoller, WatchIcon } from '../../icons/icon';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,11 +19,11 @@ const HeroSection = () => {
   ];
 
   const features = [
-    { icon: 'images/tadingIcon.svg', text: '4 TRADING PLATFORMS' },
-    { icon: 'images/academyIcon.svg', text: 'ARC ACADEMY' },
-    { icon: 'images/quantIcon.svg', text: 'QUANTLANE' },
-    { icon: 'images/watchIcon.svg', text: 'FREE TRIAL' },
-    { icon: 'images/coachIcon.svg', text: 'PERFORMANCE COACH' }
+    { icon: <ProfitSplit/>, text: '90% + Profit split ' },
+    { icon: <TradingDoller/>, text: '300k+ trading accounts' },
+    { icon: <WatchIcon/>, text: 'No time limit in challenge phase' },
+    { icon: <GraphIcon/>, text: 'Real Market Liquidity' },
+    // { icon: 'images/coachIcon.svg', text: 'PERFORMANCE COACH' }
   ];
 
   useEffect(() => {
@@ -70,7 +71,7 @@ const HeroSection = () => {
             <div className="features-row">
               {features.map((feature, index) => (
                 <div key={index} className="feature-badge">
-                  <span className="feature-icon"><img src={feature.icon}/></span>
+                  <span className="feature-icon">{feature.icon}</span>
                   <span className="feature-text">{feature.text}</span>
                 </div>
               ))}

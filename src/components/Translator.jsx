@@ -1,8 +1,11 @@
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
+ import { allCountries } from 'country-telephone-data';
 
 const Translator = () => {
   const language = useSelector((state) => state.language.language);
+let iso2 = allCountries.map(c => c.iso2);
+let iso2String = iso2.join(',');
 
   // Load Google Translate script and initialize
   useEffect(() => {

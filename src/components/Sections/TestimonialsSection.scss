@@ -4,9 +4,9 @@ $primary-teal: #00D4AA;
 $primary-orange: #FF6B35;
 
 .testimonials-section {
-  background-color: var(--dark-bg);
+  background-color: var(--text-white);
   padding: 100px 0;
-  color: white;
+  color: #000000;
 
   .testimonials-header {
     text-align: center;
@@ -83,8 +83,10 @@ $primary-orange: #FF6B35;
       }
 
       .testimonial-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        // background: rgba(255, 255, 255, 0.05);
+        // border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgb(232 232 232);
+    border: 1px solid rgb(216 200 200);
         border-radius: 12px;
         padding: 20px;
         backdrop-filter: blur(10px);
@@ -135,7 +137,7 @@ $primary-orange: #FF6B35;
         .testimonial-content {
           font-size: 13px;
           line-height: 1.5;
-          color: var(--text-light-gray);
+          color:#000;
           margin: 0;
         }
       }
