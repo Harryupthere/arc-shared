@@ -14,6 +14,9 @@ import Profile from './pages/Dashboard/profile/Profile';
 import Billing from './pages/Dashboard/Billing';
 import EconomyCalendar from './pages/Dashboard/EconomyCalnedar';
 import MainContent from './pages/dashboard-components/MainContent';
+import Trader from './pages/Dashboard/Trader';
+import Withdrawal from './pages/Dashboard/Withdrawal';
+import FlowContainer from './components/arc-flow/FlowContainer';
 function App() {
   return (
     // <Router>
@@ -22,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+        <Route path="/build-arc" element={<FlowContainer/>}/>
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<DashboardLayout />}>
@@ -29,7 +33,7 @@ function App() {
             <Route path="premium" element={<div>Premium Page</div>} />
             <Route path="profile" element={<Profile/>} />
             <Route path="account" element={<MainContent/>} />
-            <Route path="arc-traders" element={<FTMOTraders />} />
+            {/* <Route path="arc-traders" element={<FTMOTraders />} /> */}
             <Route path="arc-academy" element={<div>FTMO Academy Page</div>} />
             <Route path="billing" element={<Billing/>} />
             <Route path="leaderboard" element={<Leaderboard />} />
@@ -37,6 +41,8 @@ function App() {
             <Route path="downloads" element={<div>Downloads Page</div>} />
             <Route path="social-media" element={<SocialMedia />} />
             <Route path="calendar" element={<EconomyCalendar />} />
+            <Route path="arc-traders" element={<Trader/>} />
+            <Route path="arc-traders/withdrawal" element={<Withdrawal/>} />
           </Route>
       </Routes>
     </div>

@@ -8,7 +8,7 @@ const Billing = () => {
         <>
            
             <div className='billing-wrapped'>
-                  <div className="dark-card">
+                  <div className="dark-card first-card">
                         <div className='card-header'>
                           <div className="header-icon"><DiscountIcon sx={{ fontSize: 30 }} /></div>
                           <h1>Billing</h1>

@@ -1,0 +1,142 @@
+.withdraw-wrapped{
+    .dark-card{
+        padding: 20px;
+        margin-bottom: 20px;
+        h1{
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+    }
+    .profit-split{
+        .MuiPickersSectionList-root{
+                    color: #fff;
+        }
+        fieldset{
+            border-color: #fff;
+        }
+        label{
+            color: #fff;
+        }   
+        .MuiSvgIcon-root{
+            fill: #fff;
+        }
+    }
+    .data-table {
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: var(--card-bg);
+            margin-bottom: 20px;
+            th,
+            td {
+                padding: 12px 15px;
+                text-align: left;
+                border-bottom: 1px solid var(--border-color);
+                font-size: 14px;
+
+                .download-btn {
+                    background-color: transparent;
+                    border: none;
+
+                    .MuiSelect-icon {
+                        color: white !important;
+                    }
+                }
+            }
+
+            th {
+                color: var(--slate-color);
+                font-weight: 600;
+            }
+
+            tr:nth-child(even) {
+                background-color: var(--table-row-even-bg);
+            }
+
+            tr:hover {
+                background-color: var(--table-row-hover-bg);
+            }
+        }
+    }
+
+    .flex-box{
+        display: flex;
+        gap: 20px;
+        .left-side{
+            flex: 1;
+        }
+        .right-side{
+            width: 300px;
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+        h3{
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .account-heading{
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .input-field{
+            padding: 15px;
+            width: 100%;
+            background-color: transparent;
+            outline: none;
+            border: 1px solid #cccccc95;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .text-accent{
+            text-align: right;
+            display: block;
+            font-size: 14px;
+        }
+        .text-3xl{
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+    }
+    .radio-btn {
+        .item1 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 15px;
+            input{
+                height: 16px;
+                width: 16px;
+            }
+        }
+        .labels{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            color: #fff;
+            .images{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                .card-image{
+                    height: 20px;
+                    width: auto;
+                }
+                .card-icon{
+                    height: 20px;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+
+}
