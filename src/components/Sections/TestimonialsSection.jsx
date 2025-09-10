@@ -72,7 +72,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="testimonials-section">
+    <section className="testimonials-section" id='testimonials'>
       <div className="container">
         <div className="testimonials-header">
           <h2>WHAT <span className="highlight">PEOPLE</span> SAY<br />ABOUT ARC</h2>

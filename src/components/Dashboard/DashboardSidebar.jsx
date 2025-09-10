@@ -27,7 +27,7 @@ import { useState } from 'react';
     { path: '/dashboard/social-media', icon: Share, label: 'Social Media' },
     { path: '/dashboard/calendar', icon: CalendarMonthOutlined, label: 'Economic Calendar' },
     { path: '#/', icon: LocationOn, label: 'Timezone Converter' },
-    { path: '#/', icon: PercentRounded, label: 'Partnership Deals' },
+    { path: 'https://arc-partner-portal.vercel.app/', icon: PercentRounded, label: 'Partnership Deals',newTab: true },
     { path: '#/', icon: MonitorHeartOutlined, label: 'Mentor App' }
 
   ];
@@ -62,16 +62,30 @@ function DashboardSidebar() {
             <div className="sidebar-content">
               <div className="menu-section">
                 <nav className="menu-nav">
-                  {mainMenuItems.map((item) => (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      className={`menu-item ${isActive(item.path, item.exact) ? 'active' : ''}`}
-                    >
-                      <item.icon className="menu-icon" />
-                      <span className="menu-label">{item.label}</span>
-                    </Link>
-                  ))}
+                  {mainMenuItems.map((item) =>
+  item.newTab ? (
+    <a
+      key={item.path}
+      href={item.path}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="menu-item"
+    >
+      <item.icon className="menu-icon" />
+      <span className="menu-label">{item.label}</span>
+    </a>
+  ) : (
+    <Link
+      key={item.path}
+      to={item.path}
+      className={`menu-item ${isActive(item.path, item.exact) ? 'active' : ''}`}
+    >
+      <item.icon className="menu-icon" />
+      <span className="menu-label">{item.label}</span>
+    </Link>
+  )
+)}
+
                 </nav>
               </div>
 

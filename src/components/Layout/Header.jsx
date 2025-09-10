@@ -23,7 +23,7 @@ const Header = () => {
     // },
     { label: 'Home', link: '/' },
     { label: 'FAQ',link: '/faq'},
-    { label: 'Testimonials' },
+    { label: 'Testimonials',link: '#testimonials' },
     { label: 'Build for ARC',link: '/build-arc' },
     // { 
     //   label: 'Trading', 
@@ -83,6 +83,17 @@ const Header = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isLangOpen]);
 
+  const handleNavClick = (e, link) => {
+    if (link.startsWith('#')) {
+      e.preventDefault();
+      const sectionId = link.replace('#', '');
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   // Example: filter countries by supported iso codes if needed
   // const supportedIsoCodes = ['en', 'fr', ...];
   // const filteredCountries = allCountries.filter(c => supportedIsoCodes.includes(c.iso2));
@@ -98,7 +109,11 @@ const Header = () => {
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             {navItems.map((item, index) => (
               <div key={index} className={`nav-item ${item.hasDropdown ? 'has-dropdown' : ''}`}>
-                <Link to={item.link} className={item.className}>
+                <Link
+                  to={item.link}
+                  className={item.className}
+                  onClick={item.link && item.link.startsWith('#') ? (e) => handleNavClick(e, item.link) : undefined}
+                >
                   {item.label}
                   {item.hasDropdown && <KeyboardArrowDown />}
                 </Link>
