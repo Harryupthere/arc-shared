@@ -53,11 +53,11 @@ const HeroSection = () => {
             </p>
 
             <div className="hero-actions">
-              <a href="#" className="btn btn-primary">ARC CHALLENGE</a>
+              <a href="#pricing-table" className="btn btn-primary">ARC CHALLENGE</a>
               <a href="#" className="btn btn-outline">FREE TRIAL</a>
             </div>
 
-            <div className="trustpilot-section">
+            {/* <div className="trustpilot-section">
               <span>Excellent</span>
               <div className="stars">
                 {[...Array(5)].map((_, i) => (
@@ -66,7 +66,7 @@ const HeroSection = () => {
               </div>
               <span>25,915 reviews on</span>
               <strong>Trustpilot</strong>
-            </div>
+            </div> */}
 
             <div className="features-row">
               {features.map((feature, index) => (

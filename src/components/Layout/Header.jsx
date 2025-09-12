@@ -23,7 +23,7 @@ const Header = () => {
     // },
     { label: 'Home', link: '/' },
     { label: 'FAQ',link: '/faq'},
-    { label: 'Testimonials',link: '#testimonials' },
+    // { label: 'Testimonials',link: '#testimonials' },
     { label: 'Build for ARC',link: '/build-arc' },
     // { 
     //   label: 'Trading', 
@@ -136,7 +136,7 @@ const Header = () => {
               ref={langRef}
             >
               <div
-                style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+                style={{ display: 'flex', alignItems: 'center', cursor: 'pointer',gap:5 }}
                 onClick={() => setIsLangOpen((prev) => !prev)}
               >
                 <Language />
@@ -151,11 +151,11 @@ const Header = () => {
                     top: '100%',
                     left: 0,
                     background: 'black',
-                    border: '1px solid #eee',
                     zIndex: 1000,
-                    maxHeight: 250,
+                    maxHeight: 350,
                     overflowY: 'auto',
-                    minWidth: 180
+                    minWidth: 180,
+                    borderRadius:'10px'
                   }}
                 >
                   {allCountries.map((country) => (
@@ -165,9 +165,8 @@ const Header = () => {
                       style={{
                         display: 'flex',
                         alignItems: 'center',
-                        padding: '6px 12px',
+                        padding: '12px 12px',
                         cursor: 'pointer',
-                        borderBottom: '1px solid #f5f5f5'
                       }}
                     >
                       <span style={{ fontSize: 20, marginRight: 8 }}>

@@ -166,7 +166,7 @@ const PricingTable = () => {
   const currentData = getCurrentData();
 
   return (
-    <div className="pricing-table">
+    <div className="pricing-table" id='pricing-table'>
       <div className="container">
         {/* Account Type Tabs */}
         <div className="account-type-tabs">

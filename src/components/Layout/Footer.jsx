@@ -1,6 +1,7 @@
 import { Facebook, Twitter, Instagram, YouTube, LinkedIn } from '@mui/icons-material';
 import './Footer.scss';
 import { Link } from 'react-router-dom';
+import imageMap from '../../utlis/helper';
 
 const Footer = () => {
   const companyLinks = [
@@ -26,14 +27,14 @@ const Footer = () => {
   ];
 
   const paymentMethods = [
-    { name: 'Bank Transfer', logo: 'images/bank.svg' },
-    { name: 'Skrill', logo: 'images/skrill.svg' },
-    { name: 'Mastercard', logo: 'images/master.svg' },
-    { name: 'Maestro', logo: 'images/master.svg' },
-    { name: 'Visa', logo: 'images/visa.svg' },
-    { name: 'Diners Club', logo: 'images/visa.svg' },
-    { name: 'Discover', logo: 'images/master.svg' },
-    { name: 'PayPal', logo: 'images/paypal.svg' }
+    { name: 'Bank Transfer', logo: imageMap['bank.svg'] },
+    { name: 'Skrill', logo: imageMap['skrill.svg'] },
+    { name: 'Mastercard', logo: imageMap['master.svg'] },
+    { name: 'Maestro', logo: imageMap['master.svg'] },
+    { name: 'Visa', logo: imageMap['visa.svg'] },
+    { name: 'Diners Club', logo: imageMap['visa.svg'] },
+    { name: 'Discover', logo: imageMap['master.svg'] },
+    { name: 'PayPal', logo: imageMap['paypal.svg'] }
   ];
 
   const legalLinks = [
@@ -102,8 +103,8 @@ const Footer = () => {
           <div>
             <h4>STAY UPDATED WITH OUR NEWSLETTER!</h4>
             <div className="footer-apps">
-              <img src='images/appstore.svg' alt='appstore' />
-              <img src='images/playstore.svg' alt='playstore' />
+              <img src={imageMap['appstore.svg']} alt='appstore' />
+              <img src={imageMap['playstore.svg']} alt='playstore' />
             </div>
           </div>
 
