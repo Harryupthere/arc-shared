@@ -16,7 +16,7 @@ const allowedAccountBalances = [
 
 // Generate marks from allowed values
 let aaa=[
-  5000, 20000,
+  15000,
   40000,
   100000,
   150000, 200000,250000, 300000
@@ -55,7 +55,7 @@ const TradingSliders = () => {
     {
       id: 'amount',
       title: 'Account Balance',
-      subtitle: '$5,000 - $300,000',
+      subtitle: '$15,000 - $300,000',
       min: minAccountBalance,
       max: maxAccountBalance,
       step: 1000, // Smallest step, but value will always snap

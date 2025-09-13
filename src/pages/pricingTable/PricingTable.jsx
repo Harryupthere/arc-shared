@@ -142,7 +142,7 @@ const PricingTable = () => {
     }
   };
 
-  const twoPhaseAccountSizes = ['8k', '15k', '25k', '50k', '100k'];
+  const twoPhaseAccountSizes = [ '15k', '25k', '50k', '100k'];
   const instantFundingAccountSizes = ['5k', '10k', '50k'];
 
   const getCurrentData = () => {
