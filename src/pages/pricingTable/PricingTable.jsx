@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './PricingTable.scss';
 import CostomizedAccount from './Customized';
 import TradingSliders from './TradingSliders';
+import SuggestedAccountForm from '../../components/arc-flow/SuggestedAccountForm';
+import EstimateProfit from './EstimateProfit';
 const PricingTable = () => {
   const [accountType, setAccountType] = useState('standard');
   const [challengeType, setChallengeType] = useState('two-phase');
@@ -440,6 +442,7 @@ const PricingTable = () => {
           </div>
         )}
       </div>
+            <EstimateProfit/>
     </div>
   );
 };

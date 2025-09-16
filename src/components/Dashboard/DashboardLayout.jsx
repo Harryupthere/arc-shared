@@ -1,18 +1,19 @@
 import { useState } from 'react';
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 import './DashboardLayout.scss';
 import DashboardSidebar from './DashboardSidebar';
 import DashboardHeader from './DashboardHeader';
 
 const DashboardLayout = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <div className="dashboard-page">
-     <DashboardHeader/>
+      <DashboardHeader onMenuClick={() => setSidebarOpen((prev) => !prev)} />
       <div className='container'>
         <div className="dashboard-layout">
-         <DashboardSidebar/>
+          <DashboardSidebar sidebarOpen={sidebarOpen} />
           <div className="dashboard-main">
             <div className="dashboard-content">
               <Outlet />

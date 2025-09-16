@@ -2,6 +2,9 @@
     .account-card{
     display: flex;
     gap: 10px;
+     @media (max-width: 768px) {
+       flex-direction: column;
+      }
     }
     .dark-card {
         &.first-card {
@@ -29,7 +32,9 @@
     .theme_card {
         width: calc(33.33% - 5px);
         padding: 20px;
-
+ @media (max-width: 768px) {
+      width: 100%;
+      }
         .funded-content {
             margin-bottom: 20px;
 
