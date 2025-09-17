@@ -159,7 +159,7 @@
     border: none;
     cursor: pointer;
     gap: 4px;
-
+    z-index: 9999;
     @media (max-width: 768px) {
       display: flex;
     }

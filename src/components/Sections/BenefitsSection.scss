@@ -4,7 +4,10 @@
   color: white;
   position: relative;
   overflow: hidden;
+     @media (max-width: 768px) {
+          padding: 40px 0;
 
+      }
   .benefits-header {
     text-align: center;
     margin-bottom: 80px;

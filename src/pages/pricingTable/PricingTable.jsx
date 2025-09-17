@@ -468,7 +468,9 @@ const PricingTable = () => {
                 </div>
               </div>
             )}
-
+            <button className="btn btn-primary" style={{margin:'auto', display:'flex'}}>
+              <span>Start Challenge</span>
+            </button>
             <div className="terms-notice">
               <p>Please check Terms of Use for detailed info</p>
             </div>

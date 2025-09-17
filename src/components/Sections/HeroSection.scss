@@ -2,18 +2,25 @@
   background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
   position: relative;
   overflow: hidden;
-      letter-spacing: .03em;
-.home-icon{
-  height: 25px;
-  width: 25px;
-  fill:#1E7CE8
-}
-.btn{
-  width: 200px;
-}
+  letter-spacing: .03em;
+
+  .home-icon {
+    height: 25px;
+    width: 25px;
+    fill: #1E7CE8
+  }
+
+  .btn {
+    width: 200px;
+  }
+
   .hero-background {
     padding: 100px 0 80px;
     position: relative;
+
+    @media (max-width: 768px) {
+      padding: 50px 0 30px;
+    }
 
     &::before {
       content: '';
@@ -51,12 +58,12 @@
   .hero-title {
     font-size: 85px;
     font-weight: 600;
-            line-height: 100px;
+    line-height: 100px;
     margin-bottom: 30px;
     line-height: 1.1;
 
     @media (max-width: 768px) {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
   }
 
@@ -68,6 +75,10 @@
     margin-right: auto;
     line-height: 30px;
     font-weight: 500;
+     @media (max-width: 768px) {
+      font-size: 16px;
+      list-style: 24px;
+    }
   }
 
   .hero-actions {
@@ -111,6 +122,7 @@
     gap: 30px;
     flex-wrap: wrap;
     margin-bottom: 50px;
+
     @media (max-width: 768px) {
       gap: 15px;
     }
@@ -130,10 +142,12 @@
       .feature-icon {
         font-size: 16px;
       }
-      .feature-text{
+
+      .feature-text {
         font-size: 14px;
         font-weight: 400;
       }
+
       @media (max-width: 768px) {
         padding: 8px 12px;
         font-size: 10px;
@@ -187,6 +201,7 @@
       0% {
         transform: translateX(0);
       }
+
       100% {
         transform: translateX(-50%);
       }
