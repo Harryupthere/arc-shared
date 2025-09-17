@@ -144,13 +144,49 @@ const PricingTable = () => {
     }
   };
 
-  const twoPhaseAccountSizes = [ '15k', '25k', '50k', '100k'];
+  const twoPhaseAccountSizes = ['15k', '25k', '50k', '100k'];
   const instantFundingAccountSizes = ['5k', '10k', '50k'];
 
+  const [pricingTable1, setPricingTable1] = useState([[
+    ["$2,500", "10%", "50%"],
+    ["$5,000", "10%", "50%"],
+    ["$10,000", "10%", "75%"],
+    ["$15,000", "10%", "75%"],
+    ["$20,000", "10%", "80%"],
+    ["$25,000", "10%", "80%"],
+    ["$30,000", "10%", "80%"]
+  ], [
+    ["$5,000", "10%", "50%"],
+    ["$10,000", "10%", "50%"],
+    ["$20,000", "10%", "75%"],
+    ["$30,000", "10%", "75%"],
+    ["$35,000", "10%", "80%"],
+    ["$40,000", "10%", "80%"],
+
+  ], [
+    ["$25,000", "10%", "50%"],
+    ["$50,000", "10%", "50%"],
+    ["$100,000", "10%", "75%"],
+    ["$150,000", "10%", "75%"],
+    ["$200,000", "10%", "80%"],
+    ["$250,000", "10%", "80%"],
+
+  ]])
+
+  let pricingTab = pricingTable1[2]
   const getCurrentData = () => {
     if (challengeType === 'two-phase') {
       return twoPhaseData[selectedSize];
     } else {
+      if (selectedSize == '5k') {
+        pricingTab = pricingTable1[0]
+      } else if (selectedSize == '10k') {
+        pricingTab = pricingTable1[1]
+
+      } else {
+        pricingTab = pricingTable1[2]
+
+      }
       return instantFundingData[selectedSize];
     }
   };
@@ -397,7 +433,14 @@ const PricingTable = () => {
                     <div className="table-cell">{currentData.profitTargetPercent}</div>
                     <div className="table-cell">{currentData.profitShare}</div>
                   </div>
-                  <div className="table-row">
+                  {pricingTab.map((item) => (
+                    <div className="table-row">
+                      <div className="table-cell">{item[0]}</div>
+                      <div className="table-cell">{item[1]}</div>
+                      <div className="table-cell">{item[2]}</div>
+                    </div>
+                  ))}
+                  {/* <div className="table-row">
                     <div className="table-cell">$50,000</div>
                     <div className="table-cell">10%</div>
                     <div className="table-cell">50%</div>
@@ -407,7 +450,7 @@ const PricingTable = () => {
                     <div className="table-cell">10%</div>
                     <div className="table-cell">75%</div>
                   </div>
-                   <div className="table-row">
+                  <div className="table-row">
                     <div className="table-cell">$150,000</div>
                     <div className="table-cell">10%</div>
                     <div className="table-cell">75%</div>
@@ -417,11 +460,11 @@ const PricingTable = () => {
                     <div className="table-cell">10%</div>
                     <div className="table-cell">80%</div>
                   </div>
-                   <div className="table-row">
+                  <div className="table-row">
                     <div className="table-cell">$250,000</div>
                     <div className="table-cell">10%</div>
                     <div className="table-cell">80%</div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             )}
@@ -433,7 +476,7 @@ const PricingTable = () => {
         ) : (
           <div className="customized-account">
             {/* <CostomizedAccount/> */}
-            <TradingSliders/>
+            <TradingSliders />
             {/* <div className="customized-content">
               <h3>Customized Account Design</h3>
               <p>We are working on creating customized account options for our traders. This feature will allow you to tailor your trading account according to your specific needs and preferences.</p>
@@ -442,7 +485,7 @@ const PricingTable = () => {
           </div>
         )}
       </div>
-            <EstimateProfit/>
+      <EstimateProfit />
     </div>
   );
 };

@@ -18,6 +18,7 @@ const allowedAccountBalances = [
 let aaa=[
   15000,
   40000,
+
   100000,
   150000, 200000,250000, 300000
 ]
