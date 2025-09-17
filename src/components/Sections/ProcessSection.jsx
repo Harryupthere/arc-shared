@@ -43,26 +43,26 @@ const ProcessSection = () => {
         'All - Trading Tools & Services'
       ]
     },
-    {
-      title: 'QUANTLANE',
-      subtitle: 'PRO - TRADING',
-      color: 'orange',
-      icon: '🏢',
-      steps: [
-        {
-          step: 'STEP 04',
-          title: 'PROFESSIONAL TRADER',
-          description: 'The absolute best ARC Traders can get an opportunity through our Premium Programme to become professional traders in Quantlane, a proprietary trading firm that manages its own real capital. The career shift involves technical skills, mathematicians, and developers driven by the same passion for the financial markets. This is the final goal of a trading career which ARC envisioned.'
-        }
-      ],
-      features: [
-        'Contract with fixed salary',
-        'Performance & Mindset coach',
-        'Institutional Trading Conditions',
-        'Spreads, Liquidity, Risk, Framework',
-        'Custom Platform & Tools'
-      ]
-    }
+    // {
+    //   title: 'QUANTLANE',
+    //   subtitle: 'PRO - TRADING',
+    //   color: 'orange',
+    //   icon: '🏢',
+    //   steps: [
+    //     {
+    //       step: 'STEP 04',
+    //       title: 'PROFESSIONAL TRADER',
+    //       description: 'The absolute best ARC Traders can get an opportunity through our Premium Programme to become professional traders in Quantlane, a proprietary trading firm that manages its own real capital. The career shift involves technical skills, mathematicians, and developers driven by the same passion for the financial markets. This is the final goal of a trading career which ARC envisioned.'
+    //     }
+    //   ],
+    //   features: [
+    //     'Contract with fixed salary',
+    //     'Performance & Mindset coach',
+    //     'Institutional Trading Conditions',
+    //     'Spreads, Liquidity, Risk, Framework',
+    //     'Custom Platform & Tools'
+    //   ]
+    // }
   ];
 
   return (
