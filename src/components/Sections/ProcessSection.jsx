@@ -10,7 +10,7 @@ const ProcessSection = () => {
       steps: [
         {
           step: 'STEP 01',
-          title: 'INVOICE PHASE',
+          title: 'NOVICE PHASE',
           description: 'The ARC Challenge educates traders and leads them to master their trading habits. Traders demonstrate their experience by following our Trading Objectives inspired by key risk management rules when completing an ARC Challenge, traders move on to the Verification step.'
         },
         {
