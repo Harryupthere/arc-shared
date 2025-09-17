@@ -62,9 +62,11 @@
         padding: 10px 0;
         position: relative;
         transition: all 0.3s ease;
-   @media (max-width: 768px) {
-       font-size: 14px;
-      }
+
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+
         &.active {
           color: white;
 
@@ -100,6 +102,10 @@
         cursor: pointer;
         font-weight: 600;
         transition: all 0.3s ease;
+
+        @media (max-width: 768px) {
+          padding: 10px;
+        }
 
         &:first-child {
           border-radius: 20px 0 0 20px;
@@ -182,11 +188,13 @@
         }
       }
     }
-    .start-heading{
+
+    .start-heading {
       align-items: center;
       text-align: center;
       margin-bottom: 12px;
-      .h2{
+
+      .h2 {
         align-content: center;
       }
     }
@@ -197,9 +205,11 @@
     padding: 25px;
     position: relative;
     overflow: hidden;
- @media (max-width: 768px) {
-        padding: 12px;
-          }
+
+    @media (max-width: 768px) {
+      padding: 12px;
+    }
+
     &.novice {
       background: rgba(255, 255, 255, 0.95);
       color: #333;
@@ -217,24 +227,27 @@
 
     .card-header {
       margin-bottom: 25px;
- @media (max-width: 768px) {
-           margin-bottom: 10px;
-          }
+
+      @media (max-width: 768px) {
+        margin-bottom: 10px;
+      }
+
       .funded-stage {
         font-size: 0.9rem;
         opacity: 0.8;
         display: block;
         margin-bottom: 8px;
-        
+
       }
 
       h3 {
         font-size: 26px;
         font-weight: 500;
         margin: 0;
-         @media (max-width: 768px) {
-           font-size: 20px;
-          }
+
+        @media (max-width: 768px) {
+          font-size: 20px;
+        }
       }
     }
 
@@ -244,9 +257,11 @@
         justify-content: space-between;
         align-items: center;
         padding: 18px 0;
- @media (max-width: 768px) {
-           padding: 12px 0;
-          }
+
+        @media (max-width: 768px) {
+          padding: 12px 0;
+        }
+
         &:last-child {
           border-bottom: none;
         }
@@ -258,11 +273,13 @@
           font-weight: 500;
 
           @media (max-width: 768px) {
-           font-size: 14px;
+            font-size: 14px;
           }
-  @media (max-width: 520px) {
-           font-size: 12px;
+
+          @media (max-width: 520px) {
+            font-size: 12px;
           }
+
           .info-icon {
             width: 16px;
             height: 16px;
@@ -278,11 +295,13 @@
 
         .value {
           font-weight: 600;
-           @media (max-width: 768px) {
-           font-size: 14px;
+
+          @media (max-width: 768px) {
+            font-size: 14px;
           }
-            @media (max-width: 520px) {
-           font-size: 12px;
+
+          @media (max-width: 520px) {
+            font-size: 12px;
           }
         }
       }
