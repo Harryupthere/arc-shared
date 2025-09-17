@@ -11,26 +11,27 @@ const PricingTable = () => {
 
   // Data for Two-Phase Challenge
   const twoPhaseData = {
-    '8k': {
-      novice: {
-        profitTarget: { amount: '$640', percentage: '8%' },
-        maxDailyLoss: { amount: '$400', percentage: '5%' },
-        maxOverallLoss: { amount: '$800', percentage: '10%' },
-        minTradingDays: '5 Days'
-      },
-      expert: {
-        profitTarget: { amount: '$400', percentage: '5%' },
-        maxDailyLoss: { amount: '$400', percentage: '5%' },
-        maxOverallLoss: { amount: '$800', percentage: '10%' },
-        minTradingDays: '5 Days'
-      },
-      arcFunded: {
-        profitTarget: '-',
-        maxDailyLoss: { amount: '$400', percentage: '5%' },
-        maxOverallLoss: { amount: '$800', percentage: '10%' },
-        minTradingDays: '5 Days'
-      }
-    },
+    // '8k': {
+    //   novice: {
+    //     profitTarget: { amount: '$640', percentage: '8%' },
+    //     maxDailyLoss: { amount: '$400', percentage: '5%' },
+    //     maxOverallLoss: { amount: '$800', percentage: '10%' },
+    //     minTradingDays: '5 Days'
+    //   },
+    //   expert: {
+    //     profitTarget: { amount: '$400', percentage: '5%' },
+    //     maxDailyLoss: { amount: '$400', percentage: '5%' },
+    //     maxOverallLoss: { amount: '$800', percentage: '10%' },
+    //     minTradingDays: '5 Days'
+    //   },
+    //   arcFunded: {
+    //     profitTarget: '-',
+    //     maxDailyLoss: { amount: '$400', percentage: '5%' },
+    //     maxOverallLoss: { amount: '$800', percentage: '10%' },
+    //     minTradingDays: '5 Days'
+    //   },
+    //   price:"$139"
+    // },
     '15k': {
       novice: {
         profitTarget: { amount: '$1,200', percentage: '8%' },
@@ -49,7 +50,8 @@ const PricingTable = () => {
         maxDailyLoss: { amount: '$750', percentage: '5%' },
         maxOverallLoss: { amount: '$1,500', percentage: '10%' },
         minTradingDays: '5 Days'
-      }
+      },
+      price:"$139"
     },
     '25k': {
       novice: {
@@ -69,7 +71,9 @@ const PricingTable = () => {
         maxDailyLoss: { amount: '$1,250', percentage: '5%' },
         maxOverallLoss: { amount: '$2,500', percentage: '10%' },
         minTradingDays: '5 Days'
-      }
+      },
+      price:"$179"
+
     },
     '50k': {
       novice: {
@@ -89,7 +93,9 @@ const PricingTable = () => {
         maxDailyLoss: { amount: '$2,500', percentage: '5%' },
         maxOverallLoss: { amount: '$5,000', percentage: '10%' },
         minTradingDays: '5 Days'
-      }
+      },
+      price:"$299"
+
     },
     '100k': {
       novice: {
@@ -109,7 +115,31 @@ const PricingTable = () => {
         maxDailyLoss: { amount: '$5,000', percentage: '5%' },
         maxOverallLoss: { amount: '$10,000', percentage: '10%' },
         minTradingDays: '5 Days'
-      }
+      },
+      price:"$549"
+
+    },
+    '200k': {
+      novice: {
+        profitTarget: { amount: '$10,000', percentage: '8%' },
+        maxDailyLoss: { amount: '$5,000', percentage: '5%' },
+        maxOverallLoss: { amount: '$10,000', percentage: '10%' },
+        minTradingDays: '5 Days'
+      },
+      expert: {
+        profitTarget: { amount: '$10,000', percentage: '5%' },
+        maxDailyLoss: { amount: '$5,000', percentage: '5%' },
+        maxOverallLoss: { amount: '$10,000', percentage: '10%' },
+        minTradingDays: '5 Days'
+      },
+      arcFunded: {
+        profitTarget: '-',
+        maxDailyLoss: { amount: '$10,000', percentage: '5%' },
+        maxOverallLoss: { amount: '$10,000', percentage: '10%' },
+        minTradingDays: '5 Days'
+      },
+      price:"$999"
+
     }
   };
 
@@ -122,7 +152,8 @@ const PricingTable = () => {
       minTradingDays: '5 Days',
       accountBalance: '$25,000',
       profitTargetPercent: '10%',
-      profitShare: '50%'
+      profitShare: '50%',
+      price:'$139'
     },
     '10k': {
       profitTarget: 'Unlimited',
@@ -131,7 +162,9 @@ const PricingTable = () => {
       minTradingDays: '5 Days',
       accountBalance: '$50,000',
       profitTargetPercent: '10%',
-      profitShare: '50%'
+      profitShare: '50%',
+      price:'$179'
+
     },
     '50k': {
       profitTarget: 'Unlimited',
@@ -140,11 +173,13 @@ const PricingTable = () => {
       minTradingDays: '5 Days',
       accountBalance: '$100,000',
       profitTargetPercent: '10%',
-      profitShare: '75%'
+      profitShare: '75%',
+      price:'$299'
+
     }
   };
 
-  const twoPhaseAccountSizes = ['15k', '25k', '50k', '100k'];
+  const twoPhaseAccountSizes = ['15k', '25k', '50k', '100k','200k'];
   const instantFundingAccountSizes = ['5k', '10k', '50k'];
 
   const [pricingTable1, setPricingTable1] = useState([[
@@ -202,6 +237,15 @@ const PricingTable = () => {
   };
 
   const currentData = getCurrentData();
+
+  const getPrices=()=>{
+     if (challengeType === 'two-phase') {
+      return twoPhaseData[selectedSize].price;
+    } else {
+      return instantFundingData[selectedSize].price;
+    }
+  }
+  const prices = getPrices()
 
   return (
     <div className="pricing-table" id='pricing-table'>
@@ -468,7 +512,11 @@ const PricingTable = () => {
                 </div>
               </div>
             )}
+            <div className='start-heading'>
+            <h2 >{prices} For ${selectedSize} account</h2>
+            </div>
             <button className="btn btn-primary" style={{margin:'auto', display:'flex'}}>
+              
               <span>Start Challenge</span>
             </button>
             <div className="terms-notice">
