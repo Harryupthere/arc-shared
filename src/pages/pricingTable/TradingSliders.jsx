@@ -11,7 +11,7 @@ const allowedAccountBalances = [
   // 50k to 100k, step 10k
   50000, 60000, 70000, 80000, 90000, 100000,
   // 150k, 200k, 250k, 300k
-  150000, 200000, 250000, 300000
+  150000, 200000
 ];
 
 // Generate marks from allowed values
@@ -20,7 +20,7 @@ let aaa=[
   40000,
 
   100000,
-  150000, 200000,250000, 300000
+  150000, 200000
 ]
 const accountBalanceMarks = aaa.map((value) => ({
   value,

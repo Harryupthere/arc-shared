@@ -10,12 +10,12 @@ const ProcessSection = () => {
       steps: [
         {
           step: 'STEP 01',
-          title: 'ARC CHALLENGE',
+          title: 'INVOICE PHASE',
           description: 'The ARC Challenge educates traders and leads them to master their trading habits. Traders demonstrate their experience by following our Trading Objectives inspired by key risk management rules when completing an ARC Challenge, traders move on to the Verification step.'
         },
         {
           step: 'STEP 02',
-          title: 'VERIFICATION',
+          title: 'EXPERT PHASE',
           description: 'The Verification step verifies the skills traders demonstrated in the ARC Challenge. The Trading Objectives are simplified, with the Profit Target being halved while the Maximum Loss Rules remain intact. Upon passing it, traders get access to an ARC Account.'
         }
       ],
