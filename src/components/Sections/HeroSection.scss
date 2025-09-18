@@ -2,22 +2,44 @@
   background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
   position: relative;
   overflow: hidden;
-      letter-spacing: .03em;
-.home-icon{
-  height: 25px;
-  width: 25px;
-  fill:#1E7CE8
-}
-.btn{
-  width: 200px;
-}
+  letter-spacing: .03em;
+
+  .shade-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+
+    &.roated-90 {
+      svg {
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  .shade-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+
+  }
+
+  .home-icon {
+    height: 25px;
+    width: 25px;
+    fill: #1E7CE8
+  }
+
+  .btn {
+    width: 200px;
+  }
+
   .hero-background {
     padding: 120px 0 80px;
     position: relative;
-
-    @media (max-width: 768px) {
-      padding: 50px 0 30px;
-    }
 
     // &::before {
     //   content: '';
