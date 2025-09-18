@@ -3,15 +3,12 @@
   z-index: 1000;
   position: fixed;
   top: 0;
-<<<<<<< HEAD
-=======
   width: 100%;
   padding: 20px 0;
   &.scrolled {
     background-color: #000;
     transition: background-color 0.3s;
   }
->>>>>>> f62751dfa889b86136c4ad1fc778befbf595da15
 
   .header-content {
     display: flex;
