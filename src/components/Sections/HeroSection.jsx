@@ -23,7 +23,7 @@ const HeroSection = () => {
     { icon: <ProfitSplit/>, text: '90% + Profit split ' },
     { icon: <TradingDoller/>, text: '300k+ trading accounts' },
     { icon: <WatchIcon/>, text: 'No time limit in challenge phase' },
-    { icon: <GraphIcon/>, text: 'Real Market Liquidity' },
+    { icon: <GraphIcon/>, text: 'Real Market Liquidity '  },
     // { icon: 'images/coachIcon.svg', text: 'PERFORMANCE COACH' }
   ];
 
