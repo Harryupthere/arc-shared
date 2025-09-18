@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import './BenefitsSection.scss';
 
 const BenefitsSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);  
 
   const benefits = [
     {

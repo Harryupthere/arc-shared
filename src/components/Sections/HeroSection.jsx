@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Star } from '@mui/icons-material';
 import './HeroSection.scss';
 import { GraphIcon, ProfitSplit, TradingDoller, WatchIcon } from '../../icons/icon';
+import { ShadeImage } from '../common/iconImage';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -36,6 +37,12 @@ const HeroSection = () => {
 
   return (
     <section className="hero-section">
+         <picture className="shade-left roated-90"  >
+        <ShadeImage />
+      </picture>
+      <picture className="shade-right" >
+        <ShadeImage />
+      </picture>
       <div className="hero-background">
         <div className="container">
           <div className="hero-content">
