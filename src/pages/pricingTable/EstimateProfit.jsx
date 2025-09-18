@@ -93,7 +93,7 @@ function EstimateProfit() {
                 className="slider"
               />
               <div className="slider-labels">
-                <span>0%</span>
+                <span>0% </span>
                 <span>15%</span>
                 <span>30%</span>
               </div>
