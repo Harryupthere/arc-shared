@@ -1,13 +1,19 @@
-.header {
-  background-color: var(--dark-bg);
+.header-main-content {
+  background-color: transparent;
   z-index: 1000;
-  border-bottom: 1px solid var(--border-color);
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
+  padding: 20px 0;
+  &.scrolled {
+    background-color: #000;
+    transition: background-color 0.3s;
+  }
+
   .header-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .logo {
@@ -41,7 +47,7 @@
       top: 70px;
       left: 0;
       right: 0;
-      background-color: var(--dark-bg);
+      background-color: transparent;
       flex-direction: column;
       padding: 20px;
       transform: translateY(-100%);
