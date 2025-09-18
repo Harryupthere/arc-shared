@@ -9,37 +9,13 @@ import {setLanguage} from '../../redux/slice/languageSlice';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // <-- Add this state
   const langRef = useRef(null);
 
   const navItems = [
-    // { 
-    //   label: 'How it works', 
-    //   hasDropdown: true,
-    //   dropdownItems: [
-    //     { title: 'Evaluation Process', link: '#' },
-    //     { title: 'Trading Objectives', link: '#' },
-    //     { title: 'Scaling Plan', link: '#' }
-    //   ]
-    // },
     { label: 'Home', link: '/' },
     { label: 'FAQ',link: '/faq'},
-    // { label: 'Testimonials',link: '#testimonials' },
     { label: 'Build for ARC',link: '/build-arc' },
-    // { 
-    //   label: 'Trading', 
-    //   hasDropdown: true,
-    //   dropdownItems: [
-    //     { title: 'Blog', link: '#' },
-    //     { title: 'Trading Updates', link: '#' },
-    //     { title: 'Tools & Services', link: '#' },
-    //     { title: 'Trading Platforms', link: '#' },
-    //     { title: 'Premium Programme', link: '#' },
-    //     { title: 'Symbols', link: '#' },
-    //     { title: 'Leaderboard', link: '#' },
-    //     { title: 'Economic Calendar', link: '#' },
-    //     { title: 'App Suite', link: '#' }
-    //   ]
-    // },
     { 
       label: 'About us', 
       // hasDropdown: true,
@@ -94,13 +70,21 @@ const Header = () => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Example: filter countries by supported iso codes if needed
   // const supportedIsoCodes = ['en', 'fr', ...];
   // const filteredCountries = allCountries.filter(c => supportedIsoCodes.includes(c.iso2));
   // For now, show allCountries
 
   return (
-    <header className="header">
+    <header className={`header-main-content${isScrolled ? ' scrolled' : ''}`}>
       <div className="container">
         <div className="header-content">
           <Link to="/" className="logo">
