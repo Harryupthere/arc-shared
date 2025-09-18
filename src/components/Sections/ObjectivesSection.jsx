@@ -7,12 +7,12 @@ const ObjectivesSection = () => {
 
   const currencies = [
     { code: 'USD', flag: 'images/usd.png' },
-    { code: 'GBP', flag: 'images/gbp.png' },
-    { code: 'EUR', flag: 'images/eur.png' },
-    { code: 'CZK', flag: 'images/czk.png' },
-    { code: 'CAD', flag: 'images/cad.png' },
-    { code: 'AUD', flag: 'images/aud.png' },
-    { code: 'CHF', flag: 'images/chf.png' }
+    // { code: 'GBP', flag: 'images/gbp.png' },
+    // { code: 'EUR', flag: 'images/eur.png' },
+    // { code: 'CZK', flag: 'images/czk.png' },
+    // { code: 'CAD', flag: 'images/cad.png' },
+    // { code: 'AUD', flag: 'images/aud.png' },
+    // { code: 'CHF', flag: 'images/chf.png' }
   ];
 
   const balances = ['$10,000', '$25,000', '$50,000', '$100,000', '$200,000'];
