@@ -110,10 +110,10 @@ function EstimateProfit() {
             </div>
           </div>
           {/* Calculate Button */}
-          <button className="calculate-button">
+          {/* <button className="calculate-button">
             <Calculator className="calculate-button__icon" />
             <span>Calculate Profit</span>
-          </button>
+          </button> */}
 
         </div>
 
