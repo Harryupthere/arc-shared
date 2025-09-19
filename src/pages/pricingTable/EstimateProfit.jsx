@@ -62,9 +62,9 @@ function EstimateProfit() {
                 <div className="account-size-control__amount">
                   {formatCurrency(accountSize)}
                 </div>
-                <div className="account-size-control__formatted">
+                {/* <div className="account-size-control__formatted">
                   ({formatLargeNumber(accountSize)})
-                </div>
+                </div> */}
               </div>
               
               <button
@@ -86,7 +86,7 @@ function EstimateProfit() {
               <input
                 type="range"
                 min="0"
-                max="30"
+                max="15"
                 step="0.1"
                 value={profitRate}
                 onChange={(e) => setProfitRate(parseFloat(e.target.value))}
@@ -95,7 +95,7 @@ function EstimateProfit() {
               <div className="slider-labels">
                 <span>0% </span>
                 <span>15%</span>
-                <span>30%</span>
+                {/* <span>30%</span> */}
               </div>
             </div>
           </div>

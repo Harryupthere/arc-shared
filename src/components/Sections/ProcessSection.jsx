@@ -10,7 +10,7 @@ const ProcessSection = () => {
       steps: [
         {
           step: 'STEP 01',
-          title: 'INVOICE PHASE',
+          title: 'NOVICE',
           description: 'The ARC Challenge educates traders and leads them to master their trading habits. Traders demonstrate their experience by following our Trading Objectives inspired by key risk management rules when completing an ARC Challenge, traders move on to the Verification step.'
         },
         {
@@ -43,26 +43,26 @@ const ProcessSection = () => {
         'All - Trading Tools & Services'
       ]
     },
-    {
-      title: 'QUANTLANE',
-      subtitle: 'PRO - TRADING',
-      color: 'orange',
-      icon: '🏢',
-      steps: [
-        {
-          step: 'STEP 04',
-          title: 'PROFESSIONAL TRADER',
-          description: 'The absolute best ARC Traders can get an opportunity through our Premium Programme to become professional traders in Quantlane, a proprietary trading firm that manages its own real capital. The career shift involves technical skills, mathematicians, and developers driven by the same passion for the financial markets. This is the final goal of a trading career which ARC envisioned.'
-        }
-      ],
-      features: [
-        'Contract with fixed salary',
-        'Performance & Mindset coach',
-        'Institutional Trading Conditions',
-        'Spreads, Liquidity, Risk, Framework',
-        'Custom Platform & Tools'
-      ]
-    }
+    // {
+    //   title: 'QUANTLANE',
+    //   subtitle: 'PRO - TRADING',
+    //   color: 'orange',
+    //   icon: '🏢',
+    //   steps: [
+    //     {
+    //       step: 'STEP 04',
+    //       title: 'PROFESSIONAL TRADER',
+    //       description: 'The absolute best ARC Traders can get an opportunity through our Premium Programme to become professional traders in Quantlane, a proprietary trading firm that manages its own real capital. The career shift involves technical skills, mathematicians, and developers driven by the same passion for the financial markets. This is the final goal of a trading career which ARC envisioned.'
+    //     }
+    //   ],
+    //   features: [
+    //     'Contract with fixed salary',
+    //     'Performance & Mindset coach',
+    //     'Institutional Trading Conditions',
+    //     'Spreads, Liquidity, Risk, Framework',
+    //     'Custom Platform & Tools'
+    //   ]
+    // }
   ];
 
   return (
