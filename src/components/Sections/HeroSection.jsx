@@ -56,7 +56,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="hero-description">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, architecto eligendi distinctio rem perferendis repudiandae vitae debitis accusamus hic possimus consectetur ratione nisi nobis nesciunt?
+            Master your trading skills on our simulated trading platform, improve your trading on a demo ARC Account with up to $300,000 and get a reward of up to 90% of your simulated profits
             </p>
 
             <div className="hero-actions">
