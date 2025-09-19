@@ -4,28 +4,7 @@
   overflow: hidden;
   letter-spacing: .03em;
 
-  .shade-left {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    z-index: 1;
 
-    &.roated-90 {
-      svg {
-        transform: scaleX(-1);
-      }
-    }
-  }
-
-  .shade-right {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    z-index: 1;
-
-  }
 
   .home-icon {
     height: 25px;
