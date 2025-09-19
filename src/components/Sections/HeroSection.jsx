@@ -47,7 +47,7 @@ const HeroSection = () => {
         <div className="container">
           <div className="hero-content">
             <div className="hero-badge">
-              SINCE 2020
+              {/* SINCE 2020 */}
             </div>
 
             <h1 className="hero-title">

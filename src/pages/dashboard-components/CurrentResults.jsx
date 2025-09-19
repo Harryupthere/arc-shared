@@ -21,6 +21,8 @@ function CurrentResults() {
       </div>
       <Paper className="current-results main-paper">
         <Box className="chart-container">
+          <div style={{ backgroundColor: "#716b6bff", borderRadius: "8px", padding: "10px" }}>
+
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={data}>
               <XAxis
@@ -48,6 +50,7 @@ function CurrentResults() {
               />
             </LineChart>
           </ResponsiveContainer>
+          </div>
           <Box className="chart-labels">
             <Box className="label profit">Profit $5,000</Box>
             <Box className="label loss">Max Loss -$5,000</Box>

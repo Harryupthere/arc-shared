@@ -22,7 +22,7 @@ function App() {
   return (
     // <Router>
     <div className="App">
-      <Translator />
+      {/* <Translator /> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

@@ -5,7 +5,7 @@ import './Header.scss';
 import { useDispatch } from 'react-redux';
  import { allCountries } from 'country-telephone-data';
 import {setLanguage} from '../../redux/slice/languageSlice';
-
+import Translator from '../Translator';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
@@ -33,18 +33,18 @@ const Header = () => {
 
     const dispatch = useDispatch();
   
-  const handleLanguageClick = (code) => {
-    dispatch(setLanguage(code));
-    setIsLangOpen(false); // Close dropdown after selection
-    // Set Google Translate language
-    if (window.google && window.google.translate) {
-      const select = document.querySelector('.goog-te-combo');
-      if (select) {
-        select.value = code;
-        select.dispatchEvent(new Event('change'));
-      }
-    }
-  };
+  // const handleLanguageClick = (code) => {
+  //   dispatch(setLanguage(code));
+  //   setIsLangOpen(false);
+
+  //   // Also directly update select in case Redux is a bit late
+  //   const select = document.querySelector(".goog-te-combo");
+  //   if (select) {
+  //     select.value = code;
+  //     select.dispatchEvent(new Event("change", { bubbles: true }));
+  //     select.dispatchEvent(new Event("input", { bubbles: true }));
+  //   }
+  // };
 
   // Close dropdown if clicked outside
   useEffect(() => {
@@ -114,7 +114,7 @@ const Header = () => {
                 )}
               </div>
             ))}
-            <div
+            {/* <div
               className="language-selector"
               style={{ position: 'relative' }}
               ref={langRef}
@@ -128,46 +128,50 @@ const Header = () => {
                 <KeyboardArrowDown />
               </div>
               {isLangOpen && (
-                <div
-                  className="language-dropdown"
-                  style={{
-                    position: 'absolute',
-                    top: '100%',
-                    left: 0,
-                    background: 'black',
-                    zIndex: 1000,
-                    maxHeight: 350,
-                    overflowY: 'auto',
-                    minWidth: 180,
-                    borderRadius:'10px'
-                  }}
-                >
-                  {allCountries.map((country) => (
-                    <div
-                      key={country.iso2}
-                      onClick={() => handleLanguageClick(country.iso2)}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        padding: '12px 12px',
-                        cursor: 'pointer',
-                      }}
-                    >
-                      <span style={{ fontSize: 20, marginRight: 8 }}>
-                        {country.flag ? country.flag : (
-                          <img
-                            src={`https://flagcdn.com/24x18/${country.iso2}.png`}
-                            alt={country.name}
-                            style={{ width: 20, height: 15, objectFit: 'cover' }}
-                          />
-                        )}
-                      </span>
-                      <span>{country.name}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+      <div
+        className="language-dropdown"
+        style={{
+          position: "absolute",
+          top: "100%",
+          left: 0,
+          background: "black",
+          zIndex: 1000,
+          maxHeight: 350,
+          overflowY: "auto",
+          minWidth: 180,
+          borderRadius: "10px",
+        }}
+      >
+        {allCountries.map((country) => (
+          <div
+            key={country.iso2}
+            onClick={() => handleLanguageClick(country.iso2)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              padding: "12px 12px",
+              cursor: "pointer",
+            }}
+          >
+            <span style={{ fontSize: 20, marginRight: 8 }}>
+              <img
+                src={`https://flagcdn.com/24x18/${country.iso2}.png`}
+                alt={country.name}
+                style={{ width: 20, height: 15, objectFit: "cover" }}
+              />
+            </span>
+            <span>{country.name}</span>
+          </div>
+        ))}
+      </div>
+    )
+}
+
+            </div> */}
+            <div>
+              <Translator className=''/>
+
+</div>
             <Search className="search-icon" />
           </nav>
 
