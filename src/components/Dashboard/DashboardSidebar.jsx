@@ -26,12 +26,12 @@ const mainMenuItems = [
   // { path: '/dashboard/downloads', icon: Download, label: 'Downloads' },
   { path: '/dashboard/social-media', icon: Share, label: 'Social Media' },
   { path: '/dashboard/calendar', icon: CalendarMonthOutlined, label: 'Economic Calendar' },
-  { path: '#/', icon: LocationOn, label: 'Timezone Converter' },
+  // { path: '#/', icon: LocationOn, label: 'Timezone Converter' },
   { path: 'https://arc-partner-portal.vercel.app/', icon: PercentRounded, label: 'Partnership Deals', newTab: true },
   { path: '#/', icon: MonitorHeartOutlined, label: 'Mentor App' }
 
 ];
-function DashboardSidebar({ sidebarOpen }) {
+function DashboardSidebar({ sidebarOpen,closeSidebar }) {
   const location = useLocation();
   const [expandedSections, setExpandedSections] = useState({});
 
@@ -70,6 +70,7 @@ function DashboardSidebar({ sidebarOpen }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="menu-item"
+                  onClick={closeSidebar}
                 >
                   <item.icon className="menu-icon" />
                   <span className="menu-label">{item.label}</span>
@@ -79,6 +80,7 @@ function DashboardSidebar({ sidebarOpen }) {
                   key={item.path}
                   to={item.path}
                   className={`menu-item ${isActive(item.path, item.exact) ? 'active' : ''}`}
+                  onClick={closeSidebar}
                 >
                   <item.icon className="menu-icon" />
                   <span className="menu-label">{item.label}</span>

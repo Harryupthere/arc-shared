@@ -34,17 +34,17 @@ const BuildARC = () => {
     { title: 'Daily Drawdown', content: '3–5%', icon: <GraphUp/> },
     { title: 'Rewards', content: 'Bi-Weekly', icon: <Trophy/> },
     { title: 'Profit Split', content: '70–90%', icon: <Target/> },
-    { title: 'Fee', content: 'One-time', icon: <WalletIcon/>},
+    // { title: 'Fee', content: 'One-time', icon: <WalletIcon/>},
     { title: 'Min Profitable Days', content: '3', icon: <CalendarIcon/> },
     { title: 'Max Trading Days', content: 'Unlimited', icon: <CalendarIcon/> },
     { title: 'Trading Leverage', content: '1:125', icon: <GraphUp/> },
-    { title: 'Hold Over Weekend', content: 'Yes', icon: <Check/> },
-    { title: 'Trade Through News', content: 'Challenge Only', icon: <Newspaper/>}
+    // { title: 'Hold Over Weekend', content: 'Yes', icon: <Check/> },
+    // { title: 'Trade Through News', content: 'Challenge Only', icon: <Newspaper/>}
   ]
   const evalution = [
     { title: 'PICK AND CUSTOMIZE', description: 'Select the amount of virtual capital you will manage and customise the rules according to your strategy.' },
-    { title: 'PURCHASE CHALLENGE', description: 'The fee for the challenge is the only money you spend. Pay with credit card or crypto.' },
-    { title: 'STEP COMPLETE', description: 'If you successfully reached your targets without breaching the rules, you can progress to the next step!' },
+    { title: 'PURCHASE CHALLENGE', description: 'The fee for the challenge is the only money you spend.Pay with credit card or crypto.' },
+    { title: 'STEP COMPLETE', description: 'If you successfully reached your targets withoutbreaching the rules, you can progress to the next step!' },
     { title: 'CHALLENGE COMPLETE', description: 'Get your certificate and progress to the Master account.' }
   ]
   
@@ -136,7 +136,7 @@ const BuildARC = () => {
 
             <div className="phase-section">
               <div className="phase-header">
-                <h2><span className="phase-number">Phase 1:</span> Evaluation</h2>
+                <h2><span className="phase-number">Phase 1:</span> Novice (Evaluation Stage)</h2>
                 <div className="navigation-arrows">
                   <button className="nav-arrow" onClick={nextSlide}>←</button>
                   <button className="nav-arrow" onClick={prevSlide}>→</button>
@@ -149,6 +149,7 @@ const BuildARC = () => {
                 you've got!
               </p>
               <div className="benefits-cards">
+                
                 {getVisibleCards()?.map((item, index) => (
                   <div className="step-card" key={index}>
                     <div className="step-content">
@@ -347,7 +348,7 @@ const BuildARC = () => {
               </div>
             </div>
 
-            <div className="rewards-grid">
+            {/* <div className="rewards-grid">
               <h3>REWARDS & SUCCESS STORIES</h3>
               <div className="rewards-cards">
                 {rewardsData.map((reward, index) => (
@@ -362,12 +363,12 @@ const BuildARC = () => {
                 ))}
               </div>
               <button className="more-rewards-btn">More Rewards</button>
-            </div>
+            </div> */}
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="faq-section">
+        {/* <section className="faq-section">
           <div className="container">
             <div className="faq-content">
               <div className="faq-left">
@@ -376,12 +377,12 @@ const BuildARC = () => {
                 <button className="more-faqs-btn">More FAQs</button>
               </div>
               <div className="faq-right">
-                {/* {faqItems.map((question, index) => (
+                {faqItems.map((question, index) => (
                   <div key={index} className="faq-item">
                     <span>{question}</span>
                     <span className="faq-toggle">+</span>
                   </div>
-                ))} */}
+                ))}
                  {faqItems.map((faq, index) => (
               <Accordion key={index}>
                 <AccordionSummary
@@ -399,10 +400,10 @@ const BuildARC = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Company Section */}
-        <section className="company-section">
+        {/* <section className="company-section">
           <div className="container">
             <div className="company-content">
               <div className="company-left">
@@ -432,7 +433,7 @@ const BuildARC = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </>
   );

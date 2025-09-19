@@ -91,9 +91,11 @@ th {
   font-family: Poppins, sans-serif;
   font-style: normal;
 }
-.p-0{
-  padding: 0!important;
+
+.p-0 {
+  padding: 0 !important;
 }
+
 .section {
   padding: 80px 0;
 
@@ -185,9 +187,10 @@ th {
     font-size: 40px;
     letter-spacing: -4px;
     font-weight: 900;
-     @media (max-width: 768px) {
-     font-size: 30px;
-    letter-spacing: 0px;
+
+    @media (max-width: 768px) {
+      font-size: 30px;
+      letter-spacing: 0px;
     }
   }
 }
@@ -234,6 +237,10 @@ th {
   border-bottom: 1px solid #333;
   margin-bottom: 20px;
 
+  @media (max-width: 525px) {
+   flex-wrap: wrap;
+  }
+
   .tab-button {
     background: none;
     border: none;
@@ -268,12 +275,35 @@ th {
     }
   }
 }
-.main-heading{
-   h2 {
-      font-size: 16px;
-      font-weight: 600;
-      color: white;
-      margin-bottom: 15px;
-    }
+
+.main-heading {
+  h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 15px;
+  }
 
 }
+  .shade-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+
+    &.roated-90 {
+      svg {
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  .shade-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+
+  }

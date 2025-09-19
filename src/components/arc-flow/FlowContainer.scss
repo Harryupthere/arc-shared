@@ -127,10 +127,19 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 30px;
+   @media (max-width: 525px) {
+        flex-direction: column;
+        gap: 20px;
+        align-items: self-start;
+      }
 
         h2 {
           font-size: 3rem;
           font-weight: 600;
+
+          @media (max-width: 768px) {
+            font-size: 2rem;
+          }
 
           .phase-number {
             color: var(--primary-blue);
@@ -167,30 +176,48 @@
       }
 
 
-      .step-card {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 15px;
-        padding: 30px 20px;
-        text-align: center;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+     .step-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease; // smooth animation
 
+  &:hover {
+    transform: translateY(-8px) scale(1.03);
+    border: 1px solid var(--primary-blue);
+    box-shadow: 0 8px 20px rgba(0, 150, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+  }
 
-        .step-content {
-          h3 {
-            color: var(--primary-blue);
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-          }
+  .step-content {
+    h3 {
+      color: var(--primary-blue);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
 
-          p {
-            font-size: 14px;
-            line-height: 1.5;
-            color: var(--text-light-gray);
-          }
-        }
-      }
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-light-gray);
+      transition: color 0.3s ease;
+    }
+  }
+
+  &:hover .step-content h3 {
+    color: #ffffff;
+  }
+
+  &:hover .step-content p {
+    color: #e0e0e0;
+  }
+}
+
     }
   }
 
@@ -240,6 +267,10 @@
         padding: 40px;
         border: 1px solid rgba(255, 255, 255, 0.1);
 
+        @media (max-width: 525px) {
+          padding: 20px;
+        }
+
         h3 {
           text-align: center;
           margin-bottom: 30px;
@@ -277,9 +308,6 @@
                 cursor: pointer;
                 transition: background-color 0.3s ease;
 
-                &:hover {
-                  background: darken(#00D4AA, 10%);
-                }
               }
 
               span {
@@ -361,16 +389,28 @@
   // Master Account Section
   .master-account-section {
     padding: 100px 0;
-
+   @media (max-width: 525px) {
+       padding: 30px 0;
+      }
     .phase-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 30px;
 
+      @media (max-width: 525px) {
+        flex-direction: column;
+        gap: 20px;
+        align-items: self-start;
+      }
+
       h2 {
         font-size: 3rem;
         font-weight: 600;
+
+        @media (max-width: 768px) {
+          font-size: 2rem;
+        }
 
         .phase-number {
           color: var(--primary-blue);
@@ -390,6 +430,11 @@
           color: white;
           cursor: pointer;
           transition: all 0.3s ease;
+
+          @media (max-width: 768px) {
+            width: 30px;
+            height: 30px;
+          }
 
           &:hover {
             background: var(--primary-blue);
@@ -449,12 +494,20 @@
       display: flex;
       gap: 50px;
 
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+
       .stats-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         margin-bottom: 40px;
         width: 50%;
+
+        @media (max-width: 768px) {
+          width: 100%;
+        }
 
         @media (max-width: 968px) {
           grid-template-columns: repeat(3, 1fr);
@@ -496,12 +549,20 @@
             font-size: 1rem;
             font-weight: 600;
             color: #fff;
+
+            @media (max-width: 525px) {
+              font-size: 12px;
+            }
           }
         }
       }
 
       .customizable-trading {
         width: 50%;
+
+        @media (max-width: 768px) {
+          width: 100%;
+        }
 
         h3 {
           font-size: 2.7rem;
@@ -647,6 +708,10 @@
             color: var(--primary-blue);
             margin-bottom: 5px;
             align-items: center;
+
+            @media (max-width: 525px) {
+              font-size: 12px;
+            }
           }
 
           .stat-label {
@@ -730,9 +795,7 @@
         margin: 0 auto;
         transition: background-color 0.3s ease;
 
-        &:hover {
-          background: darken(#00D4AA, 10%);
-        }
+       
       }
     }
   }
@@ -796,7 +859,8 @@
         p {
           color: white !important;
         }
-        svg{
+
+        svg {
           color: white;
         }
 

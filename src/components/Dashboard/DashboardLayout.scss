@@ -118,7 +118,7 @@
     overflow-y: auto;
     position: sticky;
     top: 0;
-
+    z-index: 99;
     @media (max-width: 768px) {
       width: 250px;
       min-width: 250px;

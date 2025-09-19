@@ -80,7 +80,7 @@ const TradingSliders = () => {
       unit: '%',
       prefix: '',
       icon: <TrendingDown size={24} />,
-      color: 'secondary',
+      color: 'primary',
       marks: [
         { value: 5, label: '5%' },
         { value: 8, label: '8%' },

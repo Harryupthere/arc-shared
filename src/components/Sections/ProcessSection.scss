@@ -13,6 +13,7 @@
 
       @media (max-width: 768px) {
         font-size: 2rem;
+        line-height: 38px;
       }
     }
   }
@@ -90,7 +91,9 @@
       padding: 30px;
       color: white;
       text-align: center;
-
+ @media (max-width: 525px) {
+       padding: 15px;
+      }
       .process-icon {
         font-size: 2.5rem;
         margin-bottom: 15px;
@@ -116,7 +119,9 @@
 
     .process-steps {
       padding: 30px;
-
+   @media (max-width: 525px) {
+       padding: 10px;
+      }
       .process-step {
         margin-bottom: 25px;
 

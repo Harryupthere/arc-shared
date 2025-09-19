@@ -18,12 +18,12 @@ const BenefitsSection = () => {
       icon: '🛠️',
       image: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=400'
     },
-    {
-      title: 'FREE TRIAL',
-      description: 'Learn more',
-      icon: '⏰',
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
+    // {
+    //   title: 'FREE TRIAL',
+    //   description: 'Learn more',
+    //   icon: '⏰',
+    //   image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400'
+    // },
     {
       title: 'GROWTH & SCALING PLAN',
       description: 'Learn more',

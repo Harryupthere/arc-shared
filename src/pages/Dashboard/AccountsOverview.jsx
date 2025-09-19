@@ -14,10 +14,12 @@ const AccountsOverview = () => {
         <div className="ready-card">
           <div className="card-content">
             <div className="card-info">
-              <h3>Free Trial: <span className="account-id"> 1511440682</span></h3>
+              <h3>Paid Trial: <span className="account-id"> 1511440682</span></h3>
               <h3>Balance: <span className="account-id"> $200,000.00</span></h3>
             </div>
-            <button className="start-trial-btn" onClick={()=>navigate('/dashboard/account')}>Start Free Trial</button>
+            {/* <button className="start-trial-btn" onClick={()=>navigate('/dashboard/account')}>Start Free Trial</button> */}
+            <button className="start-trial-btn" onClick={()=>navigate('/dashboard/account')}>Dashboard</button>
+
           </div>
         </div>
       </div>
@@ -30,14 +32,14 @@ const AccountsOverview = () => {
             <p>Show us your trading skills. Pass the Evaluation Process and receive the ARC Account!</p>
             <div className="action-buttons">
               <button className="btn btn-primary" onClick={()=>navigate('/dashboard/account')}>New ARC Challenge</button>
-              <button className="btn btn-outline" onClick={()=>navigate('/dashboard/account')}>Start Free Trial</button>
+              {/* <button className="btn btn-outline" onClick={()=>navigate('/dashboard/account')}>Start Free Trial</button> */}
             </div>
           </div>
         </div>
       </div>
 
       <div className="info-cards">
-        <div className="info-card free-trial">
+        {/* <div className="info-card free-trial">
           <div className="card-icon"><AccessAlarmIcon/></div>
           <div className="card-content">
             <h3>Free Trial</h3>
@@ -54,7 +56,7 @@ const AccountsOverview = () => {
             </ul>
           </div>
               <button className="btn btn-outline">Start Free Trial</button>
-        </div>
+        </div> */}
 
         <div className="info-card ftmo-challenge">
           <div className="card-icon"><AutoGraphIcon/></div>

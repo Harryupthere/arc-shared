@@ -131,7 +131,9 @@
       line-height: 1.8;
       color: #555;
       margin-bottom: 20px;
-
+ @media (max-width: 525px) {
+       font-display: 14px;
+      }
       strong {
         color: var(--primary-blue);
         font-weight: 600;

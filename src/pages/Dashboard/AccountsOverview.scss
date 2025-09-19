@@ -156,7 +156,8 @@
 
   .info-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    // grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr; // always single column
     gap: 30px;
 
     @media (max-width: 768px) {

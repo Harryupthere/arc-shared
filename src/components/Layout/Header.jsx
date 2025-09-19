@@ -15,7 +15,7 @@ const Header = () => {
   const navItems = [
     { label: 'Home', link: '/' },
     { label: 'FAQ',link: '/faq'},
-    { label: 'Build for ARC',link: '/build-arc' },
+    { label: 'How it Works',link: '/build-arc' },
     { 
       label: 'About us', 
       // hasDropdown: true,

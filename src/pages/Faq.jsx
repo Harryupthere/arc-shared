@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import './FAQ.scss';
 import faqData from "./FaqData";
+import { ShadeImage } from "../components/common/iconImage";
 
 const FAQ = () => {
     const faqCategories = Object.keys(faqData);
@@ -24,7 +25,13 @@ const FAQ = () => {
 
     return (
         <>
-            <div className="faq-page">                
+            <div className="faq-page"> 
+                       <picture className="shade-left roated-90"  >
+                        <ShadeImage />
+                      </picture>
+                      <picture className="shade-right" >
+                        <ShadeImage />
+                      </picture>               
                 <section className="faq-hero">
                     <div className="hero-background">
                         <div className="network-overlay"></div>

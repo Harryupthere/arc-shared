@@ -26,18 +26,18 @@ function AccountMetrix() {
           <Button variant="outlined" size="medium" startIcon={<Key />}>
             Credentials
           </Button>
-          <Button variant="outlined" size="medium" startIcon={<ContactSupport />}>
+          {/* <Button variant="outlined" size="medium" startIcon={<ContactSupport />}>
             Contact us
-          </Button>
+          </Button> */}
           <Button variant="outlined" size="medium" startIcon={<Refresh />}>
             Refresh
           </Button>
-          <Button variant="outlined" size="medium" startIcon={<Share />}>
+          {/* <Button variant="outlined" size="medium" startIcon={<Share />}>
             Share
           </Button>
           <Button variant="outlined" size="medium" startIcon={<BarChart />}>
             Old Metrix
-          </Button>
+          </Button> */}
         <Button variant="outlined" size="small" startIcon={<Edit />}>
           Modify Account
         </Button>

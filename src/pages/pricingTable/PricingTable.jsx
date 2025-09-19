@@ -51,7 +51,7 @@ const PricingTable = () => {
         maxOverallLoss: { amount: '$1,500', percentage: '10%' },
         minTradingDays: '5 Days'
       },
-      price:"$139"
+      price:"$79"
     },
     '25k': {
       novice: {
@@ -119,28 +119,28 @@ const PricingTable = () => {
       price:"$549"
 
     },
-    '200k': {
-      novice: {
-        profitTarget: { amount: '$10,000', percentage: '8%' },
-        maxDailyLoss: { amount: '$5,000', percentage: '5%' },
-        maxOverallLoss: { amount: '$10,000', percentage: '10%' },
-        minTradingDays: '5 Days'
-      },
-      expert: {
-        profitTarget: { amount: '$10,000', percentage: '5%' },
-        maxDailyLoss: { amount: '$5,000', percentage: '5%' },
-        maxOverallLoss: { amount: '$10,000', percentage: '10%' },
-        minTradingDays: '5 Days'
-      },
-      arcFunded: {
-        profitTarget: '-',
-        maxDailyLoss: { amount: '$10,000', percentage: '5%' },
-        maxOverallLoss: { amount: '$10,000', percentage: '10%' },
-        minTradingDays: '5 Days'
-      },
-      price:"$999"
+    // '200k': {
+    //   novice: {
+    //     profitTarget: { amount: '$10,000', percentage: '8%' },
+    //     maxDailyLoss: { amount: '$5,000', percentage: '5%' },
+    //     maxOverallLoss: { amount: '$10,000', percentage: '10%' },
+    //     minTradingDays: '5 Days'
+    //   },
+    //   expert: {
+    //     profitTarget: { amount: '$10,000', percentage: '5%' },
+    //     maxDailyLoss: { amount: '$5,000', percentage: '5%' },
+    //     maxOverallLoss: { amount: '$10,000', percentage: '10%' },
+    //     minTradingDays: '5 Days'
+    //   },
+    //   arcFunded: {
+    //     profitTarget: '-',
+    //     maxDailyLoss: { amount: '$10,000', percentage: '5%' },
+    //     maxOverallLoss: { amount: '$10,000', percentage: '10%' },
+    //     minTradingDays: '5 Days'
+    //   },
+    //   price:"$999"
 
-    }
+    // }
   };
 
   // Data for Instant Funding
@@ -179,7 +179,7 @@ const PricingTable = () => {
     }
   };
 
-  const twoPhaseAccountSizes = ['15k', '25k', '50k', '100k','200k'];
+  const twoPhaseAccountSizes = ['15k', '25k', '50k', '100k'];
   const instantFundingAccountSizes = ['5k', '10k', '50k'];
 
   const [pricingTable1, setPricingTable1] = useState([[

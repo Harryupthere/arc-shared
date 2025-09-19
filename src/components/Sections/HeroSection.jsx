@@ -23,7 +23,7 @@ const HeroSection = () => {
     { icon: <ProfitSplit/>, text: '90% + Profit split ' },
     { icon: <TradingDoller/>, text: '300k+ trading accounts' },
     { icon: <WatchIcon/>, text: 'No time limit in challenge phase' },
-    { icon: <GraphIcon/>, text: 'Real Market Liquidity '  },
+    { icon: <GraphIcon/>, text: 'Fully Customizable accounts'  },
     // { icon: 'images/coachIcon.svg', text: 'PERFORMANCE COACH' }
   ];
 
@@ -61,7 +61,7 @@ const HeroSection = () => {
 
             <div className="hero-actions">
               <a href="#pricing-table" className="btn btn-primary">ARC CHALLENGE</a>
-              <a href="#" className="btn btn-outline">FREE TRIAL</a>
+              {/* <a href="#" className="btn btn-outline">FREE TRIAL</a> */}
             </div>
 
             {/* <div className="trustpilot-section">
@@ -86,7 +86,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-      <div className="logos-ticker">
+      {/* <div className="logos-ticker">
         <div className="logos-track">
           {logos.concat(logos).map((logo, index) => (
             <div key={index} className="logo-item">
@@ -101,7 +101,7 @@ const HeroSection = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
       </div>
     </section>
   );

@@ -31,7 +31,7 @@ function FTMOChallenge() {
         </Box>
         <Box className="detail-row">
           <Typography variant="body2" className="label">Account Type</Typography>
-          <Typography variant="body2" className="value">FTMO</Typography>
+          <Typography variant="body2" className="value">ARC Funding</Typography>
         </Box>
         <Box className="detail-row">
           <Typography variant="body2" className="label">Platform (cTrader)</Typography>

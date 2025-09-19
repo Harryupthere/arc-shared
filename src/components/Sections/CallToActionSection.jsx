@@ -14,7 +14,7 @@ const CallToActionSection = () => {
           
           <div className="cta-buttons">
             <button className="btn btn-primary">ARC Challenge</button>
-            <button className="btn btn-outline">Free Trial</button>
+            {/* <button className="btn btn-outline">Free Trial</button> */}
           </div>
         </div>
       </div>
