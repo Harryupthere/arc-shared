@@ -23,7 +23,7 @@ const Footer = () => {
     { icon: Twitter, color: '#1da1f2' },
     { icon: Instagram, color: '#e4405f' },
     { icon: YouTube, color: '#ff0000' },
-    { icon: LinkedIn, color: '#0077b5' }
+    // { icon: LinkedIn, color: '#0077b5' }
   ];
 
   const paymentMethods = [
@@ -56,12 +56,12 @@ const Footer = () => {
 
             <div className="company-info">
               <h4>Quadrio offices</h4>
-              <p>Lorem 000/3, 000 00, Malaysia<br />Czech Republic</p>
+              <p> Pointe Seraphine, P.O. Box 172, Castries, <br />Saint Lucia</p>
 
               <div className="contact-info">
-                <p>support@example.com</p>
-                <p>+400 000 000 000</p>
-                <p>WhatsApp</p>
+                <p>support@myarcfunding.com</p>
+                {/* <p>+400 000 000 000</p>
+                <p>WhatsApp</p> */}
               </div>
             </div>
           </div>
@@ -101,11 +101,11 @@ const Footer = () => {
 
         <div className='app-section'>
           <div>
-            <h4>STAY UPDATED WITH OUR NEWSLETTER!</h4>
+            {/* <h4>STAY UPDATED WITH OUR NEWSLETTER!</h4>
             <div className="footer-apps">
               <img src={imageMap['appstore.svg']} alt='appstore' />
               <img src={imageMap['playstore.svg']} alt='playstore' />
-            </div>
+            </div> */}
           </div>
 
           <div className="footer-newsletter">
