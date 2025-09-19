@@ -13,7 +13,7 @@ const DashboardLayout = () => {
       <DashboardHeader onMenuClick={() => setSidebarOpen((prev) => !prev)} />
       <div className='container'>
         <div className="dashboard-layout">
-          <DashboardSidebar sidebarOpen={sidebarOpen} />
+          <DashboardSidebar sidebarOpen={sidebarOpen} closeSidebar={() => setSidebarOpen(false)} />
           <div className="dashboard-main">
             <div className="dashboard-content">
               <Outlet />
