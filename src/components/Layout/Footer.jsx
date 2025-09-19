@@ -55,7 +55,7 @@ const Footer = () => {
             </Link>
 
             <div className="company-info">
-              <h4>Quadrio offices</h4>
+              <h4>ARC FUNDING</h4>
               <p> Pointe Seraphine, P.O. Box 172, Castries, <br />Saint Lucia</p>
 
               <div className="contact-info">
