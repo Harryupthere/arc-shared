@@ -1,5 +1,5 @@
 //map images dynamically
-const images = import.meta.glob('/src/assets/images/*.{png,jpg,jpeg,svg}', { eager: true });
+const images = import.meta.glob('/src/assets/images/*.{png,jpg,jpeg,svg,avif}', { eager: true });
 
 const imageMap = Object.keys(images).reduce((acc, path) => {
   const fileName = path.split('/').pop(); // Extract file name (e.g., "photo.png")

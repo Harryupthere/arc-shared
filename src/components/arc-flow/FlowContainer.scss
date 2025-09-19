@@ -1,255 +1,904 @@
-@use '../../assets/scss/abstract/mixins' as *;
+.build-arc-page {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+  color: white;
+  min-height: 100vh;
 
-.flow-container {
-  width: 100%;
-  height: 100vh;
-  max-width: 100vw;
-  padding: 50px 20px;
-  position: relative;
-  background-color: var(--dark-bg);
-  .two-flex {
-    display: flex;
-    min-height: calc(100vh - 140px);
-  }
+  .benefits-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    flex: 1;
 
-  .section-one {
-    width: 50%;
-
-    .form-section {
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1);
-      margin-bottom: 20px;
-
-      @keyframes slideInRight {
-        from {
-          transform: translateX(100%) scale(0.8);
-          opacity: 0;
-        }
-
-        50% {
-          opacity: 0.5;
-        }
-
-        to {
-          transform: translateX(0) scale(1);
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  .main-title {
-    text-align: center;
-    color: white;
-    margin-bottom: 0;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    font-size: 40px;
-    margin-bottom: 30px;
-  }
-
-  .step-details-box {
-    position: absolute;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
-    border-radius: 20px;
-    padding: 10px;
-    margin-top: 20px;
-    width: 90%;
-    max-width: 400px;
-    margin: auto;
-    box-shadow:
-      0 15px 35px rgba(0, 0, 0, 0.1),
-      0 5px 15px rgba(0, 0, 0, 0.08);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    animation: floatIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: all 0.3s ease;
-    left: 0px;
-
-    @include media_1440 {
-      left: 0;
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.15),
-        0 8px 20px rgba(0, 0, 0, 0.12);
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
     }
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(45deg, #007bff, #6610f2, #007bff);
-      border-radius: 22px;
-      z-index: -1;
-      opacity: 0;
-      animation: borderGlow 3s infinite;
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
     }
 
-    .step-details-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .step-number {
-      font-size: 14px;
-      font-weight: 600;
-      color: #007bff;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    .step-info {
-      text-align: center;
-      margin-bottom: 20px;
-
-      .step-detail-title {
-        font-size: 20px;
-        font-weight: 700;
-        color: #333;
-        margin: 0 0 8px 0;
-        line-height: 1.3;
-      }
-
-      .step-detail-description {
-        font-size: 14px;
-        color: #666;
-        margin: 0;
-        line-height: 1.5;
-      }
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 6px;
-      background: rgba(0, 123, 255, 0.1);
-      border-radius: 10px;
+    .benefit-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
       overflow: hidden;
-      position: relative;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
 
-      .progress-fill {
-        height: 100%;
-        background: linear-gradient(90deg, #007bff 0%, #6610f2 100%);
-        border-radius: 10px;
-        transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      &:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .card-image {
         position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
 
-        &::after {
-          content: '';
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+        .card-overlay {
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-          animation: shimmer 2s infinite;
+          background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .card-icon {
+            font-size: 3rem;
+            opacity: 0.9;
+          }
         }
-      }
-    }
-
-    .step-details-arrow {
-      position: absolute;
-      transform: rotate(-90deg);
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-top: 15px solid #fff;
-      right: -22px;
-      top: 44%;
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: -17px;
-        left: -16px;
-        width: 0;
-        height: 0;
-        border-left: 16px solid transparent;
-        border-right: 16px solid transparent;
-        border-top: 16px solid rgba(0, 123, 255, 0.1);
-        z-index: -1;
-      }
-    }
-  }
-
-
-  .content-wrapper {
-    position: relative;
-    display: flex;
-    height: calc(100vh - 140px);
-    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 70%;
-    margin: auto;
-
-    &.with-form {
-      .flow-steps {
-        width: 50%;
-        transform: translateX(-10%);
-      }
-    }
-
-    .flow-steps {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: end;
-      justify-content: flex-start;
-      overflow-y: auto;
-      padding-right: 50px;
-      transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-
-      &::-webkit-scrollbar {
-        width: 6px;
-      }
-
-      &::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 3px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 3px;
 
         &:hover {
-          background: rgba(255, 255, 255, 0.5);
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .card-content {
+        padding: 25px 20px;
+
+        h3 {
+          font-size: 1.1rem;
+          font-weight: 700;
+          margin-bottom: 10px;
+          line-height: 1.3;
+        }
+
+        .card-link {
+          color: var(--text-light-gray);
+          text-decoration: none;
+          font-size: 0.9rem;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  // How It Works Section
+  .how-it-works-section {
+    padding: 100px 0;
+
+    .section-header {
+      margin-bottom: 80px;
+
+      h1 {
+        font-size: 5rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: white;
+
+        @media (max-width: 768px) {
+          font-size: 2.5rem;
+        }
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: var(--text-light-gray);
+      }
+    }
+
+    .phase-section {
+      .phase-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+
+        h2 {
+          font-size: 3rem;
+          font-weight: 600;
+
+          .phase-number {
+            color: var(--primary-blue);
+          }
+        }
+
+        .navigation-arrows {
+          display: flex;
+          gap: 10px;
+
+          .nav-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background: var(--primary-blue);
+            }
+          }
+        }
+      }
+
+      .phase-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-light-gray);
+        margin-bottom: 60px;
+        max-width: 800px;
+      }
+
+
+      .step-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 30px 20px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+
+        .step-content {
+          h3 {
+            color: var(--primary-blue);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-light-gray);
+          }
+        }
+      }
+    }
+  }
+
+  // Welcome Section
+  .welcome-section {
+    padding: 100px 0;
+    background: rgba(255, 255, 255, 0.02);
+
+    .welcome-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+
+      @media (max-width: 968px) {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .welcome-text {
+        h2 {
+          font-size: 3rem;
+          font-weight: 600;
+          margin-bottom: 30px;
+          line-height: 1.2;
+
+          @media (max-width: 768px) {
+            font-size: 2rem;
+          }
+        }
+
+        p {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          color: var(--text-light-gray);
+          margin-bottom: 20px;
+
+          strong {
+            color: var(--primary-blue);
+          }
+        }
+      }
+
+      .profit-calculator {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        h3 {
+          text-align: center;
+          margin-bottom: 30px;
+          font-size: 1.5rem;
+        }
+
+        .calculator-controls {
+          margin-bottom: 40px;
+
+          .control-group {
+            margin-bottom: 25px;
+
+            label {
+              display: block;
+              margin-bottom: 10px;
+              font-weight: 600;
+            }
+
+            .size-control {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 20px;
+              justify-content: space-between;
+              width: 100%;
+
+              button {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: var(--primary-blue);
+                border: none;
+                color: white;
+                font-size: 20px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                  background: darken(#00D4AA, 10%);
+                }
+              }
+
+              span {
+                font-size: 1.5rem;
+                font-weight: 600;
+                min-width: 120px;
+                text-align: center;
+              }
+            }
+
+            .rate-control {
+              text-align: center;
+
+              span {
+                display: block;
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-bottom: 10px;
+              }
+
+              input[type="range"] {
+                width: 100%;
+                height: 6px;
+                border-radius: 3px;
+                background: rgba(255, 255, 255, 0.2);
+                outline: none;
+                -webkit-appearance: none;
+
+                &::-webkit-slider-thumb {
+                  -webkit-appearance: none;
+                  width: 20px;
+                  height: 20px;
+                  border-radius: 50%;
+                  background: var(--primary-blue);
+                  cursor: pointer;
+                }
+
+                &::-moz-range-thumb {
+                  width: 20px;
+                  height: 20px;
+                  border-radius: 50%;
+                  background: var(--primary-blue);
+                  cursor: pointer;
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+
+        .profit-result {
+          text-align: center;
+          padding: 20px;
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 12px;
+
+          .result-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+          }
+
+          .result-amount {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+          }
+
+          .result-period {
+            font-size: 14px;
+            color: var(--text-gray);
+          }
+        }
+      }
+    }
+  }
+
+  // Master Account Section
+  .master-account-section {
+    padding: 100px 0;
+
+    .phase-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+
+      h2 {
+        font-size: 3rem;
+        font-weight: 600;
+
+        .phase-number {
+          color: var(--primary-blue);
+        }
+      }
+
+      .navigation-arrows {
+        display: flex;
+        gap: 10px;
+
+        .nav-arrow {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: white;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: var(--primary-blue);
+          }
         }
       }
     }
 
+    .phase-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-light-gray);
+      margin-bottom: 60px;
+      max-width: 800px;
+    }
 
-  }
-}
+    .master-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 60px;
 
-@media (max-width: 768px) {
-  .flow-container .content-wrapper {
-    flex-direction: column;
-    height: auto;
+      @media (max-width: 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-    &.with-form {
-      .flow-steps {
-        width: 100%;
-        transform: none;
-        height: 50vh;
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+
+      .master-step-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 30px 20px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .step-content {
+          h3 {
+            color: var(--primary-blue);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-light-gray);
+          }
+        }
       }
     }
 
-    .form-section {
-      width: 100%;
-      height: 50vh;
-      padding-left: 0;
-      padding-top: 20px;
+    .trading-stats {
+      display: flex;
+      gap: 50px;
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 40px;
+        width: 50%;
+
+        @media (max-width: 968px) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 640px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .stat-item {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 12px;
+          padding: 20px;
+          text-align: center;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+
+          .stat-icon {
+            color: gold;
+
+            svg {
+              max-width: 20px;
+            }
+
+            font-size: 1.5rem;
+            margin-bottom: 0;
+          }
+
+          .stat-label {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+          }
+
+          .stat-value {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+          }
+        }
+      }
+
+      .customizable-trading {
+        width: 50%;
+
+        h3 {
+          font-size: 2.7rem;
+          font-weight: 600;
+          color: white;
+          margin-bottom: 20px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 1.5;
+          color: var(--text-light-gray);
+        }
+      }
+    }
+  }
+
+  // Rewards Section
+  .rewards-section {
+    padding: 100px 0;
+    background: rgba(255, 255, 255, 0.02);
+
+    .rewards-header {
+      margin-bottom: 60px;
+
+      h2 {
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: var(--text-light-gray);
+      }
+    }
+
+    .payment-methods-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 60px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-method-card {
+        border-radius: 20px;
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+
+        &.rise {
+          background: #0077ff2e;
+        }
+
+        &.crypto {
+          background: #0077ff2e;
+        }
+
+        .method-content {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          .method-icon {
+            font-size: 3rem;
+          }
+
+          .method-info {
+            h3 {
+              font-size: 1.5rem;
+              font-weight: 600;
+              margin-bottom: 10px;
+            }
+
+            p {
+              font-size: 1rem;
+              opacity: 0.9;
+            }
+          }
+        }
+      }
+    }
+
+    .guarantee-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 60px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      @media (max-width: 968px) {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+      }
+
+      .guarantee-badge {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .badge-icon {
+          font-size: 3rem;
+          color: var(--primary-blue);
+        }
+
+        .badge-content {
+          h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--primary-blue);
+          }
+
+          p {
+            color: var(--text-light-gray);
+          }
+        }
+      }
+
+      .support-stats {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+
+        .support-stat {
+          text-align: center;
+
+          .stat-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+          }
+
+          .stat-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+            align-items: center;
+          }
+
+          .stat-label {
+            font-size: 12px;
+            color: var(--text-gray);
+          }
+        }
+      }
+    }
+
+    .rewards-grid {
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 40px;
+        color: var(--text-light-gray);
+      }
+
+      .rewards-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-bottom: 40px;
+
+        @media (max-width: 1200px) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 768px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 480px) {
+          grid-template-columns: 1fr;
+        }
+
+        .reward-card {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 12px;
+          padding: 25px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .reward-amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+          }
+
+          .reward-info {
+            .reward-name {
+              font-weight: 600;
+              margin-bottom: 5px;
+            }
+
+            .reward-location {
+              font-size: 14px;
+              color: var(--text-gray);
+            }
+          }
+
+          .reward-certificate {
+            font-size: 30px;
+          }
+        }
+      }
+
+      .more-rewards-btn {
+        background: var(--primary-blue);
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        margin: 0 auto;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background: darken(#00D4AA, 10%);
+        }
+      }
+    }
+  }
+
+  // FAQ Section
+  .faq-section {
+    padding: 100px 0;
+
+    .faq-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: flex-start;
+
+      @media (max-width: 968px) {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .faq-left {
+        h2 {
+          font-size: 2.5rem;
+          font-weight: 600;
+          margin-bottom: 20px;
+          line-height: 1.2;
+        }
+
+        p {
+          font-size: 1.1rem;
+          color: var(--text-light-gray);
+          margin-bottom: 30px;
+        }
+
+        .more-faqs-btn {
+          background: var(--primary-blue);
+          color: white;
+          border: none;
+          padding: 15px 30px;
+          border-radius: 8px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background: #1565c0;
+          }
+        }
+      }
+
+      .faq-right {
+        .MuiPaper-root {
+          background-color: transparent;
+          background: transparent !important;
+          border-top: 1px solid #31474280;
+        }
+
+        .MuiButtonBase-root {
+          color: white !important;
+        }
+
+        p {
+          color: white !important;
+        }
+        svg{
+          color: white;
+        }
+
+        .faq-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          cursor: pointer;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: var(--primary-blue);
+          }
+
+          .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+          }
+        }
+      }
+    }
+  }
+
+  // Company Section
+  .company-section {
+    padding: 100px 0;
+    background: rgba(255, 255, 255, 0.02);
+
+    .company-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+
+      @media (max-width: 968px) {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .company-left {
+        img {
+          width: 100%;
+        }
+      }
+
+      .company-right {
+        h2 {
+          font-size: 3rem;
+          font-weight: 600;
+          margin-bottom: 40px;
+          line-height: 1.2;
+        }
+
+        .company-stats {
+          display: flex;
+          gap: 40px;
+          margin-bottom: 30px;
+
+          @media (max-width: 640px) {
+            flex-direction: column;
+            gap: 20px;
+          }
+
+          .company-stat {
+            .stat-number {
+              font-size: 2rem;
+              font-weight: 600;
+              color: var(--primary-blue);
+              margin-bottom: 5px;
+            }
+
+            .stat-label {
+              font-size: 14px;
+              color: var(--text-gray);
+            }
+          }
+        }
+
+        p {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          color: var(--text-light-gray);
+          margin-bottom: 30px;
+        }
+
+        .more-about-btn {
+          background: var(--primary-blue);
+          color: white;
+          border: none;
+          padding: 15px 30px;
+          border-radius: 8px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background: #1565c0;
+          }
+        }
+      }
     }
   }
 }
