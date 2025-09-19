@@ -6,7 +6,7 @@ const ObjectivesSection = () => {
   const [selectedBalance, setSelectedBalance] = useState('$10,000');
 
   const currencies = [
-    { code: 'USD', flag: 'images/usd.png' },
+    { code: 'USD', flag: 'images/usd.png ' },
     // { code: 'GBP', flag: 'images/gbp.png' },
     // { code: 'EUR', flag: 'images/eur.png' },
     // { code: 'CZK', flag: 'images/czk.png' },
