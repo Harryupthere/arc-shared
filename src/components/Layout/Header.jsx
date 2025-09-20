@@ -18,6 +18,7 @@ const Header = () => {
     { label: 'How it Works',link: '/build-arc' },
     { 
       label: 'About us', 
+      link: '/about-us',
       // hasDropdown: true,
       // dropdownItems: [
       //   { title: 'About us', link: '#' },

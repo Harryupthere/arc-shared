@@ -18,6 +18,9 @@ import Trader from './pages/Dashboard/Trader';
 import Withdrawal from './pages/Dashboard/Withdrawal';
 import FlowContainer from './components/arc-flow/FlowContainer';
 import FAQ from './pages/Faq';
+import AboutUs from './pages/Aboutus';
+import Checkout from './pages/Checkout';
+
 function App() {
   return (
     // <Router>
@@ -27,7 +30,9 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/build-arc" element={<FlowContainer />} />
-        <Route path="/faq" element={<FAQ />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/checkout" element={<Checkout />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<DashboardLayout />}>

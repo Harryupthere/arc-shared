@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { DollarSign, TrendingDown, Calendar } from 'lucide-react';
 import './TradingSliders.scss';
+import { useNavigate } from 'react-router-dom';
 
 // Allowed values for account balance
 const allowedAccountBalances = [
@@ -35,7 +36,7 @@ const TradingSliders = () => {
   const [accountBalance, setAccountBalance] = useState(50000);
   const [drawdown, setDrawdown] = useState(10);
   const [minTradingDays, setMinTradingDays] = useState(3);
-
+  const navigate = useNavigate();
   // Snap to nearest allowed value
   const handleAccountBalanceChange = (val) => {
     const value = Number(val);
@@ -188,7 +189,7 @@ const TradingSliders = () => {
         <button className="btn btn-outline">
           <span>Calculate Results</span>
         </button>
-        <button className="btn btn-primary">
+        <button className="btn btn-primary" onClick={()=>navigate('/checkout')}>
           <span>Start Challenge</span>
         </button>
       </div>

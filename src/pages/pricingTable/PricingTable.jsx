@@ -4,11 +4,12 @@ import CostomizedAccount from './Customized';
 import TradingSliders from './TradingSliders';
 import SuggestedAccountForm from '../../components/arc-flow/SuggestedAccountForm';
 import EstimateProfit from './EstimateProfit';
+import { useNavigate } from 'react-router-dom';
 const PricingTable = () => {
   const [accountType, setAccountType] = useState('standard');
   const [challengeType, setChallengeType] = useState('two-phase');
   const [selectedSize, setSelectedSize] = useState('15k');
-
+  const navigate = useNavigate();
   // Data for Two-Phase Challenge
   const twoPhaseData = {
     // '8k': {
@@ -515,7 +516,7 @@ const PricingTable = () => {
             <div className='start-heading'>
             <h2 >{prices} For ${selectedSize} account</h2>
             </div>
-            <button className="btn btn-primary" style={{margin:'auto', display:'flex'}}>
+            <button className="btn btn-primary" style={{margin:'auto', display:'flex'}} onClick={()=>navigate('/checkout')}>
               
               <span>Start Challenge</span>
             </button>

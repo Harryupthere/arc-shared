@@ -122,6 +122,12 @@
     }
 
     .phase-section {
+
+      .slick-track {
+        display: flex;
+        gap: 15px;
+      }
+
       .phase-header {
         display: flex;
         justify-content: space-between;
@@ -176,20 +182,28 @@
       }
 
 
-     .step-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 30px 20px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease; // smooth animation
+      .step-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 30px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
 
-  &:hover {
-    transform: translateY(-8px) scale(1.03);
-    border: 1px solid var(--primary-blue);
-    box-shadow: 0 8px 20px rgba(0, 150, 255, 0.3);
-    background: rgba(255, 255, 255, 0.1);
-  }
+        .image {
+          border-radius: 10px;
+
+          img {
+            max-height: 250px;
+            object-fit: contain;
+            width: 100%;
+            transition: transform .2s cubic-bezier(.25, .46, .45, .94);
+            margin-bottom: 30px;
+            border-radius: 30px;
+
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
 
   .step-content {
     h3 {
@@ -469,7 +483,6 @@
         background: rgba(255, 255, 255, 0.05);
         border-radius: 15px;
         padding: 30px 20px;
-        text-align: center;
         border: 1px solid rgba(255, 255, 255, 0.1);
 
         .step-content {

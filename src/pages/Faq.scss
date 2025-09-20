@@ -2,6 +2,9 @@
   background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
   min-height: 100vh;
   color: white;
+  position: relative;
+  overflow: hidden;
+
 }
 
 .faq-hero {
@@ -11,11 +14,15 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-top: 70px;
+  @media (max-width: 768px) {
+    height: 200px;
+  }
 
   .hero-background {
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
-  position: relative;
-  overflow: hidden;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+    position: relative;
+    overflow: hidden;
   }
 
   .hero-content {
@@ -68,7 +75,7 @@
         left: 18px;
         top: 50%;
         transform: translateY(-50%);
-        
+
         svg {
           width: 20px;
           height: 20px;
@@ -180,9 +187,12 @@
 }
 
 @keyframes networkPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.3;
   }
+
   50% {
     opacity: 0.6;
   }
@@ -193,6 +203,7 @@
     opacity: 0;
     max-height: 0;
   }
+
   to {
     opacity: 1;
     max-height: 200px;
