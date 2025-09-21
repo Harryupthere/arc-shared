@@ -1,0 +1,21 @@
+.privacy-container {
+     background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: .03em;
+.tnc-content{
+    padding: 120px 0;
+    h1{
+        font-size: 40px;
+        font-weight: 600;
+        margin-bottom: 30px;
+        color: #fff;
+        position: relative;
+        z-index: 99;
+    }
+    iframe{
+        z-index: 999;
+        position: relative;
+    }
+}
+}

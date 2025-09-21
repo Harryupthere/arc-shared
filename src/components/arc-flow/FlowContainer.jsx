@@ -3,8 +3,7 @@ import './FlowContainer.scss';
 import { GraphUp, Target } from '../../icons/icon';
 import { CalendarIcon, Check, ChevronLeft, ChevronRight, Newspaper, Trophy, WalletIcon } from 'lucide-react';
 import imageMap from '../../utlis/helper';
-import { Accordion, AccordionSummary, AccordionDetails, Typography } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import Slider from "react-slick";
 
 
@@ -47,10 +46,12 @@ var responsiveSlider = {
 const BuildARC = () => {
   const [accountSize, setAccountSize] = useState(50000);
   const [profitRate, setProfitRate] = useState(4.3);
-  const [step2Slide, setStep2Slide] = useState(0);
   const [step3Slide, setStep3Slide] = useState(0);
   const sliderRef = useRef(null);
   const tradingStatsSliderRef = useRef(null);
+  const rewardedSliderRef = useRef(null);
+
+  
   const calculateProfit = () => {
     return Math.round((accountSize * profitRate / 100) * 0.9);
   };
@@ -96,58 +97,52 @@ const BuildARC = () => {
   ]
 
   const step2Data = [
-    { title: 'MASTER ACCOUNT', description: 'You are now trading on demo account with virtual money, on a professional trading platform with real-time market data from liquidity providers.' },
-    { title: 'GET YOUR REWARDS', description: 'After the first two weeks, you can start requesting your rewards. Get up to 90% of your simulated profits as a reward.' },
-    { title: 'RISE & CRYPTO TRANSFERS', description: 'The legal relationship between you and ARC is based on the ARC Member Program Agreement that we will sign with you after you pass your Evaluation.' },
-    { title: 'START TRADING', description: 'You\'re in! You get your Master Account credentials, just like in the Evaluation phase. Now you can monetize your DEMO trading.' },
-    { title: 'RISK MANAGEMENT', description: 'Learn advanced risk management techniques to protect your virtual capital and maximize long-term profitability.' },
-    { title: 'PERFORMANCE TRACKING', description: 'Monitor your trading performance with detailed analytics and insights to improve your trading strategy.' }
+    { title: 'MASTER ACCOUNT', 
+      description: 'You are now trading on demo account with virtual money, on a professional trading platform with real-time market data from liquidity providers.',
+      img: imageMap['wallet.png'],
+    },
+    { title: 'GET YOUR REWARDS', 
+      description: 'After the first two weeks, you can start requesting your rewards. Get up to 90% of your simulated profits as a reward.',
+      img: imageMap['medal.png'],
+     },
+    { title: 'RISE & CRYPTO TRANSFERS',
+       description: 'The legal relationship between you and ARC is based on the ARC Member Program Agreement that we will sign with you after you pass your Evaluation.',
+       img: imageMap['money-exchange.png'],},
+    { title: 'START TRADING',
+       description: 'You\'re in! You get your Master Account credentials, just like in the Evaluation phase. Now you can monetize your DEMO trading.',
+      img: imageMap['stock-market.png'], },
+    { title: 'RISK MANAGEMENT',
+       description: 'Learn advanced risk management techniques to protect your virtual capital and maximize long-term profitability.',
+      img: imageMap['risk-management.png'],
+      },
+    { title: 'PERFORMANCE TRACKING',
+       description: 'Monitor your trading performance with detailed analytics and insights to improve your trading strategy.',
+      img: imageMap['performance.png'],}
   ];
 
   const step3Data = [
-    { title: 'REWARD PROCESSING', description: 'Your rewards are processed quickly and efficiently through our automated system within 48 hours.' },
-    { title: 'MULTIPLE PAYMENT OPTIONS', description: 'Choose from various payment methods including bank transfers, crypto, and digital wallets for maximum convenience.' },
-    { title: 'PROFIT SHARING', description: 'Enjoy up to 90% profit sharing on your successful trades, one of the highest rates in the industry.' },
-    { title: 'CONTINUOUS REWARDS', description: 'Earn rewards bi-weekly based on your trading performance and consistency in the markets.' },
-    { title: 'SCALING OPPORTUNITIES', description: 'Successful traders can scale up their accounts and manage larger amounts of virtual capital.' },
-    { title: 'COMMUNITY RECOGNITION', description: 'Top performers are featured in our success stories and trader spotlight sections.' }
+    { title: 'REWARD PROCESSING', 
+      description: 'Your rewards are processed quickly and efficiently through our automated system within 48 hours.',
+      img: imageMap['medal.png'],
+     },
+    { title: 'MULTIPLE PAYMENT OPTIONS', 
+      description: 'Choose from various payment methods including bank transfers, crypto, and digital wallets for maximum convenience.',
+    img: imageMap['credit-card.png'],},
+    { title: 'PROFIT SHARING', 
+      description: 'Enjoy up to 90% profit sharing on your successful trades, one of the highest rates in the industry.',
+      img: imageMap['doller.png'],
+     },
+    { title: 'CONTINUOUS REWARDS', 
+      description: 'Earn rewards bi-weekly based on your trading performance and consistency in the markets.',
+      img: imageMap['medal.png'],},
+    { title: 'SCALING OPPORTUNITIES', 
+      description: 'Successful traders can scale up their accounts and manage larger amounts of virtual capital.',
+    img: imageMap['stock-market.png'], },
+    { title: 'COMMUNITY RECOGNITION',
+       description: 'Top performers are featured in our success stories and trader spotlight sections.',
+      img: imageMap['performance.png'], }
   ];
 
-  // Step 2 carousel functions
-  const nextStep2Slide = () => {
-    setStep2Slide((prev) => (prev + 1) % step2Data.length);
-  };
-
-  const prevStep2Slide = () => {
-    setStep2Slide((prev) => (prev - 1 + step2Data.length) % step2Data.length);
-  };
-
-  const getStep2VisibleCards = () => {
-    const cards = [];
-    for (let i = 0; i < 4; i++) {
-      const index = (step2Slide + i) % step2Data.length;
-      cards.push(step2Data[index]);
-    }
-    return cards;
-  };
-
-  // Step 3 carousel functions
-  const nextStep3Slide = () => {
-    setStep3Slide((prev) => (prev + 1) % step3Data.length);
-  };
-
-  const prevStep3Slide = () => {
-    setStep3Slide((prev) => (prev - 1 + step3Data.length) % step3Data.length);
-  };
-
-  const getStep3VisibleCards = () => {
-    const cards = [];
-    for (let i = 0; i < 4; i++) {
-      const index = (step3Slide + i) % step3Data.length;
-      cards.push(step3Data[index]);
-    }
-    return cards;
-  };
   const faqItems = [
     { question: 'What Is ARC?', answer: 'ARC is a simulated trading firm that allows traders to evaluate their skills through trading challenges. Traders can trade on demo accounts with virtual capital and earn real profits as a reward for their performance.' },
     { question: 'What Is a Trading Challenge?', answer: 'A Trading Challenge is a product offered by ARC that tests traders\' skills. It involves trading on a demo account with virtual capital while adhering to specific rules and targets. Successful completion of the challenge grants access to a Master Account.' },
@@ -255,12 +250,8 @@ const BuildARC = () => {
             <div className="phase-header">
               <h2><span className="phase-number">Step 2:</span> Master Account</h2>
               <div className="navigation-arrows">
-                <button className="nav-arrow" onClick={prevStep2Slide}>
-                  <ChevronLeft size={20} />
-                </button>
-                <button className="nav-arrow" onClick={nextStep2Slide}>
-                  <ChevronRight size={20} />
-                </button>
+                  <button className="nav-arrow" onClick={() => tradingStatsSliderRef.current.slickPrev()}>←</button>
+                  <button className="nav-arrow" onClick={() => tradingStatsSliderRef.current.slickNext()}>→</button>
               </div>
             </div>
             <p className="phase-description">
@@ -269,16 +260,19 @@ const BuildARC = () => {
               environment with virtual funds.
             </p>
 
-            <div className="master-steps-grid">
-              {getStep2VisibleCards().map((item, index) => (
-                <div className="master-step-card" key={index}>
-                  <div className="step-content">
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+           <div className="slider-container">
+                <Slider ref={tradingStatsSliderRef} {...responsiveSlider}>
+                  {step2Data.map((item, index) => (
+                    <div className="step-card" key={index}>
+                      <div className='image'><img src={item.img} alt='img' /></div>
+                      <div className="step-content">
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </Slider>
+              </div>
 
             {/* Trading Stats */}
             <div className="trading-stats">
@@ -307,26 +301,25 @@ const BuildARC = () => {
             <div className="phase-header">
               <h2><span className="phase-number">Step 3:</span> Be Rewarded</h2>
               <div className="navigation-arrows">
-                <button className="nav-arrow" onClick={prevStep3Slide}>
-                  <ChevronLeft size={20} />
-                </button>
-                <button className="nav-arrow" onClick={nextStep3Slide}>
-                  <ChevronRight size={20} />
-                </button>
+               <button className="nav-arrow" onClick={() => rewardedSliderRef.current.slickPrev()}>←</button>
+                  <button className="nav-arrow" onClick={() => rewardedSliderRef.current.slickNext()}>→</button>
               </div>
             </div>
             <p className="phase-description">
               Our evaluation process consists of a product called the Trading Challenge, which tests your trading skills. It is designed to be challenging, and only the best traders pass. Show us what you've got!
             </p>
-            <div className="master-steps-grid">
-              {getStep3VisibleCards().map((item, index) => (
-                <div className="master-step-card" key={index}>
-                  <div className="step-content">
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="slider-container">
+             <Slider ref={rewardedSliderRef} {...responsiveSlider}>
+                  {step3Data.map((item, index) => (
+                    <div className="step-card" key={index}>
+                      <div className='image'><img src={item.img} alt='img' /></div>
+                      <div className="step-content">
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </Slider>
             </div>
           </div>
         </section>

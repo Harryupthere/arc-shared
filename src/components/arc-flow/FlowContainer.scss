@@ -2,6 +2,63 @@
   background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
   color: white;
   min-height: 100vh;
+  .slider-container{
+    margin-bottom: 20px;
+  }
+  .slick-track {
+    display: flex;
+    gap: 15px;
+  }
+
+  .step-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    .image {
+      border-radius: 10px;
+
+      img {
+        max-height: 200px;
+        object-fit: contain;
+        width: 100%;
+        transition: transform .2s cubic-bezier(.25, .46, .45, .94);
+        margin-bottom: 30px;
+        border-radius: 30px;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .step-content {
+      h3 {
+        color: var(--primary-blue);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--text-light-gray);
+        transition: color 0.3s ease;
+      }
+    }
+
+    &:hover .step-content h3 {
+      color: #ffffff;
+    }
+
+    &:hover .step-content p {
+      color: #e0e0e0;
+    }
+  }
 
   .benefits-cards {
     display: grid;
@@ -123,21 +180,19 @@
 
     .phase-section {
 
-      .slick-track {
-        display: flex;
-        gap: 15px;
-      }
+
 
       .phase-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 30px;
-   @media (max-width: 525px) {
-        flex-direction: column;
-        gap: 20px;
-        align-items: self-start;
-      }
+
+        @media (max-width: 525px) {
+          flex-direction: column;
+          gap: 20px;
+          align-items: self-start;
+        }
 
         h2 {
           font-size: 3rem;
@@ -182,55 +237,6 @@
       }
 
 
-      .step-card {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 15px;
-        padding: 30px 20px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-
-        .image {
-          border-radius: 10px;
-
-          img {
-            max-height: 250px;
-            object-fit: contain;
-            width: 100%;
-            transition: transform .2s cubic-bezier(.25, .46, .45, .94);
-            margin-bottom: 30px;
-            border-radius: 30px;
-
-            &:hover {
-              transform: scale(1.05);
-            }
-          }
-        }
-
-  .step-content {
-    h3 {
-      color: var(--primary-blue);
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 1.5;
-      color: var(--text-light-gray);
-      transition: color 0.3s ease;
-    }
-  }
-
-  &:hover .step-content h3 {
-    color: #ffffff;
-  }
-
-  &:hover .step-content p {
-    color: #e0e0e0;
-  }
-}
 
     }
   }
@@ -403,9 +409,11 @@
   // Master Account Section
   .master-account-section {
     padding: 100px 0;
-   @media (max-width: 525px) {
-       padding: 30px 0;
-      }
+
+    @media (max-width: 525px) {
+      padding: 30px 0;
+    }
+
     .phase-header {
       display: flex;
       justify-content: space-between;
@@ -808,7 +816,7 @@
         margin: 0 auto;
         transition: background-color 0.3s ease;
 
-       
+
       }
     }
   }

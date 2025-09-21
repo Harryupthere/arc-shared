@@ -20,6 +20,8 @@ import FlowContainer from './components/arc-flow/FlowContainer';
 import FAQ from './pages/Faq';
 import AboutUs from './pages/Aboutus';
 import Checkout from './pages/Checkout';
+import Tnc from './pages/Tnc';
+import PrivacyPolicy from './pages/Privacy';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
           <Route path="/build-arc" element={<FlowContainer />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/terms-and-condition" element={<Tnc />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/checkout" element={<Checkout />} />
         </Route>
         <Route path="/login" element={<Login />} />

@@ -38,12 +38,13 @@ const Footer = () => {
   ];
 
   const legalLinks = [
-    'Cookies',
-    'Imprint',
-    'Cookie settings',
-    'Terms & Conditions',
-    'Privacy Policy'
+    {name:'Cookies', link:'#/'},
+    {name:'Imprint', link:'#/'},
+    {name:'Cookie settings', link:'#/'},
+    {name:'Terms & Conditions', link:'/terms-and-condition'},
+    {name:'Privacy Policy', link:'/privacy-policy'}
   ];
+
 
   return (
     <footer className="footer">
@@ -131,7 +132,7 @@ const Footer = () => {
         <div className="footer-legal">
           <div className="legal-links">
             {legalLinks.map((link, index) => (
-              <a key={index} href="#">{link}</a>
+              <Link to={link.link} key={index}>{link.name}</Link>
             ))}
           </div>
         </div>
