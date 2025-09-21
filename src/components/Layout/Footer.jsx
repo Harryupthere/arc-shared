@@ -5,12 +5,11 @@ import imageMap from '../../utlis/helper';
 
 const Footer = () => {
   const companyLinks = [
-    'About us',
-    'Contact us',
-    'Careers',
-    'Press Kit',
-    'Press Release',
-    'How ARC works'
+    {title: 'Home', link: '/'},
+    {title: 'About us', link: '/about-us'},
+    {title: 'How ARC works', link: '/build-arc'},
+    {title: 'FAQs', link: '/faq'},
+
   ];
 
   const moreLinks = [
@@ -27,13 +26,9 @@ const Footer = () => {
   ];
 
   const paymentMethods = [
-    { name: 'Bank Transfer', logo: imageMap['bank.svg'] },
     { name: 'Skrill', logo: imageMap['skrill.svg'] },
     { name: 'Mastercard', logo: imageMap['master.svg'] },
-    { name: 'Maestro', logo: imageMap['master.svg'] },
     { name: 'Visa', logo: imageMap['visa.svg'] },
-    { name: 'Diners Club', logo: imageMap['visa.svg'] },
-    { name: 'Discover', logo: imageMap['master.svg'] },
     { name: 'PayPal', logo: imageMap['paypal.svg'] }
   ];
 
@@ -71,19 +66,11 @@ const Footer = () => {
             <h4>COMPANY</h4>
             <ul className="footer-links">
               {companyLinks.map((link, index) => (
-                <li key={index}><a href="#">{link}</a></li>
+                <li key={index}><Link to={link.link}>{link.title}</Link></li>
               ))}
             </ul>
           </div>
 
-          <div className="footer-section">
-            <h4>MORE</h4>
-            <ul className="footer-links">
-              {moreLinks.map((link, index) => (
-                <li key={index}><a href="#">{link}</a></li>
-              ))}
-            </ul>
-          </div>
 
           <div className="footer-section">
             <h4>SOCIALS</h4>
@@ -101,23 +88,7 @@ const Footer = () => {
         </div>
 
         <div className='app-section'>
-          <div>
-            {/* <h4>STAY UPDATED WITH OUR NEWSLETTER!</h4>
-            <div className="footer-apps">
-              <img src={imageMap['appstore.svg']} alt='appstore' />
-              <img src={imageMap['playstore.svg']} alt='playstore' />
-            </div> */}
-          </div>
-
-          <div className="footer-newsletter">
-            <h4>STAY UPDATED WITH OUR NEWSLETTER!</h4>
-            <div className="newsletter-form">
-              <input type="email" placeholder="Email" />
-              <button className="btn btn-primary">SUBSCRIBE</button>
-            </div>
-          </div>
-        </div>
-        <div className="footer-payments">
+ <div className="footer-payments">
           <h4>PAYMENT OPTIONS</h4>
           <div className="payment-methods">
             {paymentMethods.map((method, index) => (
@@ -128,6 +99,15 @@ const Footer = () => {
             ))}
           </div>
         </div>
+          <div className="footer-newsletter">
+            <h4>STAY UPDATED WITH OUR NEWSLETTER!</h4>
+            <div className="newsletter-form">
+              <input type="email" placeholder="Email" />
+              <button className="btn btn-primary">SUBSCRIBE</button>
+            </div>
+          </div>
+        </div>
+       
 
         <div className="footer-legal">
           <div className="legal-links">

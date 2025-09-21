@@ -5,6 +5,7 @@ import { CalendarIcon, Check, ChevronLeft, ChevronRight, Newspaper, Trophy, Wall
 import imageMap from '../../utlis/helper';
 
 import Slider from "react-slick";
+import { ShadeImage } from '../common/iconImage';
 
 
 var responsiveSlider = {
@@ -153,6 +154,12 @@ const BuildARC = () => {
   return (
     <>
       <div className="build-arc-page">
+            <picture className="shade-left roated-90"  >
+                <ShadeImage />
+              </picture>
+              <picture className="shade-right" >
+                <ShadeImage />
+              </picture>
         {/* How It Works Section */}
         <section className="how-it-works-section">
           <div className="container">

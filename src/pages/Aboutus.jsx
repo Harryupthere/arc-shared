@@ -31,33 +31,39 @@ const AboutUs = () => {
                             <div className="content">
                                 <h2>Our Story</h2>
                                 <p>
-                                    At Arc, we believe that everyone should have the opportunity to trade and invest in the financial markets. Our mission is to provide a seamless and user-friendly platform that empowers individuals to achieve their financial goals through trading.
+                                    At ARC Funding, we’ve been exactly where you are now.
+                                    We know the struggle of putting in endless hours of study, refining strategies, and proving consistency — only to be held back by one thing: capital.
                                 </p>
                                 <p>
-                                    Founded in 2023, Arc has quickly become a leading name in the trading industry. Our team of experienced professionals is dedicated to delivering innovative solutions that meet the evolving needs of traders worldwide.
+                                    This prop firm wasn’t built by outsiders. ARC Funding was built by real traders, backed by industry professionals. We’ve walked the same path, felt the same frustrations, and know firsthand how it feels to be ready for the next step but limited by access to funds.
                                 </p>
+                                <p>Here’s how we make it possible:</p>
                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae fugit, corporis perferendis voluptatum culpa voluptate natus. Laudantium obcaecati enim animi ducimus earum eligendi consequuntur autem! Qui et nihil quibusdam delectus!</p>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae fugit, corporis perferendis voluptatum culpa voluptate natus. Laudantium obcaecati enim animi ducimus earum eligendi consequuntur autem! Qui et nihil quibusdam delectus!</p>
+                                <ul>
+                                    <li>Traders who pass our evaluation gain access to this capital.</li>
 
+                                    <li>Every position is monitored with strict risk controls so our investors feel secure.</li>
+
+                                    <li>Profits are shared fairly: traders keep the majority (up to 80–90%), investors earn reliable returns, and ARC reinvests a small share to keep expanding opportunities.</li>
+
+                                    <li>We didn’t just build another prop firm. We built a platform where ambition meets opportunity, where traders can finally showcase their skills without the limits of personal capital.</li>
+
+                                    <li>Because at ARC, we’ve been in your shoes. And now, we’re here to back you every step of the way.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </section>
-                 <section className="about-us-section">
+                <section className="about-us-section">
                     <div className="container">
                         <div className="two-section">
                             <div className="content">
                                 <h2>Our Mission</h2>
                                 <p>
-                                    Our mission is simple: to offer traders the opportunity to succeed with real liquidity and
-                                    professional support. At ARC, we are dedicated to providing transparent, market-driven
-                                    solutions that empower traders at every level.
-                                    </p>
-                                    <p>
-                                    Built by traders who understand the market's
-                                    complexities and backed by experts who bring industry-leading knowledge, we aim to deliver an
-                                    unparalleled trading experience with integrity and excellence.
-                                    </p>
+                                   At ARC Funding, our mission is simple: to empower skilled traders by giving them the capital, tools, and support they need to thrive.
+We believe talent should never be wasted because of limited resources. That’s why we connect ambitious traders with the backing of trusted investors and the guidance of experienced professionals.
+Our goal is to create a fair, transparent, and sustainable ecosystem where traders can unlock their potential, investors feel secure, and ARC continues to grow as a bridge between the two.
+                                </p>
                             </div>
                             <div className="image">
                                 <img src={imageMap['mission.jpg']} alt="About Us" />
@@ -65,7 +71,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </section>
-                  <section className="about-us-section">
+                <section className="about-us-section">
                     <div className="container">
                         <div className="two-section">
                             <div className="image">
@@ -73,8 +79,9 @@ const AboutUs = () => {
                             </div>
                             <div className="content">
                                 <h2>Our Team</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni asperiores eaque, itaque molestiae reprehenderit consectetur dolorum excepturi suscipit fuga debitis nobis unde delectus, non dolorem, saepe pariatur accusamus voluptatem deleniti! </p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni asperiores eaque, itaque molestiae reprehenderit consectetur dolorum excepturi suscipit fuga debitis nobis unde delectus, non dolorem, saepe pariatur accusamus voluptatem deleniti! </p>
+                                <p>ARC Funding was built by real traders who understand the challenges of the markets and is backed by industry professionals with decades of combined experience in trading, risk management, and finance.</p>
+                                <p>We are more than just a firm — we are a team of mentors, strategists, and risk managers who know what it takes to succeed in today’s fast-moving markets. Every policy, every rule, and every opportunity we create comes from firsthand experience and a deep commitment to supporting traders.</p>
+                                <p>Our team is united by one vision: to give traders the freedom to prove their skills and trade without limits.</p>
                             </div>
                         </div>
                     </div>
