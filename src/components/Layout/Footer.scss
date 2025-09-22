@@ -234,7 +234,13 @@ justify-content: space-between;
   .footer-legal {
     border-top: 1px solid var(--border-color);
     padding-top: 20px;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+    z-index: 99;
     .legal-links {
       display: flex;
       gap: 30px;
@@ -243,7 +249,7 @@ justify-content: space-between;
       a {
         color: #fff;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 14px;
         transition: color 0.3s ease;
     position: relative;
     z-index: 99;

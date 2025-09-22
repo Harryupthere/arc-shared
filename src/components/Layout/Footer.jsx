@@ -34,8 +34,8 @@ const Footer = () => {
   ];
 
   const legalLinks = [
-    {name:'Cookies', link:'#/'},
-    {name:'Imprint', link:'#/'},
+    // {name:'Cookies', link:'#/'},
+    // {name:'Imprint', link:'#/'},
     {name:'Cookie settings', link:'#/'},
     {name:'Terms & Conditions', link:'/terms-and-condition'},
     {name:'Privacy Policy', link:'/privacy-policy'}
@@ -96,15 +96,7 @@ const Footer = () => {
 
         <div className='app-section'>
  <div className="footer-payments">
-          <h4>PAYMENT OPTIONS</h4>
-          <div className="payment-methods">
-            {paymentMethods.map((method, index) => (
-              <div key={index} className="payment-method">
-                <span><img src={method.logo} alt='pay' style={{ maxWidth: '120px' }} /></span>
-                {/* <span>{method.name}</span> */}
-              </div>
-            ))}
-          </div>
+         
         </div>
           <div className="footer-newsletter">
             <h4>STAY UPDATED WITH OUR NEWSLETTER!</h4>
@@ -122,6 +114,7 @@ const Footer = () => {
               <Link to={link.link} key={index}>{link.name}</Link>
             ))}
           </div>
+          <p>Copyright © 2025 ARC Funding. All rights reserved.</p>
         </div>
       </div>
     </footer>
