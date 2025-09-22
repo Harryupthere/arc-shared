@@ -2,6 +2,8 @@
   background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
   color: white;
   min-height: 100vh;
+  position: relative;
+      overflow: hidden;
   .slider-container{
     margin-bottom: 20px;
   }
@@ -157,7 +159,8 @@
   // How It Works Section
   .how-it-works-section {
     padding: 100px 0;
-
+position: relative;
+    z-index: 99;
     .section-header {
       margin-bottom: 80px;
 
