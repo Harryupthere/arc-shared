@@ -6,7 +6,6 @@ const ProcessSection = () => {
       title: 'EVALUATION PROCESS',
       subtitle: 'DEMO',
       color: 'blue',
-      icon: '📊',
       steps: [
         {
           step: 'STEP 01',
@@ -27,7 +26,6 @@ const ProcessSection = () => {
       title: 'ARC ACCOUNT',
       subtitle: 'MONETIZED DEMO',
       color: 'teal',
-      icon: '💰',
       steps: [
         {
           step: 'STEP 03',

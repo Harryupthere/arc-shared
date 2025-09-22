@@ -2,6 +2,7 @@ import { Facebook, Twitter, Instagram, YouTube, LinkedIn } from '@mui/icons-mate
 import './Footer.scss';
 import { Link } from 'react-router-dom';
 import imageMap from '../../utlis/helper';
+import { ShadeImage } from '../common/iconImage';
 
 const Footer = () => {
   const companyLinks = [
@@ -43,6 +44,12 @@ const Footer = () => {
 
   return (
     <footer className="footer">
+          <picture className="shade-left roated-90"  >
+              <ShadeImage />
+            </picture>
+            <picture className="shade-right" >
+              <ShadeImage />
+            </picture>
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
