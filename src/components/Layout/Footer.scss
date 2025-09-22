@@ -3,13 +3,16 @@
   color: var(--text-gray);
   padding: 80px 0 20px;
   border-top: 1px solid var(--border-color);
-
+  position: relative;
+  height: 100%;
+  overflow: hidden;
   .footer-content {
     display: grid;
     grid-template-columns: 2fr 2fr 1fr ;
     gap: 60px;
     margin-bottom: 60px;
-
+    position: relative;
+    z-index: 99;
     @media (max-width: 968px) {
       grid-template-columns: 1fr 1fr;
       gap: 40px;
@@ -28,6 +31,8 @@
       font-weight: 600;
       margin-bottom: 20px;
       text-transform: uppercase;
+          position: relative;
+    z-index: 99;
     }
     .logo{
             text-decoration: none;
@@ -56,7 +61,7 @@
         font-size: 14px;
         line-height: 1.6;
         margin-bottom: 15px;
-        color: var(--slate-color);
+        color: #fff;
 
       }
 
@@ -78,7 +83,7 @@
         margin-bottom: 5px;
 
         a {
-          color: var(--slate-color);
+          color: #fff;
           font-size: 14px;
           font-style: normal;
           font-weight: 500;
@@ -174,7 +179,8 @@
         border-radius: 6px;
         color: white;
         font-size: 14px;
-
+    position: relative;
+    z-index: 99;
         &::placeholder {
           color: var(--text-gray);
         }
@@ -189,6 +195,8 @@
         padding: 12px 24px;
         font-size: 14px;
         font-weight: 600;
+            position: relative;
+    z-index: 99;
       }
     }
   }
@@ -233,11 +241,12 @@ justify-content: space-between;
       flex-wrap: wrap;
 
       a {
-        color: var(--slate-color);
+        color: #fff;
         text-decoration: none;
         font-size: 16px;
         transition: color 0.3s ease;
-
+    position: relative;
+    z-index: 99;
         &:hover {
           color: white;
         }
