@@ -48,7 +48,7 @@ const Footer = () => {
               <ShadeImage />
             </picture>
             <picture className="shade-right" >
-              <ShadeImage />
+              <ShadeImage  />
             </picture>
       <div className="container">
         <div className="footer-content">
