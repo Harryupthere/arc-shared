@@ -3,10 +3,12 @@
   color: white;
   min-height: 100vh;
   position: relative;
-      overflow: hidden;
-  .slider-container{
+  overflow: hidden;
+
+  .slider-container {
     margin-bottom: 20px;
   }
+
   .slick-track {
     display: flex;
     gap: 15px;
@@ -159,8 +161,13 @@
   // How It Works Section
   .how-it-works-section {
     padding: 100px 0;
-position: relative;
+    position: relative;
     z-index: 99;
+
+    @media (max-width: 768px) {
+      padding: 100px 0 30px 0;
+    }
+
     .section-header {
       margin-bottom: 80px;
 
@@ -171,7 +178,7 @@ position: relative;
         color: white;
 
         @media (max-width: 768px) {
-          font-size: 2.5rem;
+          font-size: 25px;
         }
       }
 
@@ -202,7 +209,7 @@ position: relative;
           font-weight: 600;
 
           @media (max-width: 768px) {
-            font-size: 2rem;
+            font-size: 25px;
           }
 
           .phase-number {
@@ -248,6 +255,12 @@ position: relative;
   .welcome-section {
     padding: 100px 0;
     background: rgba(255, 255, 255, 0.02);
+    position: relative;
+    z-index: 99;
+
+    @media (max-width: 768px) {
+      padding: 30px 0;
+    }
 
     .welcome-content {
       display: grid;
@@ -255,9 +268,11 @@ position: relative;
       gap: 80px;
       align-items: center;
 
-      @media (max-width: 968px) {
+      @media (max-width: 768px) {
         grid-template-columns: 1fr;
         gap: 60px;
+        padding: 30px 0;
+
       }
 
       .welcome-text {
@@ -268,7 +283,7 @@ position: relative;
           line-height: 1.2;
 
           @media (max-width: 768px) {
-            font-size: 2rem;
+            font-size: 25px;
           }
         }
 
@@ -412,6 +427,8 @@ position: relative;
   // Master Account Section
   .master-account-section {
     padding: 100px 0;
+    position: relative;
+    z-index: 99;
 
     @media (max-width: 525px) {
       padding: 30px 0;
@@ -434,7 +451,7 @@ position: relative;
         font-weight: 600;
 
         @media (max-width: 768px) {
-          font-size: 2rem;
+          font-size: 25px;
         }
 
         .phase-number {
@@ -533,7 +550,7 @@ position: relative;
           width: 100%;
         }
 
-        @media (max-width: 968px) {
+        @media (max-width: 768px) {
           grid-template-columns: repeat(3, 1fr);
         }
 
@@ -593,6 +610,10 @@ position: relative;
           font-weight: 600;
           color: white;
           margin-bottom: 20px;
+
+          @media (max-width: 768px) {
+            font-size: 25px;
+          }
         }
 
         p {
@@ -608,6 +629,12 @@ position: relative;
   .rewards-section {
     padding: 100px 0;
     background: rgba(255, 255, 255, 0.02);
+    position: relative;
+    z-index: 99;
+
+    @media (max-width: 768px) {
+      padding: 30px 0;
+    }
 
     .rewards-header {
       margin-bottom: 60px;
@@ -616,6 +643,9 @@ position: relative;
         font-size: 3rem;
         font-weight: 600;
         margin-bottom: 20px;
+         @media (max-width: 768px) {
+         font-size: 25px;
+        }
       }
 
       p {
@@ -640,6 +670,10 @@ position: relative;
         position: relative;
         overflow: hidden;
 
+        @media (max-width: 768px) {
+          padding: 15px;
+        }
+
         &.rise {
           background: #0077ff2e;
         }
@@ -653,6 +687,10 @@ position: relative;
           align-items: center;
           gap: 20px;
 
+          @media (max-width: 768px) {
+            gap: 10px;
+          }
+
           .method-icon {
             font-size: 3rem;
           }
@@ -662,6 +700,9 @@ position: relative;
               font-size: 1.5rem;
               font-weight: 600;
               margin-bottom: 10px;
+               @media (max-width: 768px) {
+         font-size: 1rem;
+        }
             }
 
             p {
@@ -683,10 +724,11 @@ position: relative;
       margin-bottom: 60px;
       border: 1px solid rgba(255, 255, 255, 0.1);
 
-      @media (max-width: 968px) {
+      @media (max-width: 768px) {
         flex-direction: column;
         gap: 30px;
         text-align: center;
+        padding: 15px;
       }
 
       .guarantee-badge {
@@ -694,6 +736,10 @@ position: relative;
         align-items: center;
         gap: 20px;
 
+ @media (max-width: 525px) {
+        flex-direction: column;
+        justify-content: center;
+        }
         .badge-icon {
           font-size: 3rem;
           color: var(--primary-blue);
@@ -827,6 +873,12 @@ position: relative;
   // FAQ Section
   .faq-section {
     padding: 100px 0;
+    position: relative;
+    z-index: 99;
+
+    @media (max-width: 768px) {
+      padding: 30px 0;
+    }
 
     .faq-content {
       display: grid;
@@ -834,7 +886,7 @@ position: relative;
       gap: 80px;
       align-items: flex-start;
 
-      @media (max-width: 968px) {
+      @media (max-width: 768px) {
         grid-template-columns: 1fr;
         gap: 40px;
       }
@@ -914,6 +966,12 @@ position: relative;
   .company-section {
     padding: 100px 0;
     background: rgba(255, 255, 255, 0.02);
+    position: relative;
+    z-index: 99;
+
+    @media (max-width: 768px) {
+      padding: 30px 0;
+    }
 
     .company-content {
       display: grid;
@@ -921,7 +979,7 @@ position: relative;
       gap: 80px;
       align-items: center;
 
-      @media (max-width: 968px) {
+      @media (max-width: 768px) {
         grid-template-columns: 1fr;
         gap: 60px;
       }

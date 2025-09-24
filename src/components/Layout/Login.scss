@@ -6,15 +6,13 @@
 }
 
 .login-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
 
-  @media (max-width: 968px) {
-    grid-template-columns: 1fr;
-    max-width: 500px;
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 }
 
@@ -77,10 +75,10 @@
   }
 
   .login-form {
-    max-width: 400px;
+    width: 50%;
 
-    @media (max-width: 425px) {
-      max-width: max-content;
+    @media (max-width: 768px) {
+         width: 100%;
     }
 
     h1 {
@@ -308,6 +306,11 @@
   border-radius: 20px;
   padding: 30px;
   text-align: center;
+ width: 50%;
+
+    @media (max-width: 768px) {
+         width: 100%;
+    }
 
   img {
     margin-bottom: 20px;

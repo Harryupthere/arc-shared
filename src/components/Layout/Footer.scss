@@ -6,13 +6,15 @@
   position: relative;
   height: 100%;
   overflow: hidden;
+
   .footer-content {
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr ;
+    grid-template-columns: 2fr 2fr 1fr;
     gap: 60px;
     margin-bottom: 60px;
     position: relative;
     z-index: 99;
+
     @media (max-width: 968px) {
       grid-template-columns: 1fr 1fr;
       gap: 40px;
@@ -31,17 +33,20 @@
       font-weight: 600;
       margin-bottom: 20px;
       text-transform: uppercase;
-          position: relative;
-    z-index: 99;
+      position: relative;
+      z-index: 99;
     }
-    .logo{
-            text-decoration: none;
+
+    .logo {
+      text-decoration: none;
 
     }
+
     .footer-logo {
       margin-bottom: 20px;
       text-decoration: none;
       font-size: 40px;
+
       span {
         font-size: 1.5rem;
         font-weight: 900;
@@ -123,10 +128,12 @@
   .app-section {
     display: flex;
     justify-content: space-between;
-     @media (max-width: 768px) {
+
+    @media (max-width: 768px) {
       flex-direction: column;
       gap: 20px;
-      }
+    }
+
     h4 {
       color: white;
       font-size: 14px;
@@ -140,12 +147,13 @@
     display: flex;
     align-items: center;
     gap: 20px;
-      @media (max-width: 768px) {
-        img{
-          width: 120px;
-        }
+
+    @media (max-width: 768px) {
+      img {
+        width: 120px;
       }
-    
+    }
+
   }
 
   .footer-newsletter {
@@ -179,8 +187,9 @@
         border-radius: 6px;
         color: white;
         font-size: 14px;
-    position: relative;
-    z-index: 99;
+        position: relative;
+        z-index: 99;
+
         &::placeholder {
           color: var(--text-gray);
         }
@@ -195,8 +204,8 @@
         padding: 12px 24px;
         font-size: 14px;
         font-weight: 600;
-            position: relative;
-    z-index: 99;
+        position: relative;
+        z-index: 99;
       }
     }
   }
@@ -216,7 +225,8 @@
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
-justify-content: space-between;
+      justify-content: space-between;
+
       .payment-method {
         display: flex;
         align-items: center;
@@ -241,22 +251,37 @@ justify-content: space-between;
     font-size: 14px;
     position: relative;
     z-index: 99;
+
     .legal-links {
       display: flex;
       gap: 30px;
       flex-wrap: wrap;
+
+      @media (max-width: 480px) {
+        gap: 10px;
+      }
 
       a {
         color: #fff;
         text-decoration: none;
         font-size: 14px;
         transition: color 0.3s ease;
-    position: relative;
-    z-index: 99;
+        position: relative;
+        z-index: 99;
+@media (max-width: 480px) {
+       font-size: 12px;
+      }
         &:hover {
           color: white;
         }
       }
+    }
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 20px;
+      align-items: self-start;
+      font-size: 12px;
     }
   }
 }

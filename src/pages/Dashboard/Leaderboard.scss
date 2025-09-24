@@ -1,17 +1,24 @@
 .leaderboard {
-  .leaderboard-header{
+  .leaderboard-header {
     padding: 0;
-       .tab-content{
-      padding:20px ;
-    border-bottom: 1px solid var(--border-color);
 
+    .tab-content {
+      padding: 20px;
+      border-bottom: 1px solid var(--border-color);
+
+      @media (max-width: 768px) {
+        padding: 10px;
+        font-size: 12px;
+      }
     }
   }
+
   .card-header {
     padding: 15px;
     display: flex;
     gap: 10px;
     align-items: center;
+
     h1 {
       font-size: 20px;
       line-height: 28px;
@@ -150,6 +157,7 @@
 
       .trader-stats {
         padding: 0 15px;
+
         .stat-group {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -179,6 +187,7 @@
         .account-size {
           text-align: center;
           padding: 15px;
+
           .size-label {
             font-size: 0.8rem;
             opacity: 0.8;
@@ -214,46 +223,51 @@
     }
 
   }
+
   .data-table {
     margin-bottom: 20px;
     overflow-x: auto;
-         table {
-             width: 100%;
-             border-collapse: collapse;
-             margin-top: 20px;
-             background-color: var(--card-bg);
-             th,
-             td {
-                 padding: 20px 15px;
-                 text-align: left;
-                 border-bottom: 1px solid var(--border-color);
-                 font-size: 14px;
-   @media (max-width: 525px) {
-                    padding: 10px;
-                    font-size: 12px;
-                }
-                 .download-btn {
-                     background-color: transparent;
-                     border: none;
- 
-                     .MuiSelect-icon {
-                         color: white !important;
-                     }
-                 }
-             }
- 
-             th {
-                 color: var(--slate-color);
-                 font-weight: 600;
-             }
- 
-             tr:nth-child(even) {
-                 background-color: var(--table-row-even-bg);
-             }
- 
-             tr:hover {
-                 background-color: var(--table-row-hover-bg);
-             }
-         }
-     }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: var(--card-bg);
+
+      th,
+      td {
+        padding: 20px 15px;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+        font-size: 14px;
+
+        @media (max-width: 525px) {
+          padding: 10px;
+          font-size: 12px;
+        }
+
+        .download-btn {
+          background-color: transparent;
+          border: none;
+
+          .MuiSelect-icon {
+            color: white !important;
+          }
+        }
+      }
+
+      th {
+        color: var(--slate-color);
+        font-weight: 600;
+      }
+
+      tr:nth-child(even) {
+        background-color: var(--table-row-even-bg);
+      }
+
+      tr:hover {
+        background-color: var(--table-row-hover-bg);
+      }
+    }
+  }
 }

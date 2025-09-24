@@ -135,6 +135,11 @@ th {
   transition: all 0.3s ease;
   font-size: 14px;
 
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+
+  }
+
   &.btn-primary {
     background-color: var(--primary-blue);
     color: white;
@@ -238,7 +243,8 @@ th {
   margin-bottom: 20px;
 
   @media (max-width: 525px) {
-   flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .tab-button {
@@ -285,26 +291,26 @@ th {
   }
 
 }
-  .shade-left {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    z-index: 1;
 
-    &.roated-90 {
-      svg {
-        transform: scaleX(-1);
-      }
+.shade-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 1;
+
+  &.roated-90 {
+    svg {
+      transform: scaleX(-1);
     }
   }
+}
 
-  .shade-right {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    z-index: 1;
+.shade-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  z-index: 1;
 
-  }
-
+}

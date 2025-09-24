@@ -93,7 +93,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-
+    position: relative;
+    z-index: 99;
     @media (max-width: 968px) {
       grid-template-columns: 1fr;
       gap: 40px;
