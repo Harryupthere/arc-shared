@@ -1,19 +1,23 @@
 .trader-wrapped {
-    .account-card{
-    display: flex;
-    gap: 10px;
-     @media (max-width: 768px) {
-       flex-direction: column;
-      }
+    .account-card {
+        display: flex;
+        gap: 10px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
     }
+
     .dark-card {
         &.first-card {
             padding: 0;
             margin-bottom: 20px;
         }
+
         .tabs-content {
             padding: 0;
         }
+
         .card-header {
             padding: 15px;
             display: flex;
@@ -32,9 +36,15 @@
     .theme_card {
         width: calc(33.33% - 5px);
         padding: 20px;
- @media (max-width: 768px) {
-      width: 100%;
-      }
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+        .btn{
+             @media (max-width: 768px) {
+                    width: 100%;
+                }
+        }
         .funded-content {
             margin-bottom: 20px;
 
@@ -42,16 +52,25 @@
                 font-size: 16px;
                 font-weight: 500;
                 margin-bottom: 5px;
+
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                }
             }
 
             .status {
                 margin: 10px 0;
-
+ @media (max-width: 768px) {
+                    font-size: 12px;
+                }
                 span {
                     padding: 5px;
                     background-color: green;
                     font-size: 14px;
                     border-radius: 4px;
+                     @media (max-width: 768px) {
+                    font-size: 12px;
+                }
                 }
             }
         }
