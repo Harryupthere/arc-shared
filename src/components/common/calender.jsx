@@ -11,7 +11,7 @@ const tradeData = {
   '2021-06-05': { profit: -128, trades: 6 },
   '2021-06-09': { profit: 515, trades: 6 },
   '2021-06-10': { profit: 515, trades: 6 },
-  '2021-06-24': { profit: 796, trades: 6 },
+  '2021-06-24': { profit: 796, trades: 6  },
 };
 
 const DailyCalender = ({handleClose}) => {
