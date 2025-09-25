@@ -6,10 +6,10 @@ import { ShadeImage } from '../common/iconImage';
 
 const Footer = () => {
   const companyLinks = [
-    {title: 'Home', link: '/'},
-    {title: 'About us', link: '/about-us'},
-    {title: 'How ARC works', link: '/build-arc'},
-    {title: 'FAQs', link: '/faq'},
+    { title: 'Home', link: '/' },
+    { title: 'About us', link: '/about-us' },
+    { title: 'How ARC works', link: '/build-arc' },
+    { title: 'FAQs', link: '/faq' },
 
   ];
 
@@ -36,20 +36,20 @@ const Footer = () => {
   const legalLinks = [
     // {name:'Cookies', link:'#/'},
     // {name:'Imprint', link:'#/'},
-    {name:'Cookie settings', link:'#/'},
-    {name:'Terms & Conditions', link:'/terms-and-condition'},
-    {name:'Privacy Policy', link:'/privacy-policy'}
+    { name: 'Cookie settings', link: '#/' },
+    { name: 'Terms & Conditions', link: '/terms-and-condition' },
+    { name: 'Privacy Policy', link: '/privacy-policy' }
   ];
 
 
   return (
     <footer className="footer">
-          <picture className="shade-left roated-90"  >
-              <ShadeImage />
-            </picture>
-            <picture className="shade-right" >
-              <ShadeImage />
-            </picture>
+      {/* <picture className="shade-left roated-90"  >
+        <ShadeImage />
+      </picture>
+      <picture className="shade-right" >
+        <ShadeImage />
+      </picture> */}
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
@@ -95,9 +95,9 @@ const Footer = () => {
         </div>
 
         <div className='app-section'>
- <div className="footer-payments">
-         
-        </div>
+          <div className="footer-payments">
+
+          </div>
           <div className="footer-newsletter">
             <h4>STAY UPDATED WITH OUR NEWSLETTER!</h4>
             <div className="newsletter-form">
@@ -106,7 +106,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-       
+
 
         <div className="footer-legal">
           <div className="legal-links">

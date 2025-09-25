@@ -22,8 +22,14 @@ import AboutUs from './pages/Aboutus';
 import Checkout from './pages/Checkout';
 import Tnc from './pages/Tnc';
 import PrivacyPolicy from './pages/Privacy';
+import Aos from 'aos';
+import { useEffect } from 'react';
 
 function App() {
+    useEffect(function () {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   return (
     // <Router>
     <div className="App">

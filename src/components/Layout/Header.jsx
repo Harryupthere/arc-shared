@@ -1,23 +1,20 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { KeyboardArrowDown, Search, Language } from '@mui/icons-material';
+import { Link, useLocation } from 'react-router-dom';
+import { KeyboardArrowDown, Search, } from '@mui/icons-material';
 import './Header.scss';
-import { useDispatch } from 'react-redux';
- import { allCountries } from 'country-telephone-data';
-import {setLanguage} from '../../redux/slice/languageSlice';
 import Translator from '../Translator';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false); // <-- Add this state
   const langRef = useRef(null);
-
+  const location = useLocation()
   const navItems = [
     { label: 'Home', link: '/' },
-    { label: 'FAQ',link: '/faq'},
-    { label: 'How it Works',link: '/build-arc' },
-    { 
-      label: 'About us', 
+    { label: 'FAQ', link: '/faq' },
+    { label: 'How it Works', link: '/build-arc' },
+    {
+      label: 'About us',
       link: '/about-us',
       // hasDropdown: true,
       // dropdownItems: [
@@ -29,25 +26,9 @@ const Header = () => {
       // ]
     },
     // { label: 'Academy' },
-    { label: 'Client Area', className: 'client-area' ,link: '/login'}
+    { label: 'Client Area', link: '/login' }
   ];
 
-    const dispatch = useDispatch();
-  
-  // const handleLanguageClick = (code) => {
-  //   dispatch(setLanguage(code));
-  //   setIsLangOpen(false);
-
-  //   // Also directly update select in case Redux is a bit late
-  //   const select = document.querySelector(".goog-te-combo");
-  //   if (select) {
-  //     select.value = code;
-  //     select.dispatchEvent(new Event("change", { bubbles: true }));
-  //     select.dispatchEvent(new Event("input", { bubbles: true }));
-  //   }
-  // };
-
-  // Close dropdown if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (langRef.current && !langRef.current.contains(event.target)) {
@@ -84,6 +65,7 @@ const Header = () => {
   // const filteredCountries = allCountries.filter(c => supportedIsoCodes.includes(c.iso2));
   // For now, show allCountries
 
+
   return (
     <header className={`header-main-content${isScrolled ? ' scrolled' : ''}`}>
       <div className="container">
@@ -92,93 +74,38 @@ const Header = () => {
             <h2 className="logo-text animate-gradient ">ARC</h2>
           </Link>
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-            {navItems.map((item, index) => (
-              <div key={index} className={`nav-item ${item.hasDropdown ? 'has-dropdown' : ''}`}>
-                <Link
-                  to={item.link}
-                  className={item.className}
-                  onClick={item.link && item.link.startsWith('#') ? (e) => handleNavClick(e, item.link) : undefined}
-                >
-                  {item.label}
-                  {item.hasDropdown && <KeyboardArrowDown />}
-                </Link>
-                {item.hasDropdown && item.dropdownItems && (
-                  <div className="dropdown-menu">
-                    <div className="dropdown-content">
-                      {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
-                        <Link key={dropdownIndex} to={dropdownItem.link} className="dropdown-item">
-                          {dropdownItem.title}
-                        </Link>
-                      ))}
+            {navItems.map((item, index) => {
+              const isActive = item.link === location.pathname;
+              return (
+                <div key={index} className={`nav-item ${item.hasDropdown ? 'has-dropdown' : ''}`}>
+                  <Link
+                    to={item.link}
+                    className={`${item.className ? item.className : ''}${isActive ? ' active' : ''}`.trim()}
+                    onClick={item.link && item.link.startsWith('#') ? (e) => handleNavClick(e, item.link) : undefined}
+                  >
+                    {item.label}
+                    {item.hasDropdown && <KeyboardArrowDown />}
+                  </Link>
+                  {item.hasDropdown && item.dropdownItems && (
+                    <div className="dropdown-menu">
+                      <div className="dropdown-content">
+                        {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
+                          <Link key={dropdownIndex} to={dropdownItem.link} className="dropdown-item">
+                            {dropdownItem.title}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
-            {/* <div
-              className="language-selector"
-              style={{ position: 'relative' }}
-              ref={langRef}
-            >
-              <div
-                style={{ display: 'flex', alignItems: 'center', cursor: 'pointer',gap:5 }}
-                onClick={() => setIsLangOpen((prev) => !prev)}
-              >
-                <Language />
-                <span>EN</span>
-                <KeyboardArrowDown />
-              </div>
-              {isLangOpen && (
-      <div
-        className="language-dropdown"
-        style={{
-          position: "absolute",
-          top: "100%",
-          left: 0,
-          background: "black",
-          zIndex: 1000,
-          maxHeight: 350,
-          overflowY: "auto",
-          minWidth: 180,
-          borderRadius: "10px",
-        }}
-      >
-        {allCountries.map((country) => (
-          <div
-            key={country.iso2}
-            onClick={() => handleLanguageClick(country.iso2)}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              padding: "12px 12px",
-              cursor: "pointer",
-            }}
-          >
-            <span style={{ fontSize: 20, marginRight: 8 }}>
-              <img
-                src={`https://flagcdn.com/24x18/${country.iso2}.png`}
-                alt={country.name}
-                style={{ width: 20, height: 15, objectFit: "cover" }}
-              />
-            </span>
-            <span>{country.name}</span>
-          </div>
-        ))}
-      </div>
-    )
-}
-
-            </div> */}
+                  )}
+                </div>
+              );
+            })}
             <div>
-              <Translator className=''/>
-
-</div>
+              <Translator className='' />
+            </div>
             <Search className="search-icon" />
           </nav>
-
-  
-
-          <button 
+          <button
             className="mobile-menu-toggle"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >

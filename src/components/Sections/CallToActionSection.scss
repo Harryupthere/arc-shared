@@ -1,5 +1,5 @@
 .cta-section {
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+  background-color: #1e1e1e;
   padding: 120px 0;
   text-align: center;
   color: white;
@@ -13,7 +13,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover;
     opacity: 0.1;
     z-index: 0;
   }
