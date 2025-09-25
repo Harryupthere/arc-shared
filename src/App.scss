@@ -311,9 +311,8 @@ th {
   position: absolute;
   right: 0;
   top: 0;
-  height: 100%;
   z-index: 1;
-
+  width: 50%;
   &.bottom {
     bottom: 0;
     top: auto;
@@ -323,7 +322,8 @@ th {
       position: absolute;
       bottom: 0;
       z-index: 1;
-    
+  width: 50%;
+  
       &.roated-90 {
             transform: rotate(180deg);
       }
