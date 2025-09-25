@@ -22,6 +22,8 @@ import AboutUs from './pages/Aboutus';
 import Checkout from './pages/Checkout';
 import Tnc from './pages/Tnc';
 import PrivacyPolicy from './pages/Privacy';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (

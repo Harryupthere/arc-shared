@@ -5,9 +5,16 @@
   position: relative;
   overflow: hidden;
 
+  // .slider-container {
+  //   margin-bottom: 20px;
+  // }
   .slider-container {
-    margin-bottom: 20px;
-  }
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
 
   .slick-track {
     display: flex;
@@ -19,9 +26,12 @@
     border-radius: 15px;
     padding: 30px 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+  padding: 10px;
 
     .image {
       border-radius: 10px;
+      
 
       img {
         max-height: 200px;
@@ -30,6 +40,8 @@
         transition: transform .2s cubic-bezier(.25, .46, .45, .94);
         margin-bottom: 30px;
         border-radius: 30px;
+  height: auto;
+
 
         &:hover {
           transform: scale(1.05);
@@ -38,6 +50,7 @@
     }
 
     .step-content {
+       text-align: center;
       h3 {
         color: var(--primary-blue);
         font-size: 14px;
