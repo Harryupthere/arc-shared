@@ -10,7 +10,7 @@ import { ShadeImage } from '../common/iconImage';
 
 
 const BuildARC = () => {
-  var responsiveSlider = {
+ var responsiveSlider = {
     dots: true,
     infinite: false,
     speed: 500,
@@ -182,7 +182,7 @@ const BuildARC = () => {
                 trading skills. It is designed to be challenging, and only the best traders pass. Show us what
                 you've got!
               </p>
-              <div className="slider-container">
+              <div className="slider-container" >
                 <Slider ref={sliderRef} {...responsiveSlider}>
                   {evalution.map((item, index) => (
                     <div className="step-card" key={index}>

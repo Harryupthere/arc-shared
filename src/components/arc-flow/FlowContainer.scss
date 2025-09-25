@@ -16,6 +16,11 @@
   .slick-track {
     display: flex;
     gap: 15px;
+    .slick-slide{
+        @media (max-width: 525px) {
+     width: 270px!important;
+    }
+    }
   }
 
   .step-card {
@@ -23,7 +28,9 @@
     border-radius: 15px;
     padding: 30px 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-
+    @media (max-width: 525px) {
+     width: 270px!important;
+    }
     .image {
       border-radius: 10px;
 
