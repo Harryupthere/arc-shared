@@ -154,7 +154,7 @@ const PricingTable = () => {
       accountBalance: '$25,000',
       profitTargetPercent: '10%',
       profitShare: '50%',
-      price:'$139'
+      price:'$349'
     },
     '10k': {
       profitTarget: 'Unlimited',
@@ -164,7 +164,7 @@ const PricingTable = () => {
       accountBalance: '$50,000',
       profitTargetPercent: '10%',
       profitShare: '50%',
-      price:'$179'
+      price:'$599'
 
     },
     '50k': {
@@ -175,7 +175,7 @@ const PricingTable = () => {
       accountBalance: '$100,000',
       profitTargetPercent: '10%',
       profitShare: '75%',
-      price:'$299'
+      price:'$2799'
 
     }
   };
@@ -238,7 +238,7 @@ const PricingTable = () => {
   };
 
   const currentData = getCurrentData();
-
+console.log(currentData)
   const getPrices=()=>{
      if (challengeType === 'two-phase') {
       return twoPhaseData[selectedSize].price;
@@ -473,11 +473,11 @@ const PricingTable = () => {
                     <div className="table-cell">Profit Target</div>
                     <div className="table-cell">Profit Share</div>
                   </div>
-                  <div className="table-row">
+                  {/* <div className="table-row">
                     <div className="table-cell">{currentData.accountBalance}</div>
                     <div className="table-cell">{currentData.profitTargetPercent}</div>
                     <div className="table-cell">{currentData.profitShare}</div>
-                  </div>
+                  </div> */}
                   {pricingTab.map((item) => (
                     <div className="table-row">
                       <div className="table-cell">{item[0]}</div>
