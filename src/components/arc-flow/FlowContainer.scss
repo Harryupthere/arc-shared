@@ -23,6 +23,11 @@
   .slick-track {
     display: flex;
     gap: 15px;
+    .slick-slide{
+        @media (max-width: 525px) {
+     width: 270px!important;
+    }
+    }
   }
 
   .step-card {
@@ -30,9 +35,15 @@
     border-radius: 15px;
     padding: 30px 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+<<<<<<< HEAD
     box-sizing: border-box;
   padding: 10px;
 
+=======
+    @media (max-width: 525px) {
+     width: 270px!important;
+    }
+>>>>>>> 3aa9d18a4a658cb843be20fe48e5ceddbc9e4355
     .image {
       border-radius: 10px;
       
