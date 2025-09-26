@@ -211,7 +211,7 @@ const PricingTable = () => {
 
   let pricingTab = pricingTable1[2]
   const getCurrentData = () => {
-    if (challengeType === 'two-phase') {
+    if (challengeType =='two-phase') {
       return twoPhaseData[selectedSize];
     } else {
       if (selectedSize == '5k') {
