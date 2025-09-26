@@ -1,9 +1,13 @@
 .build-arc-page {
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+      background-color: #1e1e1e;
   color: white;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+.slider-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
 
   // .slider-container {
   //   margin-bottom: 20px;
@@ -641,7 +645,6 @@
   // Rewards Section
   .rewards-section {
     padding: 100px 0;
-    background: rgba(255, 255, 255, 0.02);
     position: relative;
     z-index: 99;
 
