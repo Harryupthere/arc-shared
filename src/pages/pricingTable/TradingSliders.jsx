@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { DollarSign, TrendingDown, Calendar } from 'lucide-react';
 import './TradingSliders.scss';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+//const url = `http://localhost:3002/api/v1/users/plan/custom-calculation`
+const url = `https://app.arcforyou.com/api/v1/users/plan/custom-calculation`
+
 
 // Allowed values for account balance
 const allowedAccountBalances = [
@@ -16,7 +20,7 @@ const allowedAccountBalances = [
 ];
 
 // Generate marks from allowed values
-let aaa=[
+let aaa = [
   15000,
   40000,
 
@@ -27,7 +31,6 @@ const accountBalanceMarks = aaa.map((value) => ({
   value,
   label: `$${value >= 1000 ? (value / 1000) + 'K' : value}`
 }));
-console.log(accountBalanceMarks);
 
 const minAccountBalance = allowedAccountBalances[0];
 const maxAccountBalance = allowedAccountBalances[allowedAccountBalances.length - 1];
@@ -36,6 +39,9 @@ const TradingSliders = () => {
   const [accountBalance, setAccountBalance] = useState(50000);
   const [drawdown, setDrawdown] = useState(10);
   const [minTradingDays, setMinTradingDays] = useState(3);
+  const [price,setPrice] = useState(0)
+  const [showResult,setShowResult] = useState(false)
+
   const navigate = useNavigate();
   // Snap to nearest allowed value
   const handleAccountBalanceChange = (val) => {
@@ -126,6 +132,28 @@ const TradingSliders = () => {
     return ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
   };
 
+  const calculateCustomPlan = async (e) => {
+    e.preventDefault();
+    try{
+ 
+    const payload = {
+      account_size: accountBalance,
+      drawdown,
+      days: minTradingDays
+    }
+
+    const result = await axios.post(url, payload)
+
+    if(result.status==200){
+setPrice(result.data.data);
+setShowResult(true)
+    }
+         
+    }catch(error){
+      console.log(error)
+    }
+  }
+
   return (
     <div className="trading-sliders">
       <div className="sliders-container">
@@ -186,14 +214,37 @@ const TradingSliders = () => {
       </div>
 
       <div className="action-buttons">
-        <button className="btn btn-outline">
+        <button className="btn btn-outline" onClick={(e) => calculateCustomPlan(e)}>
           <span>Calculate Results</span>
         </button>
-        <button className="btn btn-primary" onClick={()=>navigate('/checkout')}>
+        {/* <button className="btn btn-primary" onClick={() => navigate('/checkout')}>
+          <span>Start Challenge</span>
+        </button> */}
+      </div>
+
+{showResult && (
+    <div className="result-card">
+      <h1>
+        <span className="base">Price = </span>
+        <span className="target">${price}</span>
+      </h1>
+
+       <div className="extra-info">
+        <p><strong>Account Balance:</strong> ${accountBalance}</p>
+        <p><strong>Drawdown:</strong> {drawdown}%</p>
+        <p><strong>Days:</strong> {minTradingDays}</p>
+      </div>
+    </div>
+  )}
+     <div className="action-buttons">
+        {/* <button className="btn btn-outline" onClick={(e) => calculateCustomPlan(e)}>
+          <span>Calculate Results</span>
+        </button> */}
+        <button className="btn btn-primary" onClick={() => navigate('/checkout')}>
           <span>Start Challenge</span>
         </button>
       </div>
-    </div>
+      </div>
   );
 };
 
