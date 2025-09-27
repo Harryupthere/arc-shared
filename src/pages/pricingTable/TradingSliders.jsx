@@ -215,7 +215,7 @@ setShowResult(true)
 
       <div className="action-buttons">
         <button className="btn btn-outline" onClick={(e) => calculateCustomPlan(e)}>
-          <span>Calculate Results</span>
+          <span>Calculate Price</span>
         </button>
         {/* <button className="btn btn-primary" onClick={() => navigate('/checkout')}>
           <span>Start Challenge</span>
