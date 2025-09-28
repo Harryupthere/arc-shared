@@ -31,55 +31,106 @@ $tertiary-progress: #6C7CE7;
   max-width: 800px;
   margin: 0 auto;
   padding: 24px;
-//  background: #f8f9fa;
+  //  background: #f8f9fa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 32px;
   justify-content: center;
-  
-   .result-card {
-    background: #fff;
-    padding: 32px;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  max-width: 400px;   // ✅ reduce width
-  margin: 0 auto;     // ✅ center align
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin: 0 0 16px 0;
 
-      .base {
-        color: $dark-bg;
-      }
+  // .result-card {
+  //   background: #fff;
+  //   padding: 32px;
+  //   border-radius: 16px;
+  //   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  //   text-align: center;
+  //   max-width: 600px; // ✅ reduce width
+  //   margin: 0 auto; // ✅ center align
 
-      .target {
-        color: $primary-blue;
-      }
+  //   h1 {
+  //     font-size: 2.2rem;
+  //     font-weight: 700;
+  //     margin: 0 0 16px 0;
+
+  //     .base {
+  //       color: $dark-bg;
+  //     }
+
+  //     .target {
+  //       color: $primary-blue;
+  //     }
+  //   }
+
+  //   .extra-info {
+  //     font-size: 0.95rem;
+  //     color: #555;
+  //     line-height: 1.6;
+
+  //     p {
+  //       margin: 4px 0;
+  //     }
+
+  //     strong {
+  //       color: $primary-blue;
+  //     }
+  //   }
+  // }
+  .result-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+
+  h1 {
+    display: flex;               // ✅ keep in one row
+    justify-content: center;     // ✅ center align
+    align-items: baseline;       // ✅ align text properly
+    gap: 6px;                    // space between "Price =" and value
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+
+    .base {
+      color: $dark-bg;
+      white-space: nowrap; // ✅ prevent line break
     }
 
-    .extra-info {
-      font-size: 0.95rem;
-      color: #555;
-      line-height: 1.6;
-
-      p {
-        margin: 4px 0;
-      }
-
-      strong {
-        color: $primary-blue;
-      }
+    .target {
+      color: $primary-blue;
+      white-space: nowrap;
     }
   }
+
+  .extra-info {
+    display: flex;                // ✅ keep items in one row
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;            // ✅ stop wrapping
+    gap: 10px;                    // small spacing
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+
+    p {
+      margin: 0;
+      white-space: nowrap; // ✅ prevent breaking into multiple lines
+    }
+
+    strong {
+      color: $primary-blue;
+    }
+  }
+}
 }
 
 .sliders-container {
   display: flex;
   flex-direction: column;
   gap: 24px;
+
 }
 
 .slider-card {
@@ -99,15 +150,15 @@ $tertiary-progress: #6C7CE7;
     .slider-icon {
       background: $primary-gradient;
     }
-    
+
     .slider-progress {
       background: $primary-progress;
     }
-    
+
     .slider-track {
       background: $primary-track;
     }
-    
+
     .slider-value {
       background: $primary-gradient;
     }
@@ -117,15 +168,15 @@ $tertiary-progress: #6C7CE7;
     .slider-icon {
       background: $secondary-gradient;
     }
-    
+
     .slider-progress {
       background: $secondary-progress;
     }
-    
+
     .slider-track {
       background: $secondary-track;
     }
-    
+
     .slider-value {
       background: $secondary-gradient;
     }
@@ -135,15 +186,15 @@ $tertiary-progress: #6C7CE7;
     .slider-icon {
       background: $tertiary-gradient;
     }
-    
+
     .slider-progress {
       background: $tertiary-progress;
     }
-    
+
     .slider-track {
       background: $tertiary-track;
     }
-    
+
     .slider-value {
       background: $tertiary-gradient;
     }
@@ -315,7 +366,7 @@ $tertiary-progress: #6C7CE7;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  
+
   &:hover {
     transform: translateY(-1px);
   }
@@ -397,7 +448,7 @@ $tertiary-progress: #6C7CE7;
   .slider-marks {
     .mark-label {
       font-size: 9px;
-      
+
       &:nth-child(even) {
         opacity: 0.7;
       }
@@ -410,5 +461,21 @@ $tertiary-progress: #6C7CE7;
 
   .slider-card {
     padding: 16px;
+  }
+}
+
+/* ✅ Responsive adjustments */
+@media (max-width: 480px) {
+  .result-card {
+    padding: 16px;
+
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    .extra-info {
+      font-size: 0.75rem;
+      gap: 6px;
+    }
   }
 }

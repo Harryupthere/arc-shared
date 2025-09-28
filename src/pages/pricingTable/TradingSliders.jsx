@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { DollarSign, TrendingDown, Calendar } from 'lucide-react';
 import './TradingSliders.scss';
 import { useNavigate } from 'react-router-dom';
@@ -6,6 +6,22 @@ import axios from 'axios';
 //const url = `http://localhost:3002/api/v1/users/plan/custom-calculation`
 const url = `https://app.arcforyou.com/api/v1/users/plan/custom-calculation`
 
+const accountTable = {
+  5000: 24.38, 6000: 29.25, 7000: 34.12, 8000: 39, 9000: 44.14, 10000: 49.29,
+  15000: 75, 20000: 107, 25000: 139, 30000: 165, 35000: 191, 40000: 217,
+  50000: 269, 60000: 321, 70000: 373, 80000: 425, 90000: 477, 100000: 529,
+  150000: 793.5, 200000: 1058, 250000: 1322.5, 300000: 1587
+};
+
+const daysTable = {
+  2: 2.50, 3: 1.67, 4: 1.25, 5: 1.00
+};
+
+const drawdownTable = {
+  5: 0.50, 6: 0.60, 7: 0.70, 8: 0.80, 9: 0.90, 10: 1.00,
+  11: 1.10, 12: 1.20, 13: 1.30, 14: 1.40, 15: 1.50, 16: 1.60,
+  17: 1.70, 18: 1.80, 19: 1.90, 20: 2.00
+};
 
 // Allowed values for account balance
 const allowedAccountBalances = [
@@ -154,6 +170,24 @@ setShowResult(true)
     }
   }
 
+  useEffect(()=>{
+calculatePrice()
+  },[accountBalance,minTradingDays,drawdown])
+
+
+const calculatePrice = () => {
+  try {
+    const basePrice = accountTable[accountBalance] || 0;
+    const dayMultiplier = daysTable[minTradingDays] || 1;
+    const drawdownMultiplier = drawdownTable[drawdown] || 1;
+
+    const finalPrice = basePrice * dayMultiplier * drawdownMultiplier;
+
+    setPrice(finalPrice.toFixed(2)); // show 2 decimals
+  } catch (error) {
+    console.log(error);
+  }
+};
   return (
     <div className="trading-sliders">
       <div className="sliders-container">
@@ -213,16 +247,16 @@ setShowResult(true)
         ))}
       </div>
 
-      <div className="action-buttons">
+      {/* <div className="action-buttons">
         <button className="btn btn-outline" onClick={(e) => calculateCustomPlan(e)}>
           <span>Calculate Price</span>
         </button>
-        {/* <button className="btn btn-primary" onClick={() => navigate('/checkout')}>
+         <button className="btn btn-primary" onClick={() => navigate('/checkout')}>
           <span>Start Challenge</span>
-        </button> */}
-      </div>
+        </button> 
+      </div> */}
 
-{showResult && (
+{/* {showResult && ( */}
     <div className="result-card">
       <h1>
         <span className="base">Price = </span>
@@ -230,12 +264,11 @@ setShowResult(true)
       </h1>
 
        <div className="extra-info">
-        <p><strong>Account Balance:</strong> ${accountBalance}</p>
-        <p><strong>Drawdown:</strong> {drawdown}%</p>
-        <p><strong>Days:</strong> {minTradingDays}</p>
+        <p><strong>Account Balance:</strong> ${accountBalance} | <strong>Drawdown:</strong> {drawdown}% | <strong>Days:</strong> {minTradingDays}</p>
+       
       </div>
     </div>
-  )}
+  {/* )} */}
      <div className="action-buttons">
         {/* <button className="btn btn-outline" onClick={(e) => calculateCustomPlan(e)}>
           <span>Calculate Results</span>
