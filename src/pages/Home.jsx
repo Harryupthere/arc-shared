@@ -1,7 +1,7 @@
 import HeroSection from '../components/Sections/HeroSection';
 import ProcessSection from '../components/Sections/ProcessSection';
 import CallToActionSection from '../components/Sections/CallToActionSection';
-import PricingTable from './pricingTable/PricingTable';
+import PricingTable from   './pricingTable/PricingTable';
 
 const Home = () => {
   return (
