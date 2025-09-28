@@ -6,13 +6,13 @@ $secondary-blue: #1565c0;
 $dark-bg: #1a1a1a;
 $card-bg: #ffffff;
 $card-border: #e5e5e5;
-$text-primary: #2c2c2c;
-$text-secondary: #666666;
-$text-light: #999999;
+$text-primary: #fff;
+$text-secondary: #fff;
+$text-light: #ffffffc8;
 
 // Primary color scheme (blue)
 $primary-gradient: linear-gradient(135deg, #1E7CE8 0%, #1565c0 100%);
-$primary-track: #E3EFFF;
+$primary-track: #e3efff38;
 $primary-progress: $primary-blue;
 
 // Secondary color scheme (darker blue/black)
@@ -31,72 +31,37 @@ $tertiary-progress: #6C7CE7;
   max-width: 800px;
   margin: 0 auto;
   padding: 24px;
-  //  background: #f8f9fa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  justify-content: center;
 
-  // .result-card {
-  //   background: #fff;
-  //   padding: 32px;
-  //   border-radius: 16px;
-  //   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  //   text-align: center;
-  //   max-width: 600px; // ✅ reduce width
-  //   margin: 0 auto; // ✅ center align
-
-  //   h1 {
-  //     font-size: 2.2rem;
-  //     font-weight: 700;
-  //     margin: 0 0 16px 0;
-
-  //     .base {
-  //       color: $dark-bg;
-  //     }
-
-  //     .target {
-  //       color: $primary-blue;
-  //     }
-  //   }
-
-  //   .extra-info {
-  //     font-size: 0.95rem;
-  //     color: #555;
-  //     line-height: 1.6;
-
-  //     p {
-  //       margin: 4px 0;
-  //     }
-
-  //     strong {
-  //       color: $primary-blue;
-  //     }
-  //   }
-  // }
+  
   .result-card {
-  background: #fff;
-  padding: 32px;
+  background:linear-gradient(90deg, rgb(94 7 254 / 25%), rgb(32 7 254 / 7%) 42.78%) ;
+  padding: 24px;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 600px;
   margin: 0 auto;
+  border: 1px solid rgba(221, 221, 221, 0.1215686275);
+  display: flex; 
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+@media (max-width: 525px) {
+    flex-direction: column; 
+    gap: 16px; 
+    justify-content: start;
+    align-items: self-start;
+  }
 
-  h1 {
-    display: flex;               // ✅ keep in one row
-    justify-content: center;     // ✅ center align
-    align-items: baseline;       // ✅ align text properly
-    gap: 6px;                    // space between "Price =" and value
-    font-size: 2.2rem;
+  h1 {      
+    gap: 6px;                    
+    font-size: 25px;
     font-weight: 700;
     margin: 0 0 16px 0;
-
-    .base {
-      color: $dark-bg;
-      white-space: nowrap; // ✅ prevent line break
-    }
+    color: #fff;
+ 
 
     .target {
       color: $primary-blue;
@@ -108,7 +73,7 @@ $tertiary-progress: #6C7CE7;
     display: flex;                // ✅ keep items in one row
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;            // ✅ stop wrapping
+    flex-wrap: wrap;            // ✅ stop wrapping
     gap: 10px;                    // small spacing
     font-size: 0.95rem;
     color: #555;
@@ -116,11 +81,11 @@ $tertiary-progress: #6C7CE7;
 
     p {
       margin: 0;
-      white-space: nowrap; // ✅ prevent breaking into multiple lines
+      color: $primary-blue;
     }
 
     strong {
-      color: $primary-blue;
+      color: $text-primary;
     }
   }
 }
@@ -129,22 +94,18 @@ $tertiary-progress: #6C7CE7;
 .sliders-container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 15px;
 
 }
 
 .slider-card {
-  background: $card-bg;
+  // background: $card-bg;
+  background: linear-gradient(90deg, rgb(94 7 254 / 17%), rgba(7, 129, 254, 0) 42.78%);
   border-radius: 16px;
-  padding: 24px;
+  padding: 12px 24px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid $card-border;
+  border: 1px solid #dddddd1f;
   transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  }
 
   &.primary {
     .slider-icon {
@@ -205,7 +166,7 @@ $tertiary-progress: #6C7CE7;
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .slider-icon {
@@ -244,8 +205,8 @@ $tertiary-progress: #6C7CE7;
 }
 
 .slider-track {
-  height: 6px;
-  border-radius: 3px;
+  height: 7px;
+  border-radius: 5px;
   position: relative;
   overflow: hidden;
 }
@@ -301,7 +262,7 @@ $tertiary-progress: #6C7CE7;
 
 .slider-marks {
   position: relative;
-  margin-top: 16px;
+  margin-top: 5px;
   height: 20px;
 }
 
@@ -332,13 +293,13 @@ $tertiary-progress: #6C7CE7;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  padding: 10px 16px;
   border-radius: 12px;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   margin: 0 auto;
-  min-width: 120px;
+  min-width: 100px;
   text-align: center;
 }
 
@@ -367,9 +328,7 @@ $tertiary-progress: #6C7CE7;
   justify-content: center;
   gap: 8px;
 
-  &:hover {
-    transform: translateY(-1px);
-  }
+
 
   &:active {
     transform: translateY(0);
@@ -402,7 +361,7 @@ $tertiary-progress: #6C7CE7;
 // Responsive Design
 @media (max-width: 768px) {
   .trading-sliders {
-    padding: 16px;
+    padding: 0;
     gap: 24px;
   }
 
@@ -412,6 +371,7 @@ $tertiary-progress: #6C7CE7;
 
   .slider-header {
     margin-bottom: 20px;
+    gap: 5px;
   }
 
   .slider-icon {
@@ -420,7 +380,7 @@ $tertiary-progress: #6C7CE7;
   }
 
   .slider-title {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .slider-subtitle {
@@ -434,7 +394,7 @@ $tertiary-progress: #6C7CE7;
   .slider-value {
     font-size: 14px;
     padding: 10px 20px;
-    min-width: 100px;
+    min-width: 80px;
   }
 
   .btn {

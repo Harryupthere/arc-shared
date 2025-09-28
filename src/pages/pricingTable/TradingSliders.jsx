@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DollarSign, TrendingDown, Calendar } from 'lucide-react';
 import './TradingSliders.scss';
 import { useNavigate } from 'react-router-dom';
@@ -55,8 +55,8 @@ const TradingSliders = () => {
   const [accountBalance, setAccountBalance] = useState(50000);
   const [drawdown, setDrawdown] = useState(10);
   const [minTradingDays, setMinTradingDays] = useState(3);
-  const [price,setPrice] = useState(0)
-  const [showResult,setShowResult] = useState(false)
+  const [price, setPrice] = useState(0)
+  const [showResult, setShowResult] = useState(false)
 
   const navigate = useNavigate();
   // Snap to nearest allowed value
@@ -150,44 +150,44 @@ const TradingSliders = () => {
 
   const calculateCustomPlan = async (e) => {
     e.preventDefault();
-    try{
- 
-    const payload = {
-      account_size: accountBalance,
-      drawdown,
-      days: minTradingDays
-    }
+    try {
 
-    const result = await axios.post(url, payload)
+      const payload = {
+        account_size: accountBalance,
+        drawdown,
+        days: minTradingDays
+      }
 
-    if(result.status==200){
-setPrice(result.data.data);
-setShowResult(true)
-    }
-         
-    }catch(error){
+      const result = await axios.post(url, payload)
+
+      if (result.status == 200) {
+        setPrice(result.data.data);
+        setShowResult(true)
+      }
+
+    } catch (error) {
       console.log(error)
     }
   }
 
-  useEffect(()=>{
-calculatePrice()
-  },[accountBalance,minTradingDays,drawdown])
+  useEffect(() => {
+    calculatePrice()
+  }, [accountBalance, minTradingDays, drawdown])
 
 
-const calculatePrice = () => {
-  try {
-    const basePrice = accountTable[accountBalance] || 0;
-    const dayMultiplier = daysTable[minTradingDays] || 1;
-    const drawdownMultiplier = drawdownTable[drawdown] || 1;
+  const calculatePrice = () => {
+    try {
+      const basePrice = accountTable[accountBalance] || 0;
+      const dayMultiplier = daysTable[minTradingDays] || 1;
+      const drawdownMultiplier = drawdownTable[drawdown] || 1;
 
-    const finalPrice = basePrice * dayMultiplier * drawdownMultiplier;
+      const finalPrice = basePrice * dayMultiplier * drawdownMultiplier;
 
-    setPrice(finalPrice.toFixed(2)); // show 2 decimals
-  } catch (error) {
-    console.log(error);
-  }
-};
+      setPrice(finalPrice.toFixed(2)); // show 2 decimals
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="trading-sliders">
       <div className="sliders-container">
@@ -201,6 +201,9 @@ const calculatePrice = () => {
                 <h3 className="slider-title">{slider.title}</h3>
                 <p className="slider-subtitle">{slider.subtitle}</p>
               </div>
+                <div className="slider-value">
+              {formatValue(slider)}
+            </div>
             </div>
 
             <div className="slider-track-container">
@@ -240,44 +243,29 @@ const calculatePrice = () => {
               </div>
             </div>
 
-            <div className="slider-value">
-              {formatValue(slider)}
-            </div>
+          
           </div>
         ))}
       </div>
 
-      {/* <div className="action-buttons">
-        <button className="btn btn-outline" onClick={(e) => calculateCustomPlan(e)}>
-          <span>Calculate Price</span>
-        </button>
-         <button className="btn btn-primary" onClick={() => navigate('/checkout')}>
-          <span>Start Challenge</span>
-        </button> 
-      </div> */}
-
-{/* {showResult && ( */}
-    <div className="result-card">
-      <h1>
-        <span className="base">Price = </span>
-        <span className="target">${price}</span>
-      </h1>
-
-       <div className="extra-info">
-        <p><strong>Account Balance:</strong> ${accountBalance} | <strong>Drawdown:</strong> {drawdown}% | <strong>Days:</strong> {minTradingDays}</p>
-       
-      </div>
-    </div>
-  {/* )} */}
-     <div className="action-buttons">
-        {/* <button className="btn btn-outline" onClick={(e) => calculateCustomPlan(e)}>
-          <span>Calculate Results</span>
-        </button> */}
+      {/* {showResult && ( */}
+      <div className="result-card">
+        <div>
+        <h1>
+          <span className="base">Price = </span>
+          <span className="target">${price}</span>
+        </h1>
+        <div className="extra-info">
+          <p><strong>Account Balance:</strong> ${accountBalance} | <strong>Drawdown:</strong> {drawdown}% | <strong>Days:</strong> {minTradingDays}</p>
+        </div>
+        </div>
+      <div className="action-buttons">
         <button className="btn btn-primary" onClick={() => navigate('/checkout')}>
           <span>Start Challenge</span>
         </button>
       </div>
-      </div>
+    </div>
+    </div>
   );
 };
 
