@@ -208,7 +208,7 @@ $tertiary-progress: #6C7CE7;
   height: 7px;
   border-radius: 5px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .slider-progress {
@@ -219,6 +219,16 @@ $tertiary-progress: #6C7CE7;
   top: 0;
   left: 0;
   z-index: 1;
+  &::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    height: 15px;
+    width: 15px;
+    top: -4px;
+    border-radius: 100%;
+    background-color: $primary-progress;
+  }
 }
 
 .slider-input {
